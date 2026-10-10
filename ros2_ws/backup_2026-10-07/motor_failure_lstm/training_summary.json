@@ -1,0 +1,33 @@
+{
+  "dataset": "/root/ros2_ws/flight_data_normal.csv",
+  "rows": 1178,
+  "label_values": [
+    0
+  ],
+  "task": "normal-only LSTM sequence autoencoder for anomaly scoring",
+  "features": [
+    "vib_x",
+    "vib_y",
+    "vib_z",
+    "m1",
+    "m2",
+    "m3",
+    "m4",
+    "ekf_vel_var",
+    "ekf_pos_var",
+    "ekf_comp_var"
+  ],
+  "sequence_length": 20,
+  "train_windows": 805,
+  "validation_windows": 177,
+  "test_windows": 177,
+  "epochs_run": 50,
+  "best_validation_mse": 0.3108331561088562,
+  "anomaly_threshold_mse_99th_percentile_validation": 0.44193631410598755,
+  "test_mse_mean": 8.627629280090332,
+  "test_mse_median": 0.262562096118927,
+  "test_windows_above_threshold": 41,
+  "model": "/root/ros2_ws/motor_failure_lstm/lstm_autoencoder.keras",
+  "preprocessing": "/root/ros2_ws/motor_failure_lstm/preprocessing.npz",
+  "test_scores": "/root/ros2_ws/motor_failure_lstm/test_anomaly_scores.csv"
+}

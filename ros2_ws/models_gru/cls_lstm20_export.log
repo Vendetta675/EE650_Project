@@ -1,0 +1,104 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791406060.297521   28428 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791406060.297946   28428 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791406063.026736   28428 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791406063.027616   28428 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+E0000 00:00:1791406066.440580   28428 cuda_executor.cc:1737] INTERNAL: CUDA Runtime error: Failed call to cudaGetRuntimeVersion: Error loading CUDA libraries. GPU will not be used.: Error loading CUDA libraries. GPU will not be used.
+Saved artifact at '/tmp/tmpb7qyy2la'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(1, 20, 8), dtype=tf.float32, name='keras_tensor_10')
+Output Type:
+  TensorSpec(shape=(1, 1), dtype=tf.float32, name=None)
+Captures:
+  139728249448272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  139728249448656: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  139728249450576: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  139728249450768: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  139728249448464: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  139728249449808: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  139728249450960: TensorSpec(shape=(), dtype=tf.resource, name=None)
+Saved artifact at '/tmp/tmp9mmcd9dg'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(1, 20, 8), dtype=tf.float32, name='keras_tensor_10')
+Output Type:
+  TensorSpec(shape=(1, 1), dtype=tf.float32, name=None)
+Captures:
+  139728249448272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  139728249448656: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  139728249450576: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  139728249450768: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  139728249448464: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  139728249449808: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  139728249450960: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/convert.py:846: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+{
+ "model": "models_gru/cls_lstm20.h5",
+ "kind": "classifier",
+ "params": 5793,
+ "size_bytes": {
+  "h5": 103872,
+  "fp32": 75668,
+  "int8": 97944
+ },
+ "test_roc_auc": {
+  "keras": 0.8624437495707112,
+  "fp32": 0.8624437495707112,
+  "int8": 0.8549606825854981
+ },
+ "latency_us_1thread": {
+  "keras_call": 52200.347501639044,
+  "tflite_fp32": 28.311496862443164,
+  "tflite_int8": 40.59200000483543
+ },
+ "abs_diff_vs_keras": {
+  "fp32": {
+   "max": 5.662441253662109e-07,
+   "mean": 3.211854249229873e-08
+  },
+  "int8": {
+   "max": 0.4938960075378418,
+   "mean": 0.01795012876391411
+  }
+ },
+ "int8_io_quantization": {
+  "input": [
+   0.028566675260663033,
+   -11.0
+  ],
+  "output": [
+   0.00390625,
+   -128.0
+  ]
+ },
+ "int8_op_types": [
+  "ADD",
+  "DELEGATE",
+  "FULLY_CONNECTED",
+  "LOGISTIC",
+  "MUL",
+  "RESHAPE",
+  "SPLIT",
+  "TANH",
+  "UNPACK"
+ ]
+}

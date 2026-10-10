@@ -1,0 +1,2 @@
+[console_scripts]
+motor_fault_detector = failure_detection.motor_fault_detector:main

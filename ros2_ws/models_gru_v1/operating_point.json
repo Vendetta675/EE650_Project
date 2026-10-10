@@ -1,0 +1,28 @@
+{
+ "model": "cls_gru5_int8.tflite",
+ "source_h5": "cls_gru5.h5",
+ "threshold": 0.921875,
+ "persistence": 5,
+ "selection": "persistence chosen from persistence_tradeoff.csv (threshold picked on validation flights for <= 0.5 false alarms/min); best detection/false-alarm balance on test: 7/7 detected, 6 within the 5 s precursor, median latency 3.83 s, 1.23 false alarms/min",
+ "threshold_source": "picked on INT8 validation scores (eval_int8.py)",
+ "test_int8": {
+  "threshold": 0.921875,
+  "episodes": 7,
+  "detected": 7,
+  "detected_in_precursor": 6,
+  "latency_median_s": 3.83219838142395,
+  "latency_p90_s": 4.840399551391602,
+  "false_alarms_per_min": 1.2305168170631664,
+  "normal_minutes": 4.0633333333333335
+ },
+ "test_keras_same_rule": {
+  "threshold": 0.9129967673670977,
+  "episodes": 7,
+  "detected": 7,
+  "detected_in_precursor": 6,
+  "latency_median_s": 3.83219838142395,
+  "latency_p90_s": 4.760299110412598,
+  "false_alarms_per_min": 1.2305168170631664,
+  "normal_minutes": 4.0633333333333335
+ }
+}

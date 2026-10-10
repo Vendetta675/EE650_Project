@@ -1,0 +1,5 @@
+[0.023s] Invoking command in '/root/ros2_ws/build/motor_failure': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /root/ros2_ws/build/motor_failure -- -j12 -l12
+[0.093s] [0mCMake Error: The source directory "/root/ros2_ws/motor_failure" does not exist.
+[0.093s] Specify --help for usage, or press the help button on the CMake GUI.[0m
+[0.096s] gmake: *** [Makefile:267: cmake_check_build_system] Error 1
+[0.100s] Invoked command in '/root/ros2_ws/build/motor_failure' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /root/ros2_ws/build/motor_failure -- -j12 -l12

@@ -1,0 +1,42 @@
+FC: Calibrating barometer
+FC: Barometer 1 calibration complete
+FC: Barometer 2 calibration complete
+FC: ArduPilot Ready
+FC: Field Elevation Set: 584m
+param CC3_FAIL_MOT = 1.0
+param CC3_MASS = 1.2000000476837158
+param CC3_MODE = 0.0
+param CC3_LAG = 0.0
+param CC3_ROT_I = 0.0
+param CC3_YAW_RTGT = 10.0
+param CC3_YAW_KR = 0.019999999552965164
+param CC3_YAW_TMAX = 0.15000000596046448
+FC: RC7: SaveWaypoint LOW
+FC: RC8: PrecisionLoiter MIDDLE
+FC: Arm: Accels inconsistent
+FC: Arm: GPS 1 still configuring this GPS
+FC: GPS 1: was not found
+FC: EKF3 IMU0 initialised
+FC: EKF3 IMU1 initialised
+FC: EKF3 IMU1 tilt alignment complete
+FC: EKF3 IMU0 tilt alignment complete
+FC: EKF3 IMU0 MAG0 initial yaw alignment complete
+FC: EKF3 IMU1 MAG0 initial yaw alignment complete
+FC: Arm: Accels inconsistent
+FC: Arm: GPS 1 still configuring this GPS
+FC: GPS 1: was not found
+FC: GPS 1: probing for u-blox at 230400 baud
+FC: GPS 1: detected u-blox
+FC: Arm: Accels inconsistent
+FC: Arming motors
+FC: EKF3 IMU1 origin set
+FC: EKF3 IMU0 origin set
+FC: EKF3 IMU1 MAG0 in-flight yaw alignment complete
+FC: EKF3 IMU0 MAG0 in-flight yaw alignment complete
+failure trigger confirmed: True
+FTC switched on
+FC: Custom controller is ON
+FC: FTC: motor 1 failed, yaw released, reduced attitud
+FC: e control
+FC: EKF3 IMU0 is using GPS
+done

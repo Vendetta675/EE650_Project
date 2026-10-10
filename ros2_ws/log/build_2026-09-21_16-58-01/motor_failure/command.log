@@ -1,0 +1,2 @@
+Invoking command in '/root/ros2_ws/build/motor_failure': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=${debian_chroot:+($debian_chroot)}\u@\h:\w\$ /usr/bin/cmake --build /root/ros2_ws/build/motor_failure -- -j12 -l12
+Invoked command in '/root/ros2_ws/build/motor_failure' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=${debian_chroot:+($debian_chroot)}\u@\h:\w\$ /usr/bin/cmake --build /root/ros2_ws/build/motor_failure -- -j12 -l12

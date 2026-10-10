@@ -1,0 +1,42 @@
+[0.031s] Invoking command in '/root/ros2_ws/build/motor_failure': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/mine_waypoint_pkg:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy /usr/bin/cmake /root/ros2_ws/src/motor_failure -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/install/motor_failure
+[0.223s] -- The C compiler identification is GNU 13.3.0
+[0.358s] -- The CXX compiler identification is GNU 13.3.0
+[0.391s] -- Detecting C compiler ABI info
+[0.559s] -- Detecting C compiler ABI info - done
+[0.577s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.578s] -- Detecting C compile features
+[0.579s] -- Detecting C compile features - done
+[0.596s] -- Detecting CXX compiler ABI info
+[0.765s] -- Detecting CXX compiler ABI info - done
+[0.781s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.782s] -- Detecting CXX compile features
+[0.783s] -- Detecting CXX compile features - done
+[0.801s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.075s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.335s] -- Looking for gz-sim8 -- found version 8.11.0
+[1.350s] -- Searching for dependencies of gz-sim8
+[1.353s] -- Looking for sdformat14 -- found version 14.9.0
+[1.353s] -- Searching for dependencies of sdformat14
+[1.364s] -- Checking for module 'tinyxml2'
+[1.394s] --   Found tinyxml2, version 10.0.0
+[1.464s] -- Looking for gz-math7 -- found version 7.6.0
+[1.464s] -- Searching for dependencies of gz-math7
+[1.470s] -- Looking for gz-utils2 -- found version 2.2.1
+[1.470s] -- Searching for dependencies of gz-utils2
+[1.474s] -- Looking for gz-utils2 -- found version 2.2.1
+[1.475s] -- Searching for dependencies of gz-utils2
+[1.475s] -- Searching for <gz-utils2> component [cli]
+[1.481s] -- Looking for gz-utils2-cli -- found version 2.2.1
+[1.481s] -- Searching for dependencies of gz-utils2-cli
+[1.486s] -- Looking for gz-plugin2 -- found version 2.0.4
+[1.486s] -- Searching for dependencies of gz-plugin2
+[1.487s] -- Looking for gz-utils2 -- found version 2.2.1
+[1.488s] -- Searching for <gz-plugin2> component [loader]
+[1.491s] -- Looking for gz-plugin2-loader -- found version 2.0.4
+[1.491s] -- Searching for dependencies of gz-plugin2-loader
+[1.492s] -- Searching for <gz-plugin2> component [register]
+[1.495s] -- Looking for gz-plugin2-register -- found version 2.0.4
+[1.495s] -- Searching for dependencies of gz-plugin2-register
+[1.498s] -- Looking for gz-transport13 -- found version 13.5.0
+[1.498s] -- Searching for dependencies of gz-transport13
+[1.548s] Invoked command in '/root/ros2_ws/build/motor_failure' returned '-2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/mine_waypoint_pkg:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy /usr/bin/cmake /root/ros2_ws/src/motor_failure -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/install/motor_failure

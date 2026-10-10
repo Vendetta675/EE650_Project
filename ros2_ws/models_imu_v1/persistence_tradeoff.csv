@@ -1,0 +1,9 @@
+model,persistence,persist_s,threshold,val_detected,val_in_precursor,val_latency_s,val_fa_per_min,detected,in_precursor,latency_median_s,fa_per_min_test
+cls_gru5,2,0.2,0.975,9,4,5.05,0.47,6/8,4,4.0,0.12
+cls_gru5,3,0.3,0.94,9,4,5.05,0.47,8/8,4,5.15,0.24
+cls_gru5,5,0.5,0.814,9,4,5.08,0.47,8/8,4,5.2,0.12
+cls_gru5,8,0.8,0.586,9,4,5.29,0.47,8/8,4,5.45,0.37
+cls_lstm20,2,0.2,0.978,9,3,5.48,0.48,8/8,3,5.6,0.25
+cls_lstm20,3,0.3,0.963,9,4,5.45,0.48,8/8,3,5.65,0.25
+cls_lstm20,5,0.5,0.898,9,4,5.33,0.48,8/8,3,5.7,0.5
+cls_lstm20,8,0.8,0.864,9,3,5.85,0.48,8/8,3,5.95,0.25

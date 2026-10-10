@@ -1,0 +1,62 @@
+#!/bin/bash
+# End-to-end test of detection -> fault-tolerant control hand-off (Gazebo window by default):
+#   progressive failure of one rotor (LOE ramp 1.0 -> LOE over 5 s, then cut to zero CUT s later)
+#   mavlink_bridge (udp 14551) -> /flight_data -> lstm_predictor (models_imu_v2) -> fault_supervisor ftc:=true (udp 14552)
+#   alarm -> supervisor ARMED: custom controller on in pass-through (CC3_FAIL_MOT 0)
+#   cut   -> ArduPilot detects the complete loss onboard (CC3_AUTO) and switches to three-rotor control -> supervisor FTC
+# Flight helper + 10 Hz recorder: ftc_dev/ftc_test.py (--no-ftc: it never switches the FTC on itself), hold 25 s, land.
+# Light airframe sim_models_ftc10 (1.0 kg).
+# Options (environment): MOTOR=1 (1-4), LOE=0.6, CUT=2 (s after the 5 s ramp), FTC=1 (0 = supervisor without FTC),
+#   HEADLESS=1 (no window), KEEP_OPEN=1. Results: ros_ftc_e2e/ (run.csv, test.log, supervisor.log, states.log, logs/*.BIN)
+WS=/root/ros2_ws; D=$WS/ftc_dev; OUT=$WS/ros_ftc_e2e; MODELS=$WS/sim_models_ftc10
+MOTOR=${MOTOR:-1}; LOE=${LOE:-0.6}; CUT=${CUT:-2}; FTC=${FTC:-1}
+SDF=$MODELS/iris_with_gimbal/model.sdf
+source /opt/ros/jazzy/setup.bash; source $WS/install/setup.bash
+export GZ_SIM_SYSTEM_PLUGIN_PATH=$WS/install/motor_failure/lib:/root/ardupilot_gazebo/build
+export GZ_SIM_RESOURCE_PATH=$MODELS:$WS/worlds:/root/ardupilot_gazebo/models:/root/ardupilot_gazebo/worlds
+
+restore_model() {
+  sed -i "s#<loe_final>[^<]*</loe_final>#<loe_final>0.8</loe_final>#; s#<ramp_duration>[^<]*</ramp_duration>#<ramp_duration>5.0</ramp_duration>#; s#<cut_after>[^<]*</cut_after>#<cut_after>-1</cut_after>#; s#<failure_motor>[^<]*</failure_motor>#<failure_motor>-1</failure_motor>#; s#<stutter_amplitude>[^<]*</stutter_amplitude>#<stutter_amplitude>0.15</stutter_amplitude>#; s#<event_log>[^<]*</event_log>#<event_log>$WS/fault_events.csv</event_log>#" $SDF
+}
+cleanup() {
+  restore_model
+  [ "${KEEP_OPEN:-0}" = 1 ] && { echo "KEEP_OPEN=1: Gazebo and SITL left running (./stop_sim.sh to stop)."; return; }
+  $WS/stop_sim.sh --sim-only > /dev/null; echo "stopped all simulation processes"
+}
+trap 'echo; echo interrupted; KEEP_OPEN=0; cleanup; exit 1' INT TERM
+
+case $MOTOR in 1|2|3|4) ;; *) echo "MOTOR must be 1-4"; exit 1;; esac
+if pgrep -f "[a]rducopter|[g]z sim" > /dev/null; then
+  echo "A simulator is still running from an earlier run; stopping it first."; $WS/stop_sim.sh --sim-only > /dev/null
+fi
+
+sed -i "s#<loe_final>[^<]*</loe_final>#<loe_final>$LOE</loe_final>#; s#<ramp_duration>[^<]*</ramp_duration>#<ramp_duration>5.0</ramp_duration>#; s#<cut_after>[^<]*</cut_after>#<cut_after>$CUT</cut_after>#; s#<failure_motor>[^<]*</failure_motor>#<failure_motor>$((MOTOR-1))</failure_motor>#; s#<stutter_amplitude>[^<]*</stutter_amplitude>#<stutter_amplitude>0.15</stutter_amplitude>#; s#<event_log>[^<]*</event_log>#<event_log>$OUT/events.csv</event_log>#" $SDF
+
+mkdir -p $OUT && cd $OUT && rm -rf run.csv test.log states.log events.csv logs
+if [ "${HEADLESS:-0}" = 1 ]; then
+  echo "Gazebo: headless server (HEADLESS=1)"
+  gz sim -s -r -v2 iris_runway_headless.sdf > gz.log 2>&1 & disown
+else
+  echo "Gazebo: GUI on DISPLAY=$DISPLAY (iris_runway.sdf)"
+  gz sim -r -v3 iris_runway.sdf > gz.log 2>&1 & disown
+fi
+sleep 15
+/root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 --sim-address=127.0.0.1 -w \
+  --serial5=udpclient:127.0.0.1:14551 --serial6=udpclient:127.0.0.1:14552 \
+  --home -35.363261,149.165230,584,353 \
+  --defaults /root/ardupilot/Tools/autotest/default_params/copter.parm,/root/ardupilot/Tools/autotest/default_params/gazebo-iris.parm,$D/ftc.parm,$D/ftc_e2e.parm \
+  > sitl.log 2>&1 & disown
+sleep 5
+ros2 run motor_failure_predictor mavlink_bridge --ros-args -p mavlink_url:=udp:127.0.0.1:14551 > bridge.log 2>&1 &
+ros2 run motor_failure_predictor lstm_predictor --ros-args -p model_dir:=$WS/models_imu_v2 > predictor.log 2>&1 &
+ros2 run motor_failure_predictor fault_supervisor --ros-args -p mavlink_url:=udp:127.0.0.1:14552 -p model_dir:=$WS/models_imu_v2 \
+  -p descent_speed:=1.0 -p ftc:=$([ "$FTC" = 1 ] && echo true || echo false) > supervisor.log 2>&1 &
+timeout 400 ros2 topic echo /fault_supervisor/state std_msgs/msg/String > states.log 2>&1 &
+echo "motor $MOTOR: LOE ramp to $LOE over 5 s, cut $CUT s later; FTC hand-off=$FTC (takeoff after EKF/GPS lock, ~1 min)"
+timeout 420 python3 $D/ftc_test.py --out $OUT/run.csv --event-log $OUT/events.csv --motor $MOTOR --plan hold --no-ftc 2>&1 \
+  | grep --line-buffered -v -E "EOF on TCP|sleeping" | tee test.log
+echo "--- supervisor:"; grep -E "supervisor:|Supervisor armed" supervisor.log | sed 's/^\[[A-Z]*\] //'
+echo "--- plugin ground truth:"; cut -d, -f2,3,4,6 events.csv | tail -n +2 | tail -4
+echo "--- state sequence (10 Hz samples):"; grep data states.log | uniq -c
+echo "--- summary"; (cd $D && python3 summarize.py $OUT 2>&1 | tail -2)
+cleanup

@@ -1,0 +1,12 @@
+[01m[K/root/ros2_ws/src/motor_failure/src/MotorFailureSystem.cpp:[m[K In member function ‘[01m[Kvirtual void motor_failure::MotorFailureSystem::[01;32m[KConfigure[m[K(const gz::sim::v8::Entity&, const std::shared_ptr<const sdf::v14::Element>&, gz::sim::v8::EntityComponentManager&, gz::sim::v8::EventManager&)[m[K’:
+[01m[K/root/ros2_ws/src/motor_failure/src/MotorFailureSystem.cpp:48:41:[m[K [01;31m[Kerror: [m[Kpassing ‘[01m[Kstd::__shared_ptr_access<const sdf::v14::Element, __gnu_cxx::_S_atomic, false, false>::element_type[m[K’ {aka ‘[01m[Kconst sdf::v14::Element[m[K’} as ‘[01m[Kthis[m[K’ argument discards qualifiers [[01;31m[K-fpermissive[m[K]
+   48 |       auto joint_elem = [01;31m[K_sdf->GetElement("joint_name")[m[K;
+      |                         [01;31m[K~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/System.hh:31[m[K,
+                 from [01m[K/root/ros2_ws/src/motor_failure/src/MotorFailureSystem.cpp:5[m[K:
+[01m[K/opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/Element.hh:645:24:[m[K [01;36m[Knote: [m[K  in call to ‘[01m[Ksdf::v14::ElementPtr sdf::v14::Element::[01;32m[KGetElement[m[K(const std::string&)[m[K’
+  645 |     public: ElementPtr [01;36m[KGetElement[m[K(const std::string &_name);
+      |                        [01;36m[K^~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/motor_failure_system.dir/build.make:76: CMakeFiles/motor_failure_system.dir/src/MotorFailureSystem.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/motor_failure_system.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

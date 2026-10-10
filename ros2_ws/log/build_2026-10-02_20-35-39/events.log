@@ -1,0 +1,408 @@
+[0.000000] (-) TimerEvent: {}
+[0.000336] (motor_failure) JobQueued: {'identifier': 'motor_failure', 'dependencies': OrderedDict()}
+[0.000526] (motor_failure) JobStarted: {'identifier': 'motor_failure'}
+[0.014825] (motor_failure) JobProgress: {'identifier': 'motor_failure', 'progress': 'cmake'}
+[0.015794] (motor_failure) Command: {'cmd': ['/usr/bin/cmake', '/root/ros2_ws/src/motor_failure', '-DCMAKE_INSTALL_PREFIX=/root/ros2_ws/install/motor_failure'], 'cwd': '/root/ros2_ws/build/motor_failure', 'env': OrderedDict({'GZ_SIM_SYSTEM_PLUGIN_PATH': '/root/ros2_ws/install/motor_failure/lib', 'GZ_SIM_RESOURCE_PATH': '/root/ardupilot_gazebo/models:/root/ardupilot_gazebo/worlds:/opt/ros/jazzy/share', 'USER': 'root', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': 'c7ab345f90ed', '__GLX_VENDOR_LIBRARY_NAME': 'nvidia', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/root/ros2_ws/install', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'PIP_BREAK_SYSTEM_PACKAGES': '1', 'TERM': 'xterm', 'PATH': '/root/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/ardupilot/Tools/autotest', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', '__NV_PRIME_RENDER_OFFLOAD': '1', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/root/ros2_ws/install/motor_failure:/root/ros2_ws/install/mine_waypoint_pkg:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ros2_ws/build/motor_failure', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/root/ros2_ws/install/mine_waypoint_pkg/lib/python3.12/site-packages:/root/ros2_ws/install/failure_detection/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'TZ': 'Etc/UTC', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/root/ros2_ws/install/motor_failure:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/root/ros2_ws/install/mine_waypoint_pkg:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy'}), 'shell': False}
+[0.098845] (-) TimerEvent: {}
+[0.108704] (motor_failure) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.198980] (-) TimerEvent: {}
+[0.202341] (motor_failure) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.230889] (motor_failure) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.299147] (-) TimerEvent: {}
+[0.384245] (motor_failure) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.399322] (-) TimerEvent: {}
+[0.399690] (motor_failure) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.399943] (motor_failure) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.400391] (motor_failure) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.417219] (motor_failure) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.499538] (-) TimerEvent: {}
+[0.592269] (motor_failure) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.599718] (-) TimerEvent: {}
+[0.609088] (motor_failure) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.609401] (motor_failure) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.610337] (motor_failure) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.620661] (motor_failure) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.699843] (-) TimerEvent: {}
+[0.800260] (-) TimerEvent: {}
+[0.899260] (motor_failure) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[0.900341] (-) TimerEvent: {}
+[1.000666] (-) TimerEvent: {}
+[1.101118] (-) TimerEvent: {}
+[1.144620] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sim8 -- found version 8.11.0\n'}
+[1.157977] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sim8\n'}
+[1.159854] (motor_failure) StdoutLine: {'line': b'-- Looking for sdformat14 -- found version 14.9.0\n'}
+[1.160119] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of sdformat14\n'}
+[1.170886] (motor_failure) StdoutLine: {'line': b"-- Checking for module 'tinyxml2'\n"}
+[1.195309] (motor_failure) StdoutLine: {'line': b'--   Found tinyxml2, version 10.0.0\n'}
+[1.201267] (-) TimerEvent: {}
+[1.262428] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-math7 -- found version 7.6.0\n'}
+[1.262953] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-math7\n'}
+[1.266083] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-utils2 -- found version 2.2.1\n'}
+[1.266501] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-utils2\n'}
+[1.268877] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-utils2 -- found version 2.2.1\n'}
+[1.269274] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-utils2\n'}
+[1.269435] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-utils2> component [cli]\n'}
+[1.272540] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-utils2-cli -- found version 2.2.1\n'}
+[1.272905] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-utils2-cli\n'}
+[1.276566] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-plugin2 -- found version 2.0.4\n'}
+[1.276902] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-plugin2\n'}
+[1.277230] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-utils2 -- found version 2.2.1\n'}
+[1.278129] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-plugin2> component [loader]\n'}
+[1.280562] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-plugin2-loader -- found version 2.0.4\n'}
+[1.280881] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-plugin2-loader\n'}
+[1.281389] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-plugin2> component [register]\n'}
+[1.284004] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-plugin2-register -- found version 2.0.4\n'}
+[1.284303] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-plugin2-register\n'}
+[1.287152] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-transport13 -- found version 13.5.0\n'}
+[1.287507] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-transport13\n'}
+[1.301388] (-) TimerEvent: {}
+[1.401706] (-) TimerEvent: {}
+[1.502118] (-) TimerEvent: {}
+[1.504167] (motor_failure) StdoutLine: {'line': b'-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.21.12") \n'}
+[1.543073] (motor_failure) StdoutLine: {'line': b'-- Config-file not installed for ZeroMQ -- checking for pkg-config\n'}
+[1.550869] (motor_failure) StdoutLine: {'line': b"-- Checking for module 'libzmq >= 4'\n"}
+[1.574346] (motor_failure) StdoutLine: {'line': b'--   Found libzmq, version 4.3.5\n'}
+[1.602265] (-) TimerEvent: {}
+[1.643382] (motor_failure) StdoutLine: {'line': b'-- Found ZeroMQ: TRUE (Required is at least version "4") \n'}
+[1.655066] (motor_failure) StdoutLine: {'line': b"-- Checking for module 'uuid'\n"}
+[1.682627] (motor_failure) StdoutLine: {'line': b'--   Found uuid, version 2.39.3\n'}
+[1.702421] (-) TimerEvent: {}
+[1.739208] (motor_failure) StdoutLine: {'line': b'-- Found UUID: TRUE  \n'}
+[1.740232] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-utils2 -- found version 2.2.1\n'}
+[1.743513] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-msgs10 -- found version 10.3.2\n'}
+[1.744013] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-msgs10\n'}
+[1.796261] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-utils2 -- found version 2.2.1\n'}
+[1.796876] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-math7 -- found version 7.6.0\n'}
+[1.802526] (-) TimerEvent: {}
+[1.809837] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-transport13> component [log]\n'}
+[1.812067] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-transport13-log -- found version 13.5.0\n'}
+[1.812530] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-transport13-log\n'}
+[1.812942] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-transport13> component [parameters]\n'}
+[1.815401] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-transport13-parameters -- found version 13.5.0\n'}
+[1.815921] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-transport13-parameters\n'}
+[1.817088] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-msgs10 -- found version 10.3.2\n'}
+[1.820267] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-common5 -- found version 5.8.0\n'}
+[1.820609] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-common5\n'}
+[1.820961] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-utils2 -- found version 2.2.1\n'}
+[1.821729] (motor_failure) StdoutLine: {'line': b'-- Looking for dlfcn.h - found\n'}
+[1.823636] (motor_failure) StdoutLine: {'line': b'-- Looking for libdl - found\n'}
+[1.826165] (motor_failure) StdoutLine: {'line': b'-- Found DL: TRUE  \n'}
+[1.839633] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-common5> component [av]\n'}
+[1.842878] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-common5-av -- found version 5.8.0\n'}
+[1.843303] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-common5-av\n'}
+[1.851807] (motor_failure) StdoutLine: {'line': b"-- Checking for module 'libswscale'\n"}
+[1.878231] (motor_failure) StdoutLine: {'line': b'--   Found libswscale, version 7.5.100\n'}
+[1.902712] (-) TimerEvent: {}
+[1.938597] (motor_failure) StdoutLine: {'line': b'-- Found SWSCALE: TRUE  \n'}
+[1.947866] (motor_failure) StdoutLine: {'line': b"-- Checking for module 'libavdevice >= 56.4.100'\n"}
+[1.973316] (motor_failure) StdoutLine: {'line': b'--   Found libavdevice, version 60.3.100\n'}
+[2.002855] (-) TimerEvent: {}
+[2.049447] (motor_failure) StdoutLine: {'line': b'-- Found AVDEVICE: TRUE (Required is at least version "56.4.100") \n'}
+[2.058659] (motor_failure) StdoutLine: {'line': b"-- Checking for module 'libavformat'\n"}
+[2.083145] (motor_failure) StdoutLine: {'line': b'--   Found libavformat, version 60.16.100\n'}
+[2.103048] (-) TimerEvent: {}
+[2.148185] (motor_failure) StdoutLine: {'line': b'-- Found AVFORMAT: TRUE  \n'}
+[2.157645] (motor_failure) StdoutLine: {'line': b"-- Checking for module 'libavcodec'\n"}
+[2.185294] (motor_failure) StdoutLine: {'line': b'--   Found libavcodec, version 60.31.102\n'}
+[2.203170] (-) TimerEvent: {}
+[2.244338] (motor_failure) StdoutLine: {'line': b'-- Found AVCODEC: TRUE  \n'}
+[2.253026] (motor_failure) StdoutLine: {'line': b"-- Checking for module 'libavutil'\n"}
+[2.278054] (motor_failure) StdoutLine: {'line': b'--   Found libavutil, version 58.29.100\n'}
+[2.303344] (-) TimerEvent: {}
+[2.330656] (motor_failure) StdoutLine: {'line': b'-- Found AVUTIL: TRUE  \n'}
+[2.331709] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-common5> component [events]\n'}
+[2.335065] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-common5-events -- found version 5.8.0\n'}
+[2.335586] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-common5-events\n'}
+[2.336123] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-math7 -- found version 7.6.0\n'}
+[2.337084] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-common5> component [graphics]\n'}
+[2.340571] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-common5-graphics -- found version 5.8.0\n'}
+[2.340939] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-common5-graphics\n'}
+[2.341306] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-math7 -- found version 7.6.0\n'}
+[2.353810] (motor_failure) StdoutLine: {'line': b'-- Found GzAssimp: TRUE (found version "5.3.0") \n'}
+[2.355006] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-common5> component [io]\n'}
+[2.358258] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-common5-io -- found version 5.8.0\n'}
+[2.358606] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-common5-io\n'}
+[2.359320] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-common5> component [profiler]\n'}
+[2.362165] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-common5-profiler -- found version 5.8.0\n'}
+[2.362631] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-common5-profiler\n'}
+[2.365943] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-fuel_tools9 -- found version 9.1.1\n'}
+[2.366304] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-fuel_tools9\n'}
+[2.403563] (-) TimerEvent: {}
+[2.504021] (-) TimerEvent: {}
+[2.527973] (motor_failure) StdoutLine: {'line': b'-- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "8.5.0")  \n'}
+[2.548765] (motor_failure) StdoutLine: {'line': b"-- Checking for module 'jsoncpp'\n"}
+[2.576264] (motor_failure) StdoutLine: {'line': b'--   Found jsoncpp, version 1.9.5\n'}
+[2.604185] (-) TimerEvent: {}
+[2.632262] (motor_failure) StdoutLine: {'line': b'-- Found JSONCPP: TRUE  \n'}
+[2.680887] (motor_failure) StdoutLine: {'line': b"-- Checking for module 'yaml-0.1'\n"}
+[2.704322] (-) TimerEvent: {}
+[2.707261] (motor_failure) StdoutLine: {'line': b'--   Found yaml-0.1, version 0.2.5\n'}
+[2.763974] (motor_failure) StdoutLine: {'line': b'-- Found YAML: TRUE  \n'}
+[2.773302] (motor_failure) StdoutLine: {'line': b"-- Checking for module 'libzip'\n"}
+[2.798106] (motor_failure) StdoutLine: {'line': b'--   Found libzip, version 1.7.3\n'}
+[2.804438] (-) TimerEvent: {}
+[2.854889] (motor_failure) StdoutLine: {'line': b'-- Found ZIP: TRUE  \n'}
+[2.855774] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-utils2 -- found version 2.2.1\n'}
+[2.856353] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-common5 -- found version 5.8.0\n'}
+[2.856693] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-common5\n'}
+[2.857271] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-utils2 -- found version 2.2.1\n'}
+[2.857545] (motor_failure) StdoutLine: {'line': b'-- Looking for dlfcn.h - found\n'}
+[2.857901] (motor_failure) StdoutLine: {'line': b'-- Looking for libdl - found\n'}
+[2.870744] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-common5> component [testing]\n'}
+[2.873717] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-common5-testing -- found version 5.8.0\n'}
+[2.874155] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-common5-testing\n'}
+[2.875532] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-math7 -- found version 7.6.0\n'}
+[2.876082] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-msgs10 -- found version 10.3.2\n'}
+[2.879045] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-gui8 -- found version 8.4.0\n'}
+[2.879408] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-gui8\n'}
+[2.904661] (-) TimerEvent: {}
+[2.937802] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-utils2 -- found version 2.2.1\n'}
+[2.938460] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-math7 -- found version 7.6.0\n'}
+[2.939290] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-common5 -- found version 5.8.0\n'}
+[2.939843] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-plugin2 -- found version 2.0.4\n'}
+[2.940618] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-transport13 -- found version 13.5.0\n'}
+[2.942902] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-rendering8 -- found version 8.2.3\n'}
+[2.943268] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-rendering8\n'}
+[2.943908] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-math7 -- found version 7.6.0\n'}
+[2.944249] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-math7\n'}
+[2.944579] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-utils2 -- found version 2.2.1\n'}
+[2.944837] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-math7> component [eigen3]\n'}
+[2.947955] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-math7-eigen3 -- found version 7.6.0\n'}
+[2.948249] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-math7-eigen3\n'}
+[2.975282] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-common5 -- found version 5.8.0\n'}
+[2.975757] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-common5\n'}
+[2.976060] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-utils2 -- found version 2.2.1\n'}
+[2.976401] (motor_failure) StdoutLine: {'line': b'-- Looking for dlfcn.h - found\n'}
+[2.976616] (motor_failure) StdoutLine: {'line': b'-- Looking for libdl - found\n'}
+[2.989102] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-common5> component [graphics]\n'}
+[2.989438] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-common5> component [events]\n'}
+[2.989593] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-common5> component [geospatial]\n'}
+[2.993488] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-common5-geospatial -- found version 5.8.0\n'}
+[2.993917] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-common5-geospatial\n'}
+[2.994908] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-math7 -- found version 7.6.0\n'}
+[2.995513] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-common5 -- found version 5.8.0\n'}
+[2.997073] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-plugin2 -- found version 2.0.4\n'}
+[2.997336] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-plugin2\n'}
+[2.997901] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-utils2 -- found version 2.2.1\n'}
+[2.998251] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-plugin2> component [all]\n'}
+[3.000633] (motor_failure) StdoutLine: {'line': b'-- Looking for all libraries of gz-plugin2 -- found version 2.0.4\n'}
+[3.001388] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-plugin2 -- found version 2.0.4\n'}
+[3.002913] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-utils2 -- found version 2.2.1\n'}
+[3.004735] (-) TimerEvent: {}
+[3.020021] (motor_failure) StdoutLine: {'line': b'-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so  found components: OpenGL \n'}
+[3.022087] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-msgs10 -- found version 10.3.2\n'}
+[3.065087] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-physics7 -- found version 7.6.0\n'}
+[3.065484] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-physics7\n'}
+[3.065873] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-common5 -- found version 5.8.0\n'}
+[3.066678] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-math7 -- found version 7.6.0\n'}
+[3.067182] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-plugin2 -- found version 2.0.4\n'}
+[3.067822] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-utils2 -- found version 2.2.1\n'}
+[3.069622] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-physics7> component [heightmap]\n'}
+[3.071521] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-physics7-heightmap -- found version 7.6.0\n'}
+[3.071883] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-physics7-heightmap\n'}
+[3.072437] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-common5 -- found version 5.8.0\n'}
+[3.073285] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-physics7> component [mesh]\n'}
+[3.075353] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-physics7-mesh -- found version 7.6.0\n'}
+[3.075775] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-physics7-mesh\n'}
+[3.076228] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-common5 -- found version 5.8.0\n'}
+[3.077232] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-physics7> component [sdf]\n'}
+[3.079061] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-physics7-sdf -- found version 7.6.0\n'}
+[3.079486] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-physics7-sdf\n'}
+[3.079844] (motor_failure) StdoutLine: {'line': b'-- Looking for sdformat14 -- found version 14.9.0\n'}
+[3.082292] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8 -- found version 8.2.2\n'}
+[3.082691] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8\n'}
+[3.104964] (-) TimerEvent: {}
+[3.132169] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-math7 -- found version 7.6.0\n'}
+[3.133052] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-common5 -- found version 5.8.0\n'}
+[3.134531] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-transport13 -- found version 13.5.0\n'}
+[3.135304] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-rendering8 -- found version 8.2.3\n'}
+[3.135977] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-msgs10 -- found version 10.3.2\n'}
+[3.136662] (motor_failure) StdoutLine: {'line': b'-- Looking for sdformat14 -- found version 14.9.0\n'}
+[3.137633] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [air_pressure]\n'}
+[3.139492] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8-air_pressure -- found version 8.2.2\n'}
+[3.139842] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8-air_pressure\n'}
+[3.140409] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [air_speed]\n'}
+[3.142103] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8-air_speed -- found version 8.2.2\n'}
+[3.142491] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8-air_speed\n'}
+[3.143145] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [altimeter]\n'}
+[3.144574] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8-altimeter -- found version 8.2.2\n'}
+[3.144881] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8-altimeter\n'}
+[3.145599] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [imu]\n'}
+[3.147182] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8-imu -- found version 8.2.2\n'}
+[3.147535] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8-imu\n'}
+[3.148005] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [force_torque]\n'}
+[3.149572] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8-force_torque -- found version 8.2.2\n'}
+[3.149888] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8-force_torque\n'}
+[3.150682] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [logical_camera]\n'}
+[3.152151] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8-logical_camera -- found version 8.2.2\n'}
+[3.152512] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8-logical_camera\n'}
+[3.153210] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [magnetometer]\n'}
+[3.154691] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8-magnetometer -- found version 8.2.2\n'}
+[3.155048] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8-magnetometer\n'}
+[3.155607] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [navsat]\n'}
+[3.157138] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8-navsat -- found version 8.2.2\n'}
+[3.157351] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8-navsat\n'}
+[3.158330] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [dvl]\n'}
+[3.159814] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8-dvl -- found version 8.2.2\n'}
+[3.160164] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8-dvl\n'}
+[3.160542] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8 -- found version 8.2.2\n'}
+[3.160789] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8\n'}
+[3.205084] (-) TimerEvent: {}
+[3.210580] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-math7 -- found version 7.6.0\n'}
+[3.211364] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-common5 -- found version 5.8.0\n'}
+[3.212274] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-transport13 -- found version 13.5.0\n'}
+[3.213036] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-rendering8 -- found version 8.2.3\n'}
+[3.213823] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-msgs10 -- found version 10.3.2\n'}
+[3.214646] (motor_failure) StdoutLine: {'line': b'-- Looking for sdformat14 -- found version 14.9.0\n'}
+[3.215051] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [rendering]\n'}
+[3.217216] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8-rendering -- found version 8.2.2\n'}
+[3.217551] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8-rendering\n'}
+[3.219721] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [rendering]\n'}
+[3.219963] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [lidar]\n'}
+[3.221370] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8-lidar -- found version 8.2.2\n'}
+[3.221675] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8-lidar\n'}
+[3.222351] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8 -- found version 8.2.2\n'}
+[3.223307] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [gpu_lidar]\n'}
+[3.224906] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8-gpu_lidar -- found version 8.2.2\n'}
+[3.225137] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8-gpu_lidar\n'}
+[3.225880] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8 -- found version 8.2.2\n'}
+[3.226948] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [camera]\n'}
+[3.228480] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8-camera -- found version 8.2.2\n'}
+[3.228822] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8-camera\n'}
+[3.229139] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8 -- found version 8.2.2\n'}
+[3.230207] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [boundingbox_camera]\n'}
+[3.231974] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8-boundingbox_camera -- found version 8.2.2\n'}
+[3.232375] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8-boundingbox_camera\n'}
+[3.232943] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [segmentation_camera]\n'}
+[3.234647] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8-segmentation_camera -- found version 8.2.2\n'}
+[3.235087] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8-segmentation_camera\n'}
+[3.235706] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [depth_camera]\n'}
+[3.237109] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8-depth_camera -- found version 8.2.2\n'}
+[3.237369] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8-depth_camera\n'}
+[3.238005] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8 -- found version 8.2.2\n'}
+[3.239057] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [rgbd_camera]\n'}
+[3.240560] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8-rgbd_camera -- found version 8.2.2\n'}
+[3.240762] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8-rgbd_camera\n'}
+[3.241341] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8 -- found version 8.2.2\n'}
+[3.242499] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [thermal_camera]\n'}
+[3.244044] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8-thermal_camera -- found version 8.2.2\n'}
+[3.244407] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8-thermal_camera\n'}
+[3.244711] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8 -- found version 8.2.2\n'}
+[3.245725] (motor_failure) StdoutLine: {'line': b'-- Searching for <gz-sensors8> component [wide_angle_camera]\n'}
+[3.247286] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-sensors8-wide_angle_camera -- found version 8.2.2\n'}
+[3.247558] (motor_failure) StdoutLine: {'line': b'-- Searching for dependencies of gz-sensors8-wide_angle_camera\n'}
+[3.249398] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-rendering8 -- found version 8.2.3\n'}
+[3.250224] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-math7 -- found version 7.6.0\n'}
+[3.250768] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-utils2 -- found version 2.2.1\n'}
+[3.301072] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-plugin2 -- found version 2.0.4\n'}
+[3.301463] (motor_failure) StdoutLine: {'line': b'-- Looking for gz-transport13 -- found version 13.5.0\n'}
+[3.305292] (-) TimerEvent: {}
+[3.309687] (motor_failure) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[3.405455] (-) TimerEvent: {}
+[3.505859] (-) TimerEvent: {}
+[3.513589] (motor_failure) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[3.513927] (motor_failure) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[3.514023] (motor_failure) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[3.515468] (motor_failure) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[3.517346] (motor_failure) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[3.517590] (motor_failure) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[3.518846] (motor_failure) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[3.521876] (motor_failure) StdoutLine: {'line': b'-- Configuring done (3.5s)\n'}
+[3.539923] (motor_failure) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[3.545472] (motor_failure) StdoutLine: {'line': b'-- Build files have been written to: /root/ros2_ws/build/motor_failure\n'}
+[3.560539] (motor_failure) CommandEnded: {'returncode': 0}
+[3.561415] (motor_failure) JobProgress: {'identifier': 'motor_failure', 'progress': 'build'}
+[3.562811] (motor_failure) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/ros2_ws/build/motor_failure', '--', '-j12', '-l12'], 'cwd': '/root/ros2_ws/build/motor_failure', 'env': OrderedDict({'GZ_SIM_SYSTEM_PLUGIN_PATH': '/root/ros2_ws/install/motor_failure/lib', 'GZ_SIM_RESOURCE_PATH': '/root/ardupilot_gazebo/models:/root/ardupilot_gazebo/worlds:/opt/ros/jazzy/share', 'USER': 'root', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': 'c7ab345f90ed', '__GLX_VENDOR_LIBRARY_NAME': 'nvidia', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/root/ros2_ws/install', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'PIP_BREAK_SYSTEM_PACKAGES': '1', 'TERM': 'xterm', 'PATH': '/root/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/ardupilot/Tools/autotest', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', '__NV_PRIME_RENDER_OFFLOAD': '1', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/root/ros2_ws/install/motor_failure:/root/ros2_ws/install/mine_waypoint_pkg:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ros2_ws/build/motor_failure', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/root/ros2_ws/install/mine_waypoint_pkg/lib/python3.12/site-packages:/root/ros2_ws/install/failure_detection/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'TZ': 'Etc/UTC', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/root/ros2_ws/install/motor_failure:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/root/ros2_ws/install/mine_waypoint_pkg:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy'}), 'shell': False}
+[3.605982] (-) TimerEvent: {}
+[3.645743] (motor_failure) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/motor_failure.dir/src/MotorFailureSystem.cpp.o\x1b[0m\n'}
+[3.706108] (-) TimerEvent: {}
+[3.806447] (-) TimerEvent: {}
+[3.906869] (-) TimerEvent: {}
+[4.007244] (-) TimerEvent: {}
+[4.107651] (-) TimerEvent: {}
+[4.207986] (-) TimerEvent: {}
+[4.308362] (-) TimerEvent: {}
+[4.408752] (-) TimerEvent: {}
+[4.509080] (-) TimerEvent: {}
+[4.609508] (-) TimerEvent: {}
+[4.709838] (-) TimerEvent: {}
+[4.810166] (-) TimerEvent: {}
+[4.910486] (-) TimerEvent: {}
+[5.010856] (-) TimerEvent: {}
+[5.111178] (-) TimerEvent: {}
+[5.211554] (-) TimerEvent: {}
+[5.311877] (-) TimerEvent: {}
+[5.412372] (-) TimerEvent: {}
+[5.512707] (-) TimerEvent: {}
+[5.613058] (-) TimerEvent: {}
+[5.713447] (-) TimerEvent: {}
+[5.813900] (-) TimerEvent: {}
+[5.914233] (-) TimerEvent: {}
+[6.014556] (-) TimerEvent: {}
+[6.114936] (-) TimerEvent: {}
+[6.215327] (-) TimerEvent: {}
+[6.315724] (-) TimerEvent: {}
+[6.416116] (-) TimerEvent: {}
+[6.516509] (-) TimerEvent: {}
+[6.616900] (-) TimerEvent: {}
+[6.717294] (-) TimerEvent: {}
+[6.817691] (-) TimerEvent: {}
+[6.918145] (-) TimerEvent: {}
+[7.018494] (-) TimerEvent: {}
+[7.118887] (-) TimerEvent: {}
+[7.219291] (-) TimerEvent: {}
+[7.319690] (-) TimerEvent: {}
+[7.420015] (-) TimerEvent: {}
+[7.520417] (-) TimerEvent: {}
+[7.620807] (-) TimerEvent: {}
+[7.721142] (-) TimerEvent: {}
+[7.821457] (-) TimerEvent: {}
+[7.921834] (-) TimerEvent: {}
+[8.022176] (-) TimerEvent: {}
+[8.122568] (-) TimerEvent: {}
+[8.222917] (-) TimerEvent: {}
+[8.323319] (-) TimerEvent: {}
+[8.423657] (-) TimerEvent: {}
+[8.524032] (-) TimerEvent: {}
+[8.624413] (-) TimerEvent: {}
+[8.724790] (-) TimerEvent: {}
+[8.825135] (-) TimerEvent: {}
+[8.925564] (-) TimerEvent: {}
+[9.025976] (-) TimerEvent: {}
+[9.126373] (-) TimerEvent: {}
+[9.226705] (-) TimerEvent: {}
+[9.327099] (-) TimerEvent: {}
+[9.427423] (-) TimerEvent: {}
+[9.527811] (-) TimerEvent: {}
+[9.628135] (-) TimerEvent: {}
+[9.728724] (-) TimerEvent: {}
+[9.789554] (motor_failure) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library libmotor_failure.so\x1b[0m\n'}
+[9.828912] (-) TimerEvent: {}
+[9.929242] (-) TimerEvent: {}
+[10.029582] (-) TimerEvent: {}
+[10.121379] (motor_failure) StdoutLine: {'line': b'[100%] Built target motor_failure\n'}
+[10.129777] (-) TimerEvent: {}
+[10.137888] (motor_failure) CommandEnded: {'returncode': 0}
+[10.138832] (motor_failure) JobProgress: {'identifier': 'motor_failure', 'progress': 'install'}
+[10.152687] (motor_failure) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/ros2_ws/build/motor_failure'], 'cwd': '/root/ros2_ws/build/motor_failure', 'env': OrderedDict({'GZ_SIM_SYSTEM_PLUGIN_PATH': '/root/ros2_ws/install/motor_failure/lib', 'GZ_SIM_RESOURCE_PATH': '/root/ardupilot_gazebo/models:/root/ardupilot_gazebo/worlds:/opt/ros/jazzy/share', 'USER': 'root', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': 'c7ab345f90ed', '__GLX_VENDOR_LIBRARY_NAME': 'nvidia', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/root/ros2_ws/install', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'PIP_BREAK_SYSTEM_PACKAGES': '1', 'TERM': 'xterm', 'PATH': '/root/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/ardupilot/Tools/autotest', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', '__NV_PRIME_RENDER_OFFLOAD': '1', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/root/ros2_ws/install/motor_failure:/root/ros2_ws/install/mine_waypoint_pkg:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ros2_ws/build/motor_failure', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/root/ros2_ws/install/mine_waypoint_pkg/lib/python3.12/site-packages:/root/ros2_ws/install/failure_detection/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'TZ': 'Etc/UTC', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/root/ros2_ws/install/motor_failure:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/root/ros2_ws/install/mine_waypoint_pkg:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy'}), 'shell': False}
+[10.164845] (motor_failure) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[10.165258] (motor_failure) StdoutLine: {'line': b'-- Installing: /root/ros2_ws/install/motor_failure/lib/libmotor_failure.so\n'}
+[10.167077] (motor_failure) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/root/ros2_ws/install/motor_failure/lib/libmotor_failure.so" to ""\n'}
+[10.167642] (motor_failure) StdoutLine: {'line': b'-- Installing: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/package_run_dependencies/motor_failure\n'}
+[10.168167] (motor_failure) StdoutLine: {'line': b'-- Installing: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/parent_prefix_path/motor_failure\n'}
+[10.168475] (motor_failure) StdoutLine: {'line': b'-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/ament_prefix_path.sh\n'}
+[10.168776] (motor_failure) StdoutLine: {'line': b'-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/ament_prefix_path.dsv\n'}
+[10.168985] (motor_failure) StdoutLine: {'line': b'-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/path.sh\n'}
+[10.169263] (motor_failure) StdoutLine: {'line': b'-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/path.dsv\n'}
+[10.169501] (motor_failure) StdoutLine: {'line': b'-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.bash\n'}
+[10.169892] (motor_failure) StdoutLine: {'line': b'-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.sh\n'}
+[10.170430] (motor_failure) StdoutLine: {'line': b'-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.zsh\n'}
+[10.170819] (motor_failure) StdoutLine: {'line': b'-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.dsv\n'}
+[10.171146] (motor_failure) StdoutLine: {'line': b'-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/package.dsv\n'}
+[10.171362] (motor_failure) StdoutLine: {'line': b'-- Installing: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/packages/motor_failure\n'}
+[10.171684] (motor_failure) StdoutLine: {'line': b'-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/cmake/motor_failureConfig.cmake\n'}
+[10.171951] (motor_failure) StdoutLine: {'line': b'-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/cmake/motor_failureConfig-version.cmake\n'}
+[10.172810] (motor_failure) StdoutLine: {'line': b'-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/package.xml\n'}
+[10.174918] (motor_failure) CommandEnded: {'returncode': 0}
+[10.205162] (motor_failure) JobEnded: {'identifier': 'motor_failure', 'rc': 0}
+[10.206300] (-) EventReactorShutdown: {}

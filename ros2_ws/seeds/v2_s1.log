@@ -1,0 +1,14 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791556551.734061   15944 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791556551.734628   15944 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791556554.498847   15944 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791556554.499735   15944 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/root/venv-ardupilot/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+E0000 00:00:1791556557.479324   15944 cuda_executor.cc:1737] INTERNAL: CUDA Runtime error: Failed call to cudaGetRuntimeVersion: Error loading CUDA libraries. GPU will not be used.: Error loading CUDA libraries. GPU will not be used.
+feature set v2; used: ['rel_m1', 'rel_m2', 'rel_m3', 'rel_m4', 'vib_x', 'vib_y', 'vib_z', 'current', 'pwm_spread', 'acc_sx', 'acc_sy', 'acc_sz', 'gyr_sx', 'gyr_sy', 'gyr_sz', 'gyr_x', 'gyr_y', 'gyr_z', 'rate_z', 'acc_z_dev'] | dropped (constant in training): []
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+cls_gru5 {"params": 5729, "seq_len": 5, "threshold": 0.9268151637598081, "test_roc_auc": 0.9075060268675542, "test_pr_auc": 0.8399729060647891, "episodes": 16, "detected": 16, "detected_in_precursor": 13, "latency_median_s": 3.9863075017929077, "latency_p90_s": 5.062340140342712, "false_alarms_per_min": 0.2702398378560973, "normal_minutes": 14.801666666666668}
+          params  test_roc_auc  test_pr_auc  detected  episodes  detected_in_precursor  latency_median_s  false_alarms_per_min
+cls_gru5  5729.0      0.907506     0.839973      16.0      16.0                   13.0          3.986308               0.27024

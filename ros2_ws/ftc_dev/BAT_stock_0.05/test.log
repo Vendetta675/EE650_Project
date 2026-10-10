@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/root/ros2_ws/ftc_dev/battery_test.py", line 57, in <module>
+    main()
+  File "/root/ros2_ws/ftc_dev/battery_test.py", line 35, in main
+    cop.wait_ready(); trigger(False); cop.arm_takeoff(10.0)
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/ros2_ws/fly_fault_episodes.py", line 144, in arm_takeoff
+    raise RuntimeError("could not arm")
+RuntimeError: could not arm

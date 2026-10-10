@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: mine_waypoint_pkg
+Version: 0.0.1
+Summary: Mine detection and GPS waypoint marking via MAVROS
+Maintainer: you
+Maintainer-email: you@example.com
+License: MIT
+Requires-Dist: setuptools
+Dynamic: license
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-dist
+Dynamic: summary

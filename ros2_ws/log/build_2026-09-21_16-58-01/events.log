@@ -1,0 +1,92 @@
+[0.000000] (-) TimerEvent: {}
+[0.001587] (motor_failure) JobQueued: {'identifier': 'motor_failure', 'dependencies': OrderedDict()}
+[0.001750] (motor_failure) JobStarted: {'identifier': 'motor_failure'}
+[0.028419] (motor_failure) JobProgress: {'identifier': 'motor_failure', 'progress': 'cmake'}
+[0.031462] (motor_failure) JobProgress: {'identifier': 'motor_failure', 'progress': 'build'}
+[0.033156] (motor_failure) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/ros2_ws/build/motor_failure', '--', '-j12', '-l12'], 'cwd': '/root/ros2_ws/build/motor_failure', 'env': OrderedDict({'GZ_SIM_SYSTEM_PLUGIN_PATH': '/root/ardupilot_gazebo/build:/root/ardupilot_gazebo/build:', 'TMUX': '/tmp/tmux-0/default,126,0', 'GZ_SIM_RESOURCE_PATH': '/root/ardupilot_gazebo/models:/root/ardupilot_gazebo/worlds:/root/ardupilot_gazebo/models:/root/ardupilot_gazebo/worlds:/opt/ros/jazzy/share', 'USER': 'root', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': 'c7ab345f90ed', '__GLX_VENDOR_LIBRARY_NAME': 'nvidia', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root', 'TERM_PROGRAM_VERSION': '3.4', 'ROS_PYTHON_VERSION': '3', 'PS1': '${debian_chroot:+($debian_chroot)}\\u@\\h:\\w\\$', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'PIP_BREAK_SYSTEM_PACKAGES': '1', 'TERM': 'tmux-256color', 'PATH': '/root/.local/bin:/root/.local/bin:/root/.local/bin:/root/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/ardupilot/Tools/autotest:/root/ardupilot/Tools/autotest', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', '__NV_PRIME_RENDER_OFFLOAD': '1', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'TERM_PROGRAM': 'tmux', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'SHELL': '/bin/bash', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ros2_ws/build/motor_failure', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'TZ': 'Etc/UTC', 'COLCON': '1', 'TMUX_PANE': '%5', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099595] (-) TimerEvent: {}
+[0.200113] (-) TimerEvent: {}
+[0.237057] (motor_failure) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/motor_failure.dir/src/MotorFailureSystem.cpp.o\x1b[0m\n'}
+[0.300268] (-) TimerEvent: {}
+[0.400686] (-) TimerEvent: {}
+[0.501045] (-) TimerEvent: {}
+[0.601458] (-) TimerEvent: {}
+[0.701998] (-) TimerEvent: {}
+[0.802467] (-) TimerEvent: {}
+[0.902903] (-) TimerEvent: {}
+[1.003328] (-) TimerEvent: {}
+[1.103764] (-) TimerEvent: {}
+[1.204222] (-) TimerEvent: {}
+[1.304673] (-) TimerEvent: {}
+[1.405188] (-) TimerEvent: {}
+[1.505568] (-) TimerEvent: {}
+[1.605943] (-) TimerEvent: {}
+[1.706379] (-) TimerEvent: {}
+[1.806883] (-) TimerEvent: {}
+[1.907330] (-) TimerEvent: {}
+[2.007795] (-) TimerEvent: {}
+[2.108205] (-) TimerEvent: {}
+[2.208584] (-) TimerEvent: {}
+[2.309004] (-) TimerEvent: {}
+[2.409371] (-) TimerEvent: {}
+[2.509781] (-) TimerEvent: {}
+[2.610256] (-) TimerEvent: {}
+[2.710736] (-) TimerEvent: {}
+[2.811222] (-) TimerEvent: {}
+[2.911803] (-) TimerEvent: {}
+[3.012404] (-) TimerEvent: {}
+[3.113019] (-) TimerEvent: {}
+[3.213554] (-) TimerEvent: {}
+[3.314126] (-) TimerEvent: {}
+[3.414624] (-) TimerEvent: {}
+[3.515081] (-) TimerEvent: {}
+[3.615575] (-) TimerEvent: {}
+[3.716154] (-) TimerEvent: {}
+[3.816735] (-) TimerEvent: {}
+[3.917206] (-) TimerEvent: {}
+[4.017710] (-) TimerEvent: {}
+[4.118186] (-) TimerEvent: {}
+[4.218701] (-) TimerEvent: {}
+[4.319172] (-) TimerEvent: {}
+[4.419635] (-) TimerEvent: {}
+[4.520082] (-) TimerEvent: {}
+[4.620656] (-) TimerEvent: {}
+[4.721193] (-) TimerEvent: {}
+[4.821717] (-) TimerEvent: {}
+[4.922780] (-) TimerEvent: {}
+[5.023232] (-) TimerEvent: {}
+[5.123785] (-) TimerEvent: {}
+[5.224674] (-) TimerEvent: {}
+[5.325056] (-) TimerEvent: {}
+[5.425724] (-) TimerEvent: {}
+[5.526201] (-) TimerEvent: {}
+[5.626678] (-) TimerEvent: {}
+[5.727240] (-) TimerEvent: {}
+[5.741828] (motor_failure) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/motor_failure/src/MotorFailureSystem.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void motor_failure::MotorFailureSystem::\x1b[01;32m\x1b[KConfigure\x1b[m\x1b[K(const gz::sim::v8::Entity&, const std::shared_ptr<const sdf::v14::Element>&, gz::sim::v8::EntityComponentManager&, gz::sim::v8::EventManager&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.742510] (motor_failure) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ros2_ws/motor_failure/src/MotorFailureSystem.cpp:48:41:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kpassing \xe2\x80\x98\x1b[01m\x1b[Kstd::__shared_ptr_access<const sdf::v14::Element, __gnu_cxx::_S_atomic, false, false>::element_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kconst sdf::v14::Element\x1b[m\x1b[K\xe2\x80\x99} as \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 argument discards qualifiers [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.742845] (motor_failure) StderrLine: {'line': b'   48 |       auto joint_elem = \x1b[01;31m\x1b[K_sdf->GetElement("joint_name")\x1b[m\x1b[K;\n'}
+[5.743211] (motor_failure) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.743755] (motor_failure) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/opt/gz_sim_vendor/include/gz/sim8/gz/sim/System.hh:31\x1b[m\x1b[K,\n'}
+[5.744085] (motor_failure) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/root/ros2_ws/motor_failure/src/MotorFailureSystem.cpp:5\x1b[m\x1b[K:\n'}
+[5.744370] (motor_failure) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/opt/sdformat_vendor/include/gz/sdformat14/sdf/Element.hh:645:24:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  in call to \xe2\x80\x98\x1b[01m\x1b[Ksdf::v14::ElementPtr sdf::v14::Element::\x1b[01;32m\x1b[KGetElement\x1b[m\x1b[K(const std::string&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.744646] (motor_failure) StderrLine: {'line': b'  645 |     public: ElementPtr \x1b[01;36m\x1b[KGetElement\x1b[m\x1b[K(const std::string &_name);\n'}
+[5.744913] (motor_failure) StderrLine: {'line': b'      |                        \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.827385] (-) TimerEvent: {}
+[5.927948] (-) TimerEvent: {}
+[6.028460] (-) TimerEvent: {}
+[6.128943] (-) TimerEvent: {}
+[6.229487] (-) TimerEvent: {}
+[6.330056] (-) TimerEvent: {}
+[6.430534] (-) TimerEvent: {}
+[6.531071] (-) TimerEvent: {}
+[6.631576] (-) TimerEvent: {}
+[6.732106] (-) TimerEvent: {}
+[6.832661] (-) TimerEvent: {}
+[6.933196] (-) TimerEvent: {}
+[7.033773] (-) TimerEvent: {}
+[7.041357] (motor_failure) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/motor_failure.dir/build.make:76: CMakeFiles/motor_failure.dir/src/MotorFailureSystem.cpp.o] Error 1\n'}
+[7.041890] (motor_failure) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/motor_failure.dir/all] Error 2\n'}
+[7.042291] (motor_failure) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[7.048007] (motor_failure) CommandEnded: {'returncode': 2}
+[7.099968] (motor_failure) JobEnded: {'identifier': 'motor_failure', 'rc': 2}
+[7.110966] (-) EventReactorShutdown: {}

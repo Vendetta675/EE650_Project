@@ -1,0 +1,18 @@
+[100%] Built target motor_failure
+-- Install configuration: ""
+-- Up-to-date: /root/ros2_ws/install/motor_failure/lib/libmotor_failure.so
+-- Up-to-date: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/package_run_dependencies/motor_failure
+-- Up-to-date: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/parent_prefix_path/motor_failure
+-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/ament_prefix_path.sh
+-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/ament_prefix_path.dsv
+-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/path.sh
+-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/path.dsv
+-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.bash
+-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.sh
+-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.zsh
+-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.dsv
+-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/package.dsv
+-- Up-to-date: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/packages/motor_failure
+-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/cmake/motor_failureConfig.cmake
+-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/cmake/motor_failureConfig-version.cmake
+-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/package.xml

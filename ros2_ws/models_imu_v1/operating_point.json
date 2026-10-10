@@ -1,0 +1,7 @@
+{
+ "model": "cls_gru5_int8.tflite",
+ "source_h5": "cls_gru5.h5",
+ "threshold": 0.975,
+ "persistence": 2,
+ "selection": "persistence chosen on VALIDATION flights only (most detections within the precursor, then lowest median latency); threshold per persistence picked on validation for <= 0.5 false alarms / min"
+}

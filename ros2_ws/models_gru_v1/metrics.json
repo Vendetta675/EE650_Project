@@ -1,0 +1,117 @@
+{
+ "split": {
+  "val": [
+   "flight_04",
+   "flight_10",
+   "flight_11",
+   "flight_15"
+  ],
+  "test": [
+   "flight_05",
+   "flight_12",
+   "flight_13",
+   "flight_16"
+  ]
+ },
+ "features": [
+  "rel_m1",
+  "rel_m2",
+  "rel_m3",
+  "rel_m4",
+  "vib_x",
+  "vib_y",
+  "vib_z",
+  "pwm_spread"
+ ],
+ "dropped": [
+  "current"
+ ],
+ "units": 32,
+ "persistence": 2,
+ "results": {
+  "cls_lstm20": {
+   "params": 5793,
+   "seq_len": 20,
+   "threshold": 0.8988154726969568,
+   "test_roc_auc": 0.8680238587873503,
+   "test_pr_auc": 0.8112864633371589,
+   "episodes": 7,
+   "detected": 7,
+   "detected_in_precursor": 4,
+   "latency_median_s": 4.9202094078063965,
+   "latency_p90_s": 6.869946050643922,
+   "false_alarms_per_min": 1.0092514718250631,
+   "normal_minutes": 3.9633333333333334
+  },
+  "cls_gru20": {
+   "params": 4577,
+   "seq_len": 20,
+   "threshold": 0.8915562982785075,
+   "test_roc_auc": 0.8668696177124666,
+   "test_pr_auc": 0.8144842960433591,
+   "episodes": 7,
+   "detected": 7,
+   "detected_in_precursor": 3,
+   "latency_median_s": 5.020225286483765,
+   "latency_p90_s": 6.810010194778444,
+   "false_alarms_per_min": 0.5046257359125316,
+   "normal_minutes": 3.9633333333333334
+  },
+  "ae_lstm20": {
+   "params": 13832,
+   "seq_len": 20,
+   "threshold": 2.4926114082336426,
+   "test_roc_auc": 0.4946503480266451,
+   "test_pr_auc": 0.44511348648674753,
+   "episodes": 7,
+   "detected": 3,
+   "detected_in_precursor": 3,
+   "latency_median_s": 3.4025521278381348,
+   "latency_p90_s": 3.4811596870422363,
+   "false_alarms_per_min": 0.7569386038687973,
+   "normal_minutes": 3.9633333333333334
+  },
+  "cls_lstm5": {
+   "params": 5793,
+   "seq_len": 5,
+   "threshold": 0.9755685416867858,
+   "test_roc_auc": 0.8643084696799649,
+   "test_pr_auc": 0.7774086776703999,
+   "episodes": 7,
+   "detected": 6,
+   "detected_in_precursor": 4,
+   "latency_median_s": 3.8870593309402466,
+   "latency_p90_s": 5.617171764373779,
+   "false_alarms_per_min": 1.2305168170631664,
+   "normal_minutes": 4.0633333333333335
+  },
+  "cls_gru5": {
+   "params": 4577,
+   "seq_len": 5,
+   "threshold": 0.9646994404705843,
+   "test_roc_auc": 0.8843518019899645,
+   "test_pr_auc": 0.788754192938314,
+   "episodes": 7,
+   "detected": 7,
+   "detected_in_precursor": 6,
+   "latency_median_s": 3.5261390209198,
+   "latency_p90_s": 4.949329042434693,
+   "false_alarms_per_min": 1.9688269073010665,
+   "normal_minutes": 4.0633333333333335
+  },
+  "ae_gru5": {
+   "params": 10632,
+   "seq_len": 5,
+   "threshold": 0.19159674644470215,
+   "test_roc_auc": 0.5046095310950844,
+   "test_pr_auc": 0.4413769289869836,
+   "episodes": 7,
+   "detected": 3,
+   "detected_in_precursor": 3,
+   "latency_median_s": 3.098483085632324,
+   "latency_p90_s": 3.4406078338623045,
+   "false_alarms_per_min": 0.9844134536505332,
+   "normal_minutes": 4.0633333333333335
+  }
+ }
+}

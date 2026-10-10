@@ -1,0 +1,543 @@
+=== flight 01 loe_final=0.7 23:19:24 motor=1 supervisor=on
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791415180.101990   37669 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791415180.102414   37669 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791415182.110023   37669 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791415182.111677   37669 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor on
+trigger at 1791415269.35
+1791415273.97 supervisor: NORMAL -> HOLD (alarm p=0.99)
+1791415274.97 supervisor: HOLD -> DESCEND (confirmed: 10 hot windows)
+1791415280.77 supervisor: DESCEND -> LAND (rel_alt 1.9 m)
+recovered, alt 0.0
+supervisor events: [(1791415273.97, 'NORMAL', 'HOLD', 'alarm p=0.99'), (1791415274.97, 'HOLD', 'DESCEND', 'confirmed: 10 hot windows'), (1791415280.77, 'DESCEND', 'LAND', 'rel_alt 1.9 m')]
+=== flight 02 loe_final=0.7 23:21:40 motor=2 supervisor=on
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791415315.497957   37889 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791415315.498384   37889 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791415317.673533   37889 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791415317.674073   37889 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor on
+1791415367.57 supervisor: NORMAL -> HOLD (alarm p=0.83)
+1791415370.98 supervisor: HOLD -> NORMAL (alarm cleared (false alarm))
+trigger at 1791415398.16
+1791415403.08 supervisor: NORMAL -> HOLD (alarm p=1.00)
+1791415404.08 supervisor: HOLD -> DESCEND (confirmed: 10 hot windows)
+1791415410.67 supervisor: DESCEND -> LAND (rel_alt 1.9 m)
+recovered, alt 0.0
+supervisor events: [(1791415367.57, 'NORMAL', 'HOLD', 'alarm p=0.83'), (1791415370.98, 'HOLD', 'NORMAL', 'alarm cleared (false alarm)'), (1791415403.08, 'NORMAL', 'HOLD', 'alarm p=1.00'), (1791415404.08, 'HOLD', 'DESCEND', 'confirmed: 10 hot windows'), (1791415410.67, 'DESCEND', 'LAND', 'rel_alt 1.9 m')]
+=== flight 03 loe_final=0.7 23:23:48 motor=3 supervisor=on
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791415444.215228   37983 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791415444.215633   37983 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791415446.211557   37983 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791415446.212119   37983 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor on
+1791415527.94 supervisor: NORMAL -> HOLD (alarm p=0.56)
+1791415531.45 supervisor: HOLD -> NORMAL (alarm cleared (false alarm))
+trigger at 1791415541.33
+1791415545.74 supervisor: NORMAL -> HOLD (alarm p=1.00)
+1791415546.75 supervisor: HOLD -> DESCEND (confirmed: 10 hot windows)
+1791415553.14 supervisor: DESCEND -> LAND (rel_alt 1.9 m)
+recovered, alt 0.0
+supervisor events: [(1791415527.94, 'NORMAL', 'HOLD', 'alarm p=0.56'), (1791415531.45, 'HOLD', 'NORMAL', 'alarm cleared (false alarm)'), (1791415545.74, 'NORMAL', 'HOLD', 'alarm p=1.00'), (1791415546.75, 'HOLD', 'DESCEND', 'confirmed: 10 hot windows'), (1791415553.14, 'DESCEND', 'LAND', 'rel_alt 1.9 m')]
+=== flight 04 loe_final=0.7 23:26:12 motor=0 supervisor=on
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791415585.762091   38077 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791415585.762484   38077 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791415587.840404   38077 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791415587.840956   38077 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor on
+trigger at 1791415682.68
+1791415687.97 supervisor: NORMAL -> HOLD (alarm p=1.00)
+1791415688.97 supervisor: HOLD -> DESCEND (confirmed: 10 hot windows)
+1791415695.97 supervisor: DESCEND -> LAND (rel_alt 2.0 m)
+recovered, alt 0.0
+supervisor events: [(1791415687.97, 'NORMAL', 'HOLD', 'alarm p=1.00'), (1791415688.97, 'HOLD', 'DESCEND', 'confirmed: 10 hot windows'), (1791415695.97, 'DESCEND', 'LAND', 'rel_alt 2.0 m')]
+=== done 23:28:33
+=== flight 01 loe_final=0.7 23:28:33 motor=1 supervisor=off
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791415727.423055   38204 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791415727.423453   38204 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791415729.446044   38204 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791415729.446634   38204 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor off
+trigger at 1791415816.55
+recovered, alt 0.12
+supervisor events: []
+=== flight 02 loe_final=0.7 23:30:47 motor=2 supervisor=off
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791415861.067751   38298 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791415861.068199   38298 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791415863.125827   38298 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791415863.126450   38298 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor off
+trigger at 1791415941.22
+recovered, alt 0.0
+supervisor events: []
+=== flight 03 loe_final=0.7 23:32:52 motor=3 supervisor=off
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791415985.715293   38392 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791415985.715755   38392 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791415987.750301   38392 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791415987.750909   38392 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor off
+trigger at 1791416082.45
+recovered, alt 0.0
+supervisor events: []
+=== flight 04 loe_final=0.7 23:35:13 motor=0 supervisor=off
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791416128.591300   38486 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791416128.591832   38486 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791416130.674890   38486 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791416130.675450   38486 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor off
+trigger at 1791416218.06
+recovered, alt 0.01
+supervisor events: []
+=== done 23:37:28
+=== flight 05 loe_final=0.6 23:37:29 motor=1 supervisor=on
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791416262.882458   38614 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791416262.882931   38614 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791416264.921019   38614 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791416264.921648   38614 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor on
+1791416341.00 supervisor: NORMAL -> HOLD (alarm p=0.92)
+1791416344.20 supervisor: HOLD -> NORMAL (alarm cleared (false alarm))
+trigger at 1791416357.59
+1791416359.70 supervisor: NORMAL -> HOLD (alarm p=1.00)
+1791416360.70 supervisor: HOLD -> DESCEND (confirmed: 10 hot windows)
+1791416366.01 supervisor: DESCEND -> LAND (rel_alt 1.8 m)
+disarmed (landed or crashed)
+recovered, alt 0.0
+supervisor events: [(1791416341.0, 'NORMAL', 'HOLD', 'alarm p=0.92'), (1791416344.2, 'HOLD', 'NORMAL', 'alarm cleared (false alarm)'), (1791416359.7, 'NORMAL', 'HOLD', 'alarm p=1.00'), (1791416360.7, 'HOLD', 'DESCEND', 'confirmed: 10 hot windows'), (1791416366.01, 'DESCEND', 'LAND', 'rel_alt 1.8 m')]
+=== flight 06 loe_final=0.6 23:39:43 motor=2 supervisor=on
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791416398.309419   38708 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791416398.309870   38708 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791416400.339305   38708 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791416400.340285   38708 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor on
+1791416452.55 supervisor: NORMAL -> HOLD (alarm p=0.72)
+1791416457.45 supervisor: HOLD -> NORMAL (alarm cleared (false alarm))
+trigger at 1791416482.83
+1791416485.16 supervisor: NORMAL -> HOLD (alarm p=1.00)
+1791416486.16 supervisor: HOLD -> DESCEND (confirmed: 10 hot windows)
+1791416490.66 supervisor: DESCEND -> LAND (rel_alt 1.8 m)
+disarmed (landed or crashed)
+recovered, alt 0.0
+supervisor events: [(1791416452.55, 'NORMAL', 'HOLD', 'alarm p=0.72'), (1791416457.45, 'HOLD', 'NORMAL', 'alarm cleared (false alarm)'), (1791416485.16, 'NORMAL', 'HOLD', 'alarm p=1.00'), (1791416486.16, 'HOLD', 'DESCEND', 'confirmed: 10 hot windows'), (1791416490.66, 'DESCEND', 'LAND', 'rel_alt 1.8 m')]
+=== flight 07 loe_final=0.6 23:41:48 motor=3 supervisor=on
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791416522.236095   38802 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791416522.236569   38802 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791416524.272927   38802 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791416524.273469   38802 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor on
+trigger at 1791416604.48
+1791416606.77 supervisor: NORMAL -> HOLD (alarm p=1.00)
+1791416607.77 supervisor: HOLD -> DESCEND (confirmed: 10 hot windows)
+1791416612.58 supervisor: DESCEND -> LAND (rel_alt 1.7 m)
+disarmed (landed or crashed)
+recovered, alt 0.0
+supervisor events: [(1791416606.77, 'NORMAL', 'HOLD', 'alarm p=1.00'), (1791416607.77, 'HOLD', 'DESCEND', 'confirmed: 10 hot windows'), (1791416612.58, 'DESCEND', 'LAND', 'rel_alt 1.7 m')]
+=== flight 08 loe_final=0.6 23:43:50 motor=0 supervisor=on
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791416645.916893   38896 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791416645.917350   38896 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791416647.940167   38896 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791416647.940721   38896 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor on
+1791416690.41 supervisor: NORMAL -> HOLD (alarm p=0.56)
+1791416693.71 supervisor: HOLD -> NORMAL (alarm cleared (false alarm))
+trigger at 1791416718.71
+1791416722.72 supervisor: NORMAL -> HOLD (alarm p=1.00)
+1791416723.72 supervisor: HOLD -> DESCEND (confirmed: 10 hot windows)
+1791416728.72 supervisor: DESCEND -> LAND (rel_alt 1.8 m)
+disarmed (landed or crashed)
+recovered, alt 0.0
+supervisor events: [(1791416690.41, 'NORMAL', 'HOLD', 'alarm p=0.56'), (1791416693.71, 'HOLD', 'NORMAL', 'alarm cleared (false alarm)'), (1791416722.72, 'NORMAL', 'HOLD', 'alarm p=1.00'), (1791416723.72, 'HOLD', 'DESCEND', 'confirmed: 10 hot windows'), (1791416728.72, 'DESCEND', 'LAND', 'rel_alt 1.8 m')]
+=== done 23:45:45
+=== flight 05 loe_final=0.6 23:45:46 motor=1 supervisor=off
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791416761.482639   39004 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791416761.483087   39004 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791416763.511513   39004 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791416763.512082   39004 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor off
+trigger at 1791416849.29
+recovered, alt 0.0
+supervisor events: []
+=== flight 06 loe_final=0.6 23:48:00 motor=2 supervisor=off
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791416895.472041   39098 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791416895.472496   39098 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791416897.519241   39098 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791416897.519804   39098 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor off
+trigger at 1791416979.88
+recovered, alt 0.0
+supervisor events: []
+=== flight 07 loe_final=0.6 23:50:10 motor=3 supervisor=off
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791417026.197041   39198 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791417026.197513   39198 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791417028.208509   39198 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791417028.209052   39198 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor off
+trigger at 1791417101.33
+recovered, alt 0.02
+supervisor events: []
+=== flight 08 loe_final=0.6 23:52:12 motor=0 supervisor=off
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791417147.428852   39292 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791417147.429292   39292 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791417149.451827   39292 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791417149.452386   39292 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor off
+trigger at 1791417220.20
+recovered, alt 0.02
+supervisor events: []
+=== done 23:54:11
+=== flight 09 loe_final=0.8 23:54:11 motor=1 supervisor=on
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791417266.697505   39400 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791417266.697983   39400 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791417268.711723   39400 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791417268.712282   39400 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor on
+1791417317.57 supervisor: NORMAL -> HOLD (alarm p=0.53)
+1791417321.77 supervisor: HOLD -> NORMAL (alarm cleared (false alarm))
+trigger at 1791417342.56
+1791417348.67 supervisor: NORMAL -> HOLD (alarm p=1.00)
+1791417349.67 supervisor: HOLD -> DESCEND (confirmed: 10 hot windows)
+1791417358.08 supervisor: DESCEND -> LAND (rel_alt 2.0 m)
+recovered, alt 1.29
+supervisor events: [(1791417317.57, 'NORMAL', 'HOLD', 'alarm p=0.53'), (1791417321.77, 'HOLD', 'NORMAL', 'alarm cleared (false alarm)'), (1791417348.67, 'NORMAL', 'HOLD', 'alarm p=1.00'), (1791417349.67, 'HOLD', 'DESCEND', 'confirmed: 10 hot windows'), (1791417358.08, 'DESCEND', 'LAND', 'rel_alt 2.0 m')]
+=== flight 10 loe_final=0.8 23:56:19 motor=2 supervisor=on
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791417394.751291   39494 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791417394.751758   39494 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791417396.783674   39494 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791417396.784217   39494 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor on
+trigger at 1791417483.57
+1791417488.17 supervisor: NORMAL -> HOLD (alarm p=1.00)
+1791417489.17 supervisor: HOLD -> DESCEND (confirmed: 10 hot windows)
+1791417497.08 supervisor: DESCEND -> LAND (rel_alt 2.0 m)
+recovered, alt 1.26
+supervisor events: [(1791417488.17, 'NORMAL', 'HOLD', 'alarm p=1.00'), (1791417489.17, 'HOLD', 'DESCEND', 'confirmed: 10 hot windows'), (1791417497.08, 'DESCEND', 'LAND', 'rel_alt 2.0 m')]
+=== flight 11 loe_final=0.8 23:58:39 motor=3 supervisor=on
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791417533.205273   39588 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791417533.205719   39588 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791417535.258915   39588 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791417535.259915   39588 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor on
+1791417590.31 supervisor: NORMAL -> HOLD (alarm p=0.59)
+1791417593.61 supervisor: HOLD -> NORMAL (alarm cleared (false alarm))
+trigger at 1791417627.02
+1791417632.32 supervisor: NORMAL -> HOLD (alarm p=1.00)
+1791417633.31 supervisor: HOLD -> DESCEND (confirmed: 10 hot windows)
+1791417642.40 supervisor: DESCEND -> LAND (rel_alt 2.0 m)
+recovered, alt 1.33
+supervisor events: [(1791417590.31, 'NORMAL', 'HOLD', 'alarm p=0.59'), (1791417593.61, 'HOLD', 'NORMAL', 'alarm cleared (false alarm)'), (1791417632.32, 'NORMAL', 'HOLD', 'alarm p=1.00'), (1791417633.31, 'HOLD', 'DESCEND', 'confirmed: 10 hot windows'), (1791417642.4, 'DESCEND', 'LAND', 'rel_alt 2.0 m')]
+=== flight 12 loe_final=0.8 00:01:04 motor=0 supervisor=on
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791417678.575005   39682 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791417678.575448   39682 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791417680.606233   39682 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791417680.606834   39682 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor on
+1791417738.78 supervisor: NORMAL -> HOLD (alarm p=0.61)
+1791417741.79 supervisor: HOLD -> NORMAL (alarm cleared (false alarm))
+trigger at 1791417765.43
+1791417768.78 supervisor: NORMAL -> HOLD (alarm p=1.00)
+1791417769.78 supervisor: HOLD -> DESCEND (confirmed: 10 hot windows)
+1791417777.38 supervisor: DESCEND -> LAND (rel_alt 2.0 m)
+recovered, alt 0.4
+supervisor events: [(1791417738.78, 'NORMAL', 'HOLD', 'alarm p=0.61'), (1791417741.79, 'HOLD', 'NORMAL', 'alarm cleared (false alarm)'), (1791417768.78, 'NORMAL', 'HOLD', 'alarm p=1.00'), (1791417769.78, 'HOLD', 'DESCEND', 'confirmed: 10 hot windows'), (1791417777.38, 'DESCEND', 'LAND', 'rel_alt 2.0 m')]
+=== done 00:03:16
+=== flight 09 loe_final=0.8 00:03:16 motor=1 supervisor=off
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791417811.776557   39790 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791417811.777022   39790 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791417813.809353   39790 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791417813.809925   39790 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor off
+trigger at 1791417887.44
+recovered, alt 9.59
+supervisor events: []
+=== flight 10 loe_final=0.8 00:05:47 motor=2 supervisor=off
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791417961.116583   39884 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791417961.117032   39884 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791417963.388521   39884 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791417963.389096   39884 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor off
+trigger at 1791418057.23
+recovered, alt 9.13
+supervisor events: []
+=== flight 11 loe_final=0.8 00:08:36 motor=3 supervisor=off
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791418131.933683   39978 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791418131.934118   39978 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791418133.959279   39978 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791418133.959859   39978 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor off
+trigger at 1791418218.65
+recovered, alt 11.62
+supervisor events: []
+=== flight 12 loe_final=0.8 00:11:21 motor=0 supervisor=off
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791418297.195763   40072 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791418297.196207   40072 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791418299.209187   40072 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791418299.209779   40072 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor off
+trigger at 1791418377.03
+recovered, alt 10.13
+supervisor events: []
+=== done 00:13:59
+ALL_DONE

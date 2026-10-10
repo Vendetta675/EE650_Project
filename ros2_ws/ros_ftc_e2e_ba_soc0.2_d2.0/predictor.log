@@ -1,0 +1,22 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791559754.818845   27985 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791559754.819483   27985 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791559756.928084   27985 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791559756.928675   27985 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+[INFO] [1791559759.407269278] [lstm_predictor_node]: Loaded /root/ros2_ws/models_v3/cls_gru5_int8.tflite (v3 features, int8 input), threshold 0.926, persistence 2.
+[WARN] [1791559805.534225908] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 0.95
+[WARN] [1791559816.734904177] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 0.97
+[WARN] [1791559818.434413818] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 0.97
+[WARN] [1791559819.434489790] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791559820.534129567] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 0.97
+[WARN] [1791559868.534606739] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 0.95

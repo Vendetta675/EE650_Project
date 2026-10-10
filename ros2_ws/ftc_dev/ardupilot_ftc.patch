@@ -1,0 +1,971 @@
+diff --git a/libraries/AC_CustomControl/AC_CustomControl.cpp b/libraries/AC_CustomControl/AC_CustomControl.cpp
+index e4c77513b8..0c7a0e7801 100644
+--- a/libraries/AC_CustomControl/AC_CustomControl.cpp
++++ b/libraries/AC_CustomControl/AC_CustomControl.cpp
+@@ -7,6 +7,7 @@
+ #include "AC_CustomControl_Backend.h"
+ // #include "AC_CustomControl_Empty.h"
+ #include "AC_CustomControl_PID.h"
++#include "AC_CustomControl_FTC.h"
+ #include <GCS_MAVLink/GCS.h>
+ #include <AP_Logger/AP_Logger.h>
+ #include <AP_Scheduler/AP_Scheduler.h>
+@@ -16,7 +17,7 @@ const AP_Param::GroupInfo AC_CustomControl::var_info[] = {
+     // @Param: _TYPE
+     // @DisplayName: Custom control type
+     // @Description: Custom control type to be used
+-    // @Values: 0:None, 1:Empty, 2:PID
++    // @Values: 0:None, 1:Empty, 2:PID, 3:Single rotor failure FTC
+     // @RebootRequired: True
+     // @User: Advanced
+     AP_GROUPINFO_FLAGS("_TYPE", 1, AC_CustomControl, _controller_type, 0, AP_PARAM_FLAG_ENABLE),
+@@ -35,6 +36,10 @@ const AP_Param::GroupInfo AC_CustomControl::var_info[] = {
+     // @Path: AC_CustomControl_PID.cpp
+     AP_SUBGROUPVARPTR(_backend, "2_", 7, AC_CustomControl, _backend_var_info[1]),
+ 
++    // @Group: 3_
++    // @Path: AC_CustomControl_FTC.cpp
++    AP_SUBGROUPVARPTR(_backend, "3_", 8, AC_CustomControl, _backend_var_info[2]),
++
+     AP_GROUPEND
+ };
+ 
+@@ -65,6 +70,12 @@ void AC_CustomControl::init(void)
+             _backend = NEW_NOTHROW AC_CustomControl_PID(*this, _ahrs, _att_control, _motors, _dt);
+             _backend_var_info[get_type()] = AC_CustomControl_PID::var_info;
+             break;
++#if AP_COPTER_CUSTOMCONTROL_FTC_ENABLED
++        case CustomControlType::CONT_FTC:
++            _backend = NEW_NOTHROW AC_CustomControl_FTC(*this, _ahrs, _att_control, _motors, _dt);
++            _backend_var_info[get_type()] = AC_CustomControl_FTC::var_info;
++            break;
++#endif
+         default:
+             return;
+     }
+@@ -82,7 +93,12 @@ void AC_CustomControl::update(void)
+ 
+         motor_out_rpy = _backend->update();
+ 
+-        motor_set(motor_out_rpy);
++        // pass-through: do not override the outputs, and above all do not zero the main controller's rate
++        // integrators (motor_set does that every loop), which would remove its integral action while it is still
++        // the controller in charge
++        if (!_backend->passthrough()) {
++            motor_set(motor_out_rpy);
++        }
+     }
+ }
+ 
+diff --git a/libraries/AC_CustomControl/AC_CustomControl.h b/libraries/AC_CustomControl/AC_CustomControl.h
+index 8be2e6cd52..7c1ee8fa71 100644
+--- a/libraries/AC_CustomControl/AC_CustomControl.h
++++ b/libraries/AC_CustomControl/AC_CustomControl.h
+@@ -14,7 +14,7 @@
+ #include <AP_Motors/AP_MotorsMulticopter.h>
+ 
+ #ifndef CUSTOMCONTROL_MAX_TYPES
+-#define CUSTOMCONTROL_MAX_TYPES 2
++#define CUSTOMCONTROL_MAX_TYPES 3
+ #endif
+ 
+ class AC_CustomControl_Backend;
+@@ -49,6 +49,7 @@ protected:
+         CONT_NONE            = 0,
+         CONT_EMPTY           = 1,
+         CONT_PID             = 2,
++        CONT_FTC             = 3,  // single rotor failure fault-tolerant controller
+     };            // controller that should be used     
+ 
+     enum class  CustomControlOption {
+diff --git a/libraries/AC_CustomControl/AC_CustomControl_Backend.h b/libraries/AC_CustomControl/AC_CustomControl_Backend.h
+index 5be2f5bb50..685cf166c5 100644
+--- a/libraries/AC_CustomControl/AC_CustomControl_Backend.h
++++ b/libraries/AC_CustomControl/AC_CustomControl_Backend.h
+@@ -28,6 +28,10 @@ public:
+     // set the PID notch sample rates
+     virtual void set_notch_sample_rate(float sample_rate) {};
+ 
++    // true while the backend only passes the main controller through (e.g. an armed fault-tolerant controller that
++    // has not taken over yet): the front end then leaves the main controller's outputs and integrators untouched
++    virtual bool passthrough() const { return false; }
++
+ protected:
+     // References to external libraries
+     AP_AHRS_View*& _ahrs;
+diff --git a/libraries/AC_CustomControl/AC_CustomControl_FTC.cpp b/libraries/AC_CustomControl/AC_CustomControl_FTC.cpp
+new file mode 100644
+index 0000000000..8f7962a150
+--- /dev/null
++++ b/libraries/AC_CustomControl/AC_CustomControl_FTC.cpp
+@@ -0,0 +1,485 @@
++#include "AC_CustomControl_config.h"
++
++#if AP_COPTER_CUSTOMCONTROL_FTC_ENABLED
++
++#include "AC_CustomControl_FTC.h"
++
++#include <GCS_MAVLink/GCS.h>
++#include <AP_Logger/AP_Logger.h>
++
++// table of user settable parameters
++const AP_Param::GroupInfo AC_CustomControl_FTC::var_info[] = {
++    // @Param: FAIL_MOT
++    // @DisplayName: Failed motor
++    // @Description: Motor (1-4) that has completely failed. 0 passes the main attitude controller through.
++    // @Range: 0 4
++    // @User: Advanced
++    AP_GROUPINFO("FAIL_MOT", 1, AC_CustomControl_FTC, _fail_motor, 0),
++
++    // @Param: KP
++    // @DisplayName: Tilt stiffness
++    // @Description: Reduced-attitude proportional gain (angular acceleration per radian of thrust-axis error)
++    // @Units: 1/s/s
++    // @User: Advanced
++    AP_GROUPINFO("KP", 2, AC_CustomControl_FTC, _kp, 64.0f),
++
++    // @Param: KD
++    // @DisplayName: Tilt-rate damping
++    // @Description: Damping gain on the roll / pitch body rates
++    // @Units: 1/s
++    // @User: Advanced
++    AP_GROUPINFO("KD", 3, AC_CustomControl_FTC, _kd, 11.0f),
++
++    // @Param: IXX
++    // @DisplayName: Inertia x
++    // @Units: kg.m.m
++    // @User: Advanced
++    AP_GROUPINFO("IXX", 4, AC_CustomControl_FTC, _ixx, 0.008f),
++
++    // @Param: IYY
++    // @DisplayName: Inertia y
++    // @Units: kg.m.m
++    // @User: Advanced
++    AP_GROUPINFO("IYY", 5, AC_CustomControl_FTC, _iyy, 0.015f),
++
++    // @Param: IZZ
++    // @DisplayName: Inertia z
++    // @Units: kg.m.m
++    // @User: Advanced
++    AP_GROUPINFO("IZZ", 6, AC_CustomControl_FTC, _izz, 0.017f),
++
++    // @Param: MASS
++    // @DisplayName: Vehicle mass
++    // @Units: kg
++    // @User: Advanced
++    AP_GROUPINFO("MASS", 7, AC_CustomControl_FTC, _mass, 1.8f),
++
++    // @Param: ARM_X
++    // @DisplayName: Rotor x offset
++    // @Units: m
++    // @User: Advanced
++    AP_GROUPINFO("ARM_X", 8, AC_CustomControl_FTC, _arm_x, 0.13f),
++
++    // @Param: ARM_Y
++    // @DisplayName: Rotor y offset
++    // @Units: m
++    // @User: Advanced
++    AP_GROUPINFO("ARM_Y", 9, AC_CustomControl_FTC, _arm_y, 0.21f),
++
++    // @Param: SMO_EN
++    // @DisplayName: Disturbance observer enable
++    // @Values: 0:Disabled,1:Enabled
++    // @User: Advanced
++    AP_GROUPINFO("SMO_EN", 10, AC_CustomControl_FTC, _smo_enable, 1),
++
++    // @Param: SMO_E1
++    // @DisplayName: Observer gain eps1
++    // @User: Advanced
++    AP_GROUPINFO("SMO_E1", 11, AC_CustomControl_FTC, _smo_e1, 15.0f),
++
++    // @Param: SMO_E2
++    // @DisplayName: Observer gain eps2
++    // @User: Advanced
++    AP_GROUPINFO("SMO_E2", 12, AC_CustomControl_FTC, _smo_e2, 5.0f),
++
++    // @Param: SMO_E3
++    // @DisplayName: Observer gain eps3
++    // @User: Advanced
++    AP_GROUPINFO("SMO_E3", 13, AC_CustomControl_FTC, _smo_e3, 50.0f),
++
++    // @Param: SMO_H
++    // @DisplayName: Observer exponent h
++    // @Description: Exponent of the fixed-time term, must be greater than 1
++    // @User: Advanced
++    AP_GROUPINFO("SMO_H", 14, AC_CustomControl_FTC, _smo_h, 1.5f),
++
++    // @Param: DIST_MAX
++    // @DisplayName: Disturbance estimate limit
++    // @Units: N.m
++    // @User: Advanced
++    AP_GROUPINFO("DIST_MAX", 15, AC_CustomControl_FTC, _dist_max, 0.3f),
++
++    // @Param: LAG
++    // @DisplayName: Actuator lag compensation
++    // @Description: Rotor thrust lag; the torque command is rotated by -yaw_rate * LAG about body z so that it acts in the intended direction of the spinning frame. 0 disables.
++    // @Units: s
++    // @User: Advanced
++    AP_GROUPINFO("LAG", 16, AC_CustomControl_FTC, _lag, 0.0f),
++
++    // @Param: YAW_RTGT
++    // @DisplayName: Yaw brake spin rate
++    // @Description: Spin rate above which the rotor opposite the failed one is given thrust to oppose the spin. 0 disables the yaw brake.
++    // @Units: rad/s
++    // @User: Advanced
++    AP_GROUPINFO("YAW_RTGT", 17, AC_CustomControl_FTC, _yaw_rate_tgt, 8.0f),
++
++    // @Param: YAW_KR
++    // @DisplayName: Yaw brake gain
++    // @Description: Opposite-rotor thrust (0..1) per rad/s of spin above YAW_RTGT
++    // @User: Advanced
++    AP_GROUPINFO("YAW_KR", 18, AC_CustomControl_FTC, _yaw_kr, 0.05f),
++
++    // @Param: YAW_TMAX
++    // @DisplayName: Yaw brake maximum thrust
++    // @Description: Maximum opposite-rotor thrust (0..1)
++    // @User: Advanced
++    AP_GROUPINFO("YAW_TMAX", 19, AC_CustomControl_FTC, _yaw_tmax, 0.25f),
++
++    // @Param: ROT_I
++    // @DisplayName: Rotor inertia
++    // @Description: Rotor and propeller inertia about the rotor axis, for the rotor gyroscopic feedforward (the two loaded rotors spin the same way after a failure, so their angular momentum no longer cancels). 0 disables.
++    // @Units: kg.m.m
++    // @User: Advanced
++    AP_GROUPINFO("ROT_I", 20, AC_CustomControl_FTC, _rot_inertia, 0.0f),
++
++    // @Param: ROT_WMAX
++    // @DisplayName: Rotor speed at full output
++    // @Units: rad/s
++    // @User: Advanced
++    AP_GROUPINFO("ROT_WMAX", 21, AC_CustomControl_FTC, _rot_wmax, 838.0f),
++
++    // @Param: MODE
++    // @DisplayName: FTC control law
++    // @Description: 0: reduced-attitude PD law of the paper (thrust axis tracks the target). 1: angular-momentum steering once spinning faster than SPIN_MIN (the spin axis, fixed in the body, is precessed onto the target thrust direction; the thrust axis cones around it).
++    // @Values: 0:Paper reduced attitude,1:Angular-momentum steering,2:Primary-axis INDI
++    // @User: Advanced
++    AP_GROUPINFO("MODE", 22, AC_CustomControl_FTC, _mode, 0),
++
++    // @Param: SKP
++    // @DisplayName: Steering gain
++    // @Units: 1/s
++    // @User: Advanced
++    AP_GROUPINFO("SKP", 23, AC_CustomControl_FTC, _steer_kp, 3.0f),
++
++    // @Param: SKD
++    // @DisplayName: Steering damping
++    // @User: Advanced
++    AP_GROUPINFO("SKD", 24, AC_CustomControl_FTC, _steer_kd, 1.0f),
++
++    // @Param: SPIN_MIN
++    // @DisplayName: Spin rate for angular-momentum steering
++    // @Units: rad/s
++    // @User: Advanced
++    AP_GROUPINFO("SPIN_MIN", 25, AC_CustomControl_FTC, _spin_min, 3.0f),
++
++    // @Param: HK
++    // @DisplayName: Mode 2 primary-axis gain
++    // @Units: 1/s
++    // @User: Advanced
++    AP_GROUPINFO("HK", 26, AC_CustomControl_FTC, _hk, 4.0f),
++
++    // @Param: WK
++    // @DisplayName: Mode 2 rate-loop gain
++    // @Units: 1/s
++    // @User: Advanced
++    AP_GROUPINFO("WK", 27, AC_CustomControl_FTC, _wk, 20.0f),
++
++    // @Param: INDI_F
++    // @DisplayName: Mode 2 INDI filter cutoff
++    // @Units: Hz
++    // @User: Advanced
++    AP_GROUPINFO("INDI_F", 28, AC_CustomControl_FTC, _indi_flt, 25.0f),
++
++    // @Param: HB_TC
++    // @DisplayName: Mode 2 primary-axis adaptation time constant
++    // @Description: The target primary axis (in the body frame) slowly follows the measured one, so the vehicle settles in its coning equilibrium instead of fighting it. 0 keeps it at body z.
++    // @Units: s
++    // @User: Advanced
++    AP_GROUPINFO("HB_TC", 29, AC_CustomControl_FTC, _hbar_tc, 2.0f),
++
++    // @Param: HB_MAX
++    // @DisplayName: Mode 2 maximum primary-axis tilt
++    // @Units: rad
++    // @User: Advanced
++    AP_GROUPINFO("HB_MAX", 30, AC_CustomControl_FTC, _hbar_max, 0.6f),
++
++    // @Param: ACT_TC
++    // @DisplayName: Mode 2 actuator time constant
++    // @Description: First-order rotor response time used to model the torque actually acting for INDI
++    // @Units: s
++    // @User: Advanced
++    AP_GROUPINFO("ACT_TC", 31, AC_CustomControl_FTC, _act_tc, 0.04f),
++
++    // @Param: EFF
++    // @DisplayName: Control effectiveness scale
++    // @Description: Scale on the modelled roll / pitch torque per unit mixer input (thrust curve mismatch between the autopilot model and the vehicle)
++    // @User: Advanced
++    AP_GROUPINFO("EFF", 32, AC_CustomControl_FTC, _eff, 1.0f),
++
++    // @Param: AUTO
++    // @DisplayName: Onboard rotor-loss detection
++    // @Description: With the custom controller switched on and FAIL_MOT 0 the controller passes the main controller through ("armed", e.g. by a fault predictor). With AUTO 1 it then switches to three-rotor control by itself as soon as the motor mixer shows a complete rotor loss (one motor at full output, its diagonal partner at minimum, for 30 ms).
++    // @Values: 0:Disabled,1:Enabled
++    // @User: Advanced
++    AP_GROUPINFO("AUTO", 33, AC_CustomControl_FTC, _auto, 1),
++
++    AP_GROUPEND
++};
++
++AC_CustomControl_FTC::AC_CustomControl_FTC(AC_CustomControl& frontend, AP_AHRS_View*& ahrs, AC_AttitudeControl*& att_control, AP_MotorsMulticopter*& motors, float dt) :
++    AC_CustomControl_Backend(frontend, ahrs, att_control, motors, dt),
++    _dt(dt)
++{
++    AP_Param::setup_object_defaults(this, var_info);
++}
++
++// return roll, pitch, yaw mixer inputs
++Vector3f AC_CustomControl_FTC::update(void)
++{
++    int8_t failed = _fail_motor;
++    switch (_motors->get_spool_state()) {
++        case AP_Motors::SpoolState::SHUT_DOWN:
++        case AP_Motors::SpoolState::GROUND_IDLE:
++            reset();
++            _auto_motor = 0;
++            _passthrough = true;
++            return Vector3f{_motors->get_roll(), _motors->get_pitch(), _motors->get_yaw()};
++        case AP_Motors::SpoolState::THROTTLE_UNLIMITED:
++        case AP_Motors::SpoolState::SPOOLING_UP:
++        case AP_Motors::SpoolState::SPOOLING_DOWN:
++            break;
++    }
++    if ((failed < 1 || failed > 4) && _auto == 1) {
++        // armed: watch the mixer for a complete rotor loss and latch it until landed
++        if (_auto_motor == 0) {
++            const int8_t lost = _motors->get_complete_loss_motor();
++            if (lost >= 0 && lost < 4) {
++                _auto_motor = lost + 1;
++                GCS_SEND_TEXT(MAV_SEVERITY_CRITICAL, "FTC: motor %d lost (onboard detection)", _auto_motor);
++            }
++        }
++        failed = _auto_motor;
++    }
++    _passthrough = failed < 1 || failed > 4;
++    if (_passthrough) {
++        // no failed motor declared: behave like the main controller (the front end leaves it untouched)
++        return Vector3f{_motors->get_roll(), _motors->get_pitch(), _motors->get_yaw()};
++    }
++    // three-rotor allocation with yaw released (refreshed every loop, expires if this controller stops); above the spin
++    // target the opposite rotor gets thrust in proportion to the excess spin (yaw brake)
++    const float spin = fabsf(_ahrs->get_gyro_latest().z);
++    float opposite_thrust = -1.0f;
++    if (is_positive(_yaw_rate_tgt) && spin > _yaw_rate_tgt) {
++        opposite_thrust = MIN(_yaw_kr * (spin - _yaw_rate_tgt), _yaw_tmax);
++    }
++    _motors->request_single_motor_failure_mode(failed - 1, opposite_thrust);
++    if (!_announced) {
++        GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "FTC: motor %d failed, yaw released, reduced attitude control", failed);
++        _announced = true;
++    }
++
++    // ---- reduced attitude error (Eq. 10-12): rotation taking the body thrust axis onto the target thrust axis
++    Quaternion q_body, q_target = _att_control->get_attitude_target_quat();
++    _ahrs->get_quat_body_to_ned(q_body);
++    Matrix3f R, Rt;
++    q_body.rotation_matrix(R);      // body -> NED
++    q_target.rotation_matrix(Rt);
++    const Vector3f zb = R.colz();   // body z axis (thrust is along -z) in NED
++    const Vector3f zd = Rt.colz();
++    const Vector3f axis_ned = zb % zd;
++    const float sin_t = axis_ned.length();
++    const float tilt_err = atan2f(sin_t, zb * zd);
++    Vector3f err;                   // tilt error vector in the body frame (no yaw component)
++    if (sin_t > 1.0e-6f) {
++        err = R.mul_transpose(axis_ned) * (tilt_err / sin_t);
++    } else if (tilt_err > 1.0f) {   // exactly opposite: any horizontal axis
++        err = Vector3f(tilt_err, 0.0f, 0.0f);
++    }
++    err.z = 0.0f;
++
++    // ---- control torque (Eq. 13 / 16): feedback linearisation incl. gyroscopic term, minus disturbance estimate
++    const Vector3f w = _ahrs->get_gyro_latest();
++    const Vector3f I(_ixx, _iyy, _izz);
++    const Vector3f Iw(I.x * w.x, I.y * w.y, I.z * w.z);
++    Vector3f gyro_torque = w % Iw;
++    // rotor gyroscopic feedforward: the two loaded rotors (diagonal pair) spin the same way, each carrying about twice
++    // its hover share; their net angular momentum H along body z couples roll and pitch (torque w x H). The body spins
++    // opposite to the loaded rotors, so H has the sign opposite to the measured yaw rate.
++    if (is_positive(_rot_inertia) && fabsf(w.z) > 1.0f) {
++        const float t_load = constrain_float(2.0f * _motors->get_throttle(), 0.0f, 1.0f);
++        const float h_z = -copysignf(2.0f * _rot_inertia * _rot_wmax * sqrtf(t_load), w.z);
++        gyro_torque += w % Vector3f(0.0f, 0.0f, h_z);
++    }
++    Vector3f alpha(_kp * err.x - _kd * w.x, _kp * err.y - _kd * w.y, 0.0f);
++    Vector3f dist_torque(I.x * _dist_acc.x, I.y * _dist_acc.y, 0.0f);
++    Vector3f torque(I.x * alpha.x + gyro_torque.x - dist_torque.x,
++                    I.y * alpha.y + gyro_torque.y - dist_torque.y,
++                    0.0f);
++
++    // mode 1, angular-momentum steering: once spinning, the vehicle is gyroscopically stiff and a torque precesses the
++    // angular momentum L (dL/dt = tau) instead of producing an angular acceleration. Steer the spin axis n = L/|L|,
++    // which is fixed in the body (the thrust axis cones around it), onto the target thrust direction:
++    // tau = s |L| (kp (d - (d.n) n) - kd n_dot), with s the sign that makes n point along body +z.
++    if (_mode == 1 && fabsf(w.z) > _spin_min) {
++        float h_z = 0.0f;
++        if (is_positive(_rot_inertia)) {
++            const float t_load = constrain_float(2.0f * _motors->get_throttle(), 0.0f, 1.0f);
++            h_z = -copysignf(2.0f * _rot_inertia * _rot_wmax * sqrtf(t_load), w.z);
++        }
++        const Vector3f L_b(I.x * w.x, I.y * w.y, I.z * w.z + h_z);
++        const float L_mag = L_b.length();
++        if (L_mag > 1.0e-3f) {
++            const float sgn = is_negative(L_b.z) ? -1.0f : 1.0f;
++            const Vector3f n_b = L_b * (sgn / L_mag);       // spin axis in the body frame, close to +z
++            const Vector3f n_e = R * n_b;
++            const Vector3f d_perp = zd - n_e * (zd * n_e);  // where the spin axis should move
++            const Vector3f n_dot_e = R * (w % n_b);         // current motion of the spin axis
++            const Vector3f tau_e = (d_perp * _steer_kp - n_dot_e * _steer_kd) * (sgn * L_mag);
++            torque = R.mul_transpose(tau_e) - dist_torque;
++            torque.z = 0.0f;
++            // log the spin-axis error instead of the thrust-axis error in this mode
++            err = R.mul_transpose(n_e % zd);
++        }
++    }
++
++    // ---- torque -> mixer input: one unit of roll / pitch input changes each motor's thrust fraction by its +-0.5
++    // factor, i.e. a torque of 2 * arm * T_max, with T_max (thrust at full output) from the learned hover throttle
++    const float thr_hover = MAX(_motors->get_throttle_hover(), 0.05f);
++    const float t_max = _mass * GRAVITY_MSS / (4.0f * thr_hover);
++    const float eff = constrain_float(_eff.get(), 0.05f, 5.0f);
++    const float tq_roll_max = 2.0f * _arm_y * t_max * eff;
++    const float tq_pitch_max = 2.0f * _arm_x * t_max * eff;
++    // mode 2, primary-axis reduced attitude + INDI (after Mueller and D'Andrea 2016, Sun et al. 2021):
++    // h = desired thrust direction in the body frame, h_dot = -w x h, so the roll / pitch rates that move h towards the
++    // primary axis hbar follow exactly, including the spin r: p = (h2_dot + r h1) / h3, q = (r h2 - h1_dot) / h3.
++    // The rates are tracked with incremental nonlinear dynamic inversion: torque = realised torque (filtered) +
++    // I (alpha_des - filtered angular acceleration), which cancels unmodelled torques (rotor gyroscopics, aerodynamics,
++    // CoM offset) from measurement. hbar adapts slowly to the coning equilibrium of the spinning vehicle.
++    if (_mode == 2) {
++        if (!_indi_init) {
++            const float fs = 1.0f / _dt;
++            _gyro_filt.set_cutoff_frequency(fs, _indi_flt);
++            _tq_filt.set_cutoff_frequency(fs, _indi_flt);
++            _gyro_filt.reset(w);
++            _tq_filt.reset(Vector3f());
++            _tq_act.zero();
++            _wf_prev = w;
++            _hbar = Vector3f(0.0f, 0.0f, 1.0f);
++            _indi_init = true;
++        }
++        const Vector3f h = R.mul_transpose(zd);
++        if (is_positive(_hbar_tc)) {
++            const float a = _dt / (_hbar_tc + _dt);
++            _hbar.x += a * (h.x - _hbar.x);
++            _hbar.y += a * (h.y - _hbar.y);
++            const float hxy = norm(_hbar.x, _hbar.y), lim = sinf(_hbar_max);
++            if (hxy > lim) {
++                _hbar.x *= lim / hxy;
++                _hbar.y *= lim / hxy;
++            }
++            _hbar.z = safe_sqrt(1.0f - sq(_hbar.x) - sq(_hbar.y));
++        }
++        const float h3 = MAX(h.z, 0.3f);
++        const float e1 = h.x - _hbar.x, e2 = h.y - _hbar.y;
++        const float hd1 = -_hk * e1, hd2 = -_hk * e2;
++        const float p_des = (hd2 + w.z * h.x) / h3;
++        const float q_des = (w.z * h.y - hd1) / h3;
++
++        // realised torque of the previous mixer run (N m), filtered like the gyro
++        float rr = 0.0f, pp = 0.0f;
++        Vector3f tq_real;
++        if (_motors->get_single_motor_failure_realized(rr, pp)) {
++            tq_real = Vector3f(rr * tq_roll_max, pp * tq_pitch_max, 0.0f);
++        }
++        // rotors take ~ACT_TC to change speed: the torque acting now is the realised command through that lag
++        _tq_act += (tq_real - _tq_act) * (_dt / (MAX(_act_tc.get(), 0.0f) + _dt));
++        const Vector3f tq_f = _tq_filt.apply(_tq_act);
++        const Vector3f wf = _gyro_filt.apply(w);
++        const Vector3f wdot_f = (wf - _wf_prev) / _dt;
++        _wf_prev = wf;
++        const float ax = _wk * (p_des - w.x), ay = _wk * (q_des - w.y);
++        torque = Vector3f(tq_f.x + I.x * (ax - wdot_f.x), tq_f.y + I.y * (ay - wdot_f.y), 0.0f);
++#if HAL_LOGGING_ENABLED
++        if (_log_counter == 7) {
++            // @LoggerMessage: CCI
++            // @Description: FTC mode 2 (primary-axis INDI) internals
++            // @Field: TimeUS: Time since system startup
++            // @Field: H1: desired thrust direction in body x
++            // @Field: H2: desired thrust direction in body y
++            // @Field: PD: desired roll rate
++            // @Field: QD: desired pitch rate
++            // @Field: P: measured roll rate
++            // @Field: Q: measured pitch rate
++            // @Field: WDX: filtered roll acceleration
++            // @Field: WDY: filtered pitch acceleration
++            // @Field: TFX: filtered acting torque x
++            // @Field: TFY: filtered acting torque y
++            // @Field: TCX: commanded torque x
++            // @Field: TCY: commanded torque y
++            AP::logger().WriteStreaming("CCI", "TimeUS,H1,H2,PD,QD,P,Q,WDX,WDY,TFX,TFY,TCX,TCY", "Qffffffffffff",
++                                        AP_HAL::micros64(), h.x, h.y, p_des, q_des, w.x, w.y, wdot_f.x, wdot_f.y,
++                                        tq_f.x, tq_f.y, torque.x, torque.y);
++        }
++#endif
++        err = Vector3f(e1, e2, 0.0f);
++        dist_torque = Vector3f(_hbar.x, _hbar.y, 0.0f);  // logged in DX / DY in this mode
++    }
++
++    // actuator-lag compensation for the spinning frame: the torque takes effect ~lag later, when the body has turned by
++    // yaw_rate * lag, so rotate the command by the opposite angle about body z
++    if (is_positive(_lag)) {
++        const float ang = -w.z * _lag;
++        const float ca = cosf(ang), sa = sinf(ang);
++        torque = Vector3f(ca * torque.x - sa * torque.y, sa * torque.x + ca * torque.y, 0.0f);
++    }
++    const float u_roll = constrain_float(torque.x / tq_roll_max, -1.0f, 1.0f);
++    const float u_pitch = constrain_float(torque.y / tq_pitch_max, -1.0f, 1.0f);
++    _torque_cmd = Vector3f(u_roll * tq_roll_max, u_pitch * tq_pitch_max, 0.0f);
++
++    // ---- sliding-mode disturbance observer (Eq. 5), pseudo angular velocity mu, roll / pitch channels
++    if (_smo_enable) {
++        const Vector3f e = _mu - w;
++        const Vector3f exy(e.x, e.y, 0.0f);
++        const float en = exy.length();
++        const float eps = 1.0e-3f;
++        const Vector3f s_half = exy / sqrtf(en + eps);                 // e / |e|^(1/2)
++        const Vector3f s_h = exy * powf(en + eps, _smo_h - 1.0f);       // e |e|^(h-1)
++        const Vector3f s_sign = exy / (en + eps);                       // e / |e|
++        const Vector3f model_acc((_torque_cmd.x - gyro_torque.x) / I.x, (_torque_cmd.y - gyro_torque.y) / I.y, 0.0f);
++        _mu += (model_acc + _dist_acc - s_half * _smo_e1 - s_h * _smo_e2) * _dt;
++        _mu.z = w.z;
++        _dist_acc -= s_sign * (_smo_e3 * _dt);
++        const float dmax_x = _dist_max / I.x, dmax_y = _dist_max / I.y;
++        _dist_acc.x = constrain_float(_dist_acc.x, -dmax_x, dmax_x);
++        _dist_acc.y = constrain_float(_dist_acc.y, -dmax_y, dmax_y);
++        _dist_acc.z = 0.0f;
++    } else {
++        _dist_acc.zero();
++    }
++
++#if HAL_LOGGING_ENABLED
++    if (++_log_counter >= 8) {  // 50 Hz at a 400 Hz loop
++        _log_counter = 0;
++        // @LoggerMessage: CCF
++        // @Description: FTC custom controller (single rotor failure)
++        // @Field: TimeUS: Time since system startup
++        // @Field: Mot: failed motor
++        // @Field: Err: thrust-axis error
++        // @Field: ErX: tilt error x
++        // @Field: ErY: tilt error y
++        // @Field: Wz: yaw rate
++        // @Field: DX: disturbance estimate x
++        // @Field: DY: disturbance estimate y
++        // @Field: UR: roll input
++        // @Field: UP: pitch input
++        // @Field: Tmx: thrust at full output per motor
++        AP::logger().WriteStreaming("CCF", "TimeUS,Mot,Err,ErX,ErY,Wz,DX,DY,UR,UP,Tmx", "QBfffffffff",
++                                    AP_HAL::micros64(), (uint8_t)failed, tilt_err, err.x, err.y, w.z,
++                                    dist_torque.x, dist_torque.y, u_roll, u_pitch, t_max);
++    }
++#endif
++
++    return Vector3f{u_roll, u_pitch, 0.0f};
++}
++
++// reset observer and announcement (called when switched on and on the ground)
++void AC_CustomControl_FTC::reset(void)
++{
++    _mu = _ahrs->get_gyro_latest();
++    _dist_acc.zero();
++    _torque_cmd.zero();
++    _announced = false;
++    _indi_init = false;
++}
++
++#endif  // AP_COPTER_CUSTOMCONTROL_FTC_ENABLED
+diff --git a/libraries/AC_CustomControl/AC_CustomControl_FTC.h b/libraries/AC_CustomControl/AC_CustomControl_FTC.h
+new file mode 100644
+index 0000000000..3a74f14262
+--- /dev/null
++++ b/libraries/AC_CustomControl/AC_CustomControl_FTC.h
+@@ -0,0 +1,71 @@
++#pragma once
++
++#include "AC_CustomControl_config.h"
++
++#if AP_COPTER_CUSTOMCONTROL_FTC_ENABLED
++
++#include "AC_CustomControl_Backend.h"
++#include <Filter/LowPassFilter2p.h>
++
++// Fault-tolerant attitude controller for a quad with one completely failed rotor (CC_TYPE = 3).
++// Decoupled degraded strategy of Gu, Wang and Lu (IEEE Access 13, 2025): yaw is given up, only the thrust direction
++// is controlled (reduced attitude), with a sliding-mode disturbance observer; the three remaining rotors are allocated
++// by AP_MotorsMatrix's single-motor-failure mode. With CC3_FAIL_MOT = 0 the backend passes the main controller through.
++class AC_CustomControl_FTC : public AC_CustomControl_Backend {
++public:
++    AC_CustomControl_FTC(AC_CustomControl& frontend, AP_AHRS_View*& ahrs, AC_AttitudeControl*& att_control, AP_MotorsMulticopter*& motors, float dt);
++
++    Vector3f update(void) override;
++    void reset(void) override;
++    bool passthrough() const override { return _passthrough; }
++
++    // user settable parameters
++    static const struct AP_Param::GroupInfo var_info[];
++
++protected:
++    AP_Int8  _fail_motor;   // failed motor number 1-4, 0 = none
++    AP_Float _kp;           // tilt stiffness, 1/s^2
++    AP_Float _kd;           // tilt-rate damping, 1/s
++    AP_Float _ixx, _iyy, _izz;   // body inertia, kg m^2
++    AP_Float _mass;         // vehicle mass, kg
++    AP_Float _arm_x, _arm_y;     // rotor offsets from the centre of mass, m
++    AP_Int8  _smo_enable;   // 1 = use the disturbance observer
++    AP_Float _smo_e1, _smo_e2, _smo_e3, _smo_h;  // observer gains (Eq. 5): eps1, eps2, eps3 and exponent h > 1
++    AP_Float _dist_max;     // limit of the disturbance estimate, N m
++    AP_Float _lag;          // actuator lag compensated by rotating the torque command by -yaw_rate * lag, s
++    AP_Float _yaw_rate_tgt; // spin rate above which the opposite rotor brakes, rad/s (0 = no yaw brake)
++    AP_Float _yaw_kr;       // opposite-rotor thrust per rad/s of excess spin
++    AP_Float _yaw_tmax;     // maximum opposite-rotor thrust (0..1)
++    AP_Float _rot_inertia;  // rotor + propeller inertia about its axis, kg m^2 (0 = no rotor gyroscopic feedforward)
++    AP_Float _rot_wmax;     // rotor speed at full output, rad/s
++    AP_Int8  _mode;         // 0 = paper reduced-attitude PD law, 1 = angular-momentum steering once spinning
++    AP_Float _steer_kp;     // steering gain: precession rate per radian of spin-axis error, 1/s
++    AP_Float _steer_kd;     // steering damping on the spin-axis rate
++    AP_Float _spin_min;     // spin rate above which mode 1 steers the angular momentum, rad/s
++    AP_Float _hk;           // mode 2: primary-axis convergence rate, 1/s
++    AP_Float _wk;           // mode 2: rate-loop gain, 1/s
++    AP_Float _indi_flt;     // mode 2: INDI filter cutoff, Hz
++    AP_Float _hbar_tc;      // mode 2: adaptation time constant of the primary axis, s (0 = fixed at body z)
++    AP_Float _hbar_max;     // mode 2: maximum primary-axis tilt from body z, rad
++    AP_Float _act_tc;       // mode 2: rotor (actuator) time constant used by INDI, s
++    AP_Int8  _auto;         // 1: when armed with FAIL_MOT 0, switch to three-rotor control on an onboard-detected loss
++    int8_t   _auto_motor = 0;  // motor (1-4) found by the onboard detection, 0 = none (cleared only on the ground)
++    AP_Float _eff;          // control-effectiveness scale on the modelled torque per unit roll / pitch input
++    Vector3f _tq_act;       // modelled torque actually acting (realised torque through the actuator lag)
++
++    float _dt;
++    Vector3f _mu;           // observer pseudo angular velocity, rad/s
++    Vector3f _dist_acc;     // observer disturbance estimate as angular acceleration, rad/s^2
++    Vector3f _torque_cmd;   // last commanded torque, N m
++    uint16_t _log_counter;
++    bool _announced;
++    bool _passthrough = true;  // no failed motor declared or detected: the main controller stays in charge
++    // mode 2 state
++    LowPassFilter2pVector3f _gyro_filt;
++    LowPassFilter2pVector3f _tq_filt;
++    Vector3f _wf_prev;
++    Vector3f _hbar;         // primary axis in the body frame (target of the reduced attitude)
++    bool _indi_init;
++};
++
++#endif  // AP_COPTER_CUSTOMCONTROL_FTC_ENABLED
+diff --git a/libraries/AC_CustomControl/AC_CustomControl_config.h b/libraries/AC_CustomControl/AC_CustomControl_config.h
+index a28ebe788e..c757ed2522 100644
+--- a/libraries/AC_CustomControl/AC_CustomControl_config.h
++++ b/libraries/AC_CustomControl/AC_CustomControl_config.h
+@@ -17,3 +17,7 @@
+ #ifndef AP_COPTER_CUSTOMCONTROL_PID_ENABLED
+ #define AP_COPTER_CUSTOMCONTROL_PID_ENABLED AP_COPTER_CUSTOMCONTROL_BACKEND_DEFAULT_ENABLED
+ #endif
++
++#ifndef AP_COPTER_CUSTOMCONTROL_FTC_ENABLED
++#define AP_COPTER_CUSTOMCONTROL_FTC_ENABLED AP_COPTER_CUSTOMCONTROL_BACKEND_DEFAULT_ENABLED
++#endif
+diff --git a/libraries/AP_Motors/AP_MotorsMatrix.cpp b/libraries/AP_Motors/AP_MotorsMatrix.cpp
+index 7ebad14768..e5b9d7a023 100644
+--- a/libraries/AP_Motors/AP_MotorsMatrix.cpp
++++ b/libraries/AP_Motors/AP_MotorsMatrix.cpp
+@@ -212,6 +212,11 @@ float AP_MotorsMatrix::boost_ratio(float boost_value, float normal_value) const
+ // includes new scaling stability patch
+ void AP_MotorsMatrix::output_armed_stabilizing()
+ {
++    if (single_motor_failure_mode_active()) {
++        output_armed_stabilizing_single_motor_failure();
++        return;
++    }
++
+     // apply voltage and air pressure compensation
+     const float compensation_gain = thr_lin.get_compensation_gain(); // compensation for battery voltage and altitude
+ 
+@@ -401,6 +406,220 @@ void AP_MotorsMatrix::output_armed_stabilizing()
+ 
+     // check for failed motor
+     check_for_failed_motor(throttle_thrust_best_plus_adj);
++
++    update_complete_loss_detector();
++}
++
++// complete loss of one rotor on a quad: the attitude controller pins that motor at full output and its diagonal
++// partner (same spin direction, opposite roll / pitch factors) at minimum. Declared after 30 ms of that pattern.
++void AP_MotorsMatrix::update_complete_loss_detector()
++{
++    uint8_t n = 0;
++    int8_t k = -1;
++    float t_high = -1.0f;
++    for (uint8_t i = 0; i < AP_MOTORS_MAX_NUM_MOTORS; i++) {
++        if (motor_enabled[i]) {
++            n++;
++            if (_thrust_rpyt_out[i] > t_high) {
++                t_high = _thrust_rpyt_out[i];
++                k = i;
++            }
++        }
++    }
++    int8_t j = -1;
++    if (n == 4 && k >= 0) {
++        float best = 0.0f;
++        for (uint8_t i = 0; i < AP_MOTORS_MAX_NUM_MOTORS; i++) {
++            const float dot = _roll_factor[i] * _roll_factor[k] + _pitch_factor[i] * _pitch_factor[k];
++            if (motor_enabled[i] && i != k && dot < best) {
++                best = dot;
++                j = i;
++            }
++        }
++    }
++    if (j >= 0 && t_high >= 0.95f && _thrust_rpyt_out[j] <= 0.05f) {
++        _cl_count = (k == _cl_candidate) ? _cl_count + 1 : 1;
++        _cl_candidate = k;
++    } else {
++        _cl_count = 0;
++    }
++    _cl_motor = (_cl_count >= MAX(1U, (uint16_t)(0.03f / MAX(_dt_s, 0.0005f)))) ? _cl_candidate : -1;
++}
++
++// ---------------------------------------------------------------------------------------------------------------------
++// Single-motor-failure (SMF) allocation for fault-tolerant control of a quad.
++// Following the decoupled degraded strategy of Gu, Wang and Lu (IEEE Access 13, 2025, "Fault-Tolerant Control of a
++// Quadrotor UAV With Single Rotor Failure in Dense Obstacle Environments"): yaw is given up and the three remaining
++// rotors produce the collective thrust and the roll / pitch torques exactly (3 equations, 3 unknowns).
++// The request comes from the FTC custom controller every loop and expires after 200 ms.
++
++void AP_MotorsMatrix::request_single_motor_failure_mode(int8_t motor_index, float opposite_thrust)
++{
++    _smf_opposite_thrust = opposite_thrust;
++    if (motor_index < 0 || motor_index >= AP_MOTORS_MAX_NUM_MOTORS || !motor_enabled[motor_index]) {
++        _smf_index = -1;
++        return;
++    }
++    _smf_index = motor_index;
++    _smf_last_ms = AP_HAL::millis();
++}
++
++bool AP_MotorsMatrix::get_single_motor_failure_realized(float &roll, float &pitch) const
++{
++    if (!single_motor_failure_mode_active()) {
++        return false;
++    }
++    roll = _smf_realized_roll;
++    pitch = _smf_realized_pitch;
++    return true;
++}
++
++bool AP_MotorsMatrix::single_motor_failure_mode_active() const
++{
++    return _smf_index >= 0 && (AP_HAL::millis() - _smf_last_ms) < 200;
++}
++
++void AP_MotorsMatrix::output_armed_stabilizing_single_motor_failure()
++{
++    const float compensation_gain = thr_lin.get_compensation_gain();
++    const float roll_thrust = (_roll_in + _roll_in_ff) * compensation_gain;
++    const float pitch_thrust = (_pitch_in + _pitch_in_ff) * compensation_gain;
++    float throttle_thrust = constrain_float(get_throttle() * compensation_gain, 0.0f, 1.0f);
++
++    // the healthy motors, and the torque scale of the normal mixer (torque per unit roll / pitch input)
++    uint8_t idx[3];
++    uint8_t n_ok = 0, n_enabled = 0;
++    float sum_r2 = 0.0f, sum_p2 = 0.0f;
++    for (uint8_t i = 0; i < AP_MOTORS_MAX_NUM_MOTORS; i++) {
++        if (!motor_enabled[i]) {
++            continue;
++        }
++        n_enabled++;
++        sum_r2 += sq(_roll_factor[i]);
++        sum_p2 += sq(_pitch_factor[i]);
++        if (i != _smf_index && n_ok < 3) {
++            idx[n_ok++] = i;
++        }
++    }
++    // A t = b with rows (collective, roll torque, pitch torque) over the three healthy motors
++    const Matrix3f A(1.0f, 1.0f, 1.0f,
++                     _roll_factor[idx[0]], _roll_factor[idx[1]], _roll_factor[idx[2]],
++                     _pitch_factor[idx[0]], _pitch_factor[idx[1]], _pitch_factor[idx[2]]);
++    Matrix3f Ainv;
++    if (n_enabled != 4 || n_ok != 3 || !A.inverse(Ainv)) {
++        // only defined for a quad; fall back to the normal mixer
++        _smf_index = -1;
++        output_armed_stabilizing();
++        return;
++    }
++    // thrust per unit of total collective (h), and the roll / pitch part (g); torque per unit input as in the
++    // normal mixer, so the attitude controllers see the same plant gain
++    const Vector3f h = Ainv * Vector3f(1.0f, 0.0f, 0.0f);
++    Vector3f g = Ainv * Vector3f(0.0f, roll_thrust * sum_r2, pitch_thrust * sum_p2);
++    const float c_des = n_enabled * throttle_thrust;  // same total thrust as the four-motor mixer would give
++
++    // keep 0 <= g + c h <= 1: roll / pitch first, collective clamped to what fits, torque scaled down if nothing fits
++    float scale = 1.0f, c_lo = 0.0f, c_hi = 0.0f;
++    for (uint8_t iter = 0; iter < 12; iter++) {
++        c_lo = 0.0f;
++        c_hi = n_enabled;
++        for (uint8_t j = 0; j < 3; j++) {
++            const float gj = g[j] * scale;
++            if (h[j] > 1.0e-4f) {
++                c_lo = MAX(c_lo, -gj / h[j]);
++                c_hi = MIN(c_hi, (1.0f - gj) / h[j]);
++            } else if (gj > 1.0f) {  // motor with no collective share (opposite the failed one): torque too large
++                c_hi = -1.0f;
++            }
++        }
++        if (c_lo <= c_hi) {
++            break;
++        }
++        scale *= 0.8f;
++    }
++    float c = constrain_float(c_des, c_lo, MAX(c_lo, c_hi));
++
++    // yaw brake (relaxed hover, Mueller and D'Andrea 2016): the rotor opposite the failed one spins the other way, so
++    // giving it thrust t_o opposes the spin. The remaining pair is then allocated by weighted least squares on
++    // (collective, roll, pitch); the torque residual is fixed in the spinning body frame and is absorbed by the
++    // reduced attitude loop.
++    int8_t j_opp = -1;
++    for (uint8_t j = 0; j < 3; j++) {
++        if (h[j] <= 1.0e-4f) {
++            j_opp = j;
++        }
++    }
++    bool full_thrusts = false;
++    if (is_positive(_smf_opposite_thrust) && j_opp >= 0) {
++        const float t_o = constrain_float(_smf_opposite_thrust, 0.0f, 1.0f);
++        uint8_t ab[2];
++        uint8_t k = 0;
++        for (uint8_t j = 0; j < 3; j++) {
++            if (j != j_opp) {
++                ab[k++] = j;
++            }
++        }
++        const float w_c = 10.0f;  // weight of the collective row relative to the torque rows
++        const float bc = c_des - t_o;
++        const float br = roll_thrust * sum_r2 - _roll_factor[idx[j_opp]] * t_o;
++        const float bp = pitch_thrust * sum_p2 - _pitch_factor[idx[j_opp]] * t_o;
++        const float a0r = _roll_factor[idx[ab[0]]], a1r = _roll_factor[idx[ab[1]]];
++        const float a0p = _pitch_factor[idx[ab[0]]], a1p = _pitch_factor[idx[ab[1]]];
++        // normal equations of the weighted 3x2 system
++        const float m00 = w_c * w_c + a0r * a0r + a0p * a0p;
++        const float m01 = w_c * w_c + a0r * a1r + a0p * a1p;
++        const float m11 = w_c * w_c + a1r * a1r + a1p * a1p;
++        const float r0 = w_c * w_c * bc + a0r * br + a0p * bp;
++        const float r1 = w_c * w_c * bc + a1r * br + a1p * bp;
++        const float det = m00 * m11 - m01 * m01;
++        if (fabsf(det) > 1.0e-6f) {
++            float ta = (m11 * r0 - m01 * r1) / det;
++            float tb = (m00 * r1 - m01 * r0) / det;
++            // keep the pair inside 0..1 by shifting both together (gives up collective first), then clip
++            const float hi = MAX(ta, tb), lo = MIN(ta, tb);
++            if (hi > 1.0f) {
++                ta -= hi - 1.0f;
++                tb -= hi - 1.0f;
++                limit.throttle_upper = true;
++            } else if (lo < 0.0f) {
++                ta -= lo;
++                tb -= lo;
++            }
++            g.zero();
++            scale = 1.0f;
++            g[ab[0]] = constrain_float(ta, 0.0f, 1.0f);
++            g[ab[1]] = constrain_float(tb, 0.0f, 1.0f);
++            g[j_opp] = t_o;
++            c = 0.0f;
++            full_thrusts = true;
++        }
++    }
++    if (scale < 1.0f) {
++        limit.set_rpy(true);
++    }
++    if (full_thrusts) {
++        // limits were set by the least-squares branch
++    } else if (c < c_des) {
++        limit.throttle_upper = true;
++    } else if (c > c_des) {
++        limit.throttle_lower = true;
++    }
++    limit.yaw = true;  // yaw is not controlled in this mode
++
++    _thrust_rpyt_out[_smf_index] = 0.0f;
++    for (uint8_t j = 0; j < 3; j++) {
++        _thrust_rpyt_out[idx[j]] = constrain_float(g[j] * scale + c * h[j], 0.0f, 1.0f);
++    }
++    _throttle_out = (full_thrusts ? (g[0] + g[1] + g[2]) / n_enabled : c / n_enabled) / compensation_gain;
++
++    // torque actually produced, in mixer-input units (the normal mixer gives sum(f_i^2) per unit input)
++    float rr = 0.0f, pp = 0.0f;
++    for (uint8_t j = 0; j < 3; j++) {
++        rr += _roll_factor[idx[j]] * _thrust_rpyt_out[idx[j]];
++        pp += _pitch_factor[idx[j]] * _thrust_rpyt_out[idx[j]];
++    }
++    _smf_realized_roll = rr / (sum_r2 * compensation_gain);
++    _smf_realized_pitch = pp / (sum_p2 * compensation_gain);
+ }
+ 
+ // check for failed motor
+diff --git a/libraries/AP_Motors/AP_MotorsMatrix.h b/libraries/AP_Motors/AP_MotorsMatrix.h
+index ad36a0e0cc..cdc6969510 100644
+--- a/libraries/AP_Motors/AP_MotorsMatrix.h
++++ b/libraries/AP_Motors/AP_MotorsMatrix.h
+@@ -65,6 +65,12 @@ public:
+     // return number of motor that has failed.  Should only be called if get_thrust_boost() returns true
+     uint8_t             get_lost_motor() const override { return _motor_lost_index; }
+ 
++    // single-motor-failure allocation (see AP_MotorsMulticopter.h)
++    void                request_single_motor_failure_mode(int8_t motor_index, float opposite_thrust = -1.0f) override;
++    bool                single_motor_failure_mode_active() const override;
++    bool                get_single_motor_failure_realized(float &roll, float &pitch) const override;
++    int8_t              get_complete_loss_motor() const override { return _cl_motor; }
++
+     // return the roll factor of any motor, this is used for tilt rotors and tail sitters
+     // using copter motors for forward flight
+     float               get_roll_factor(uint8_t i) override { return _roll_factor[i]; }
+@@ -112,6 +118,17 @@ protected:
+     // check for failed motor
+     void                check_for_failed_motor(float throttle_thrust_best);
+ 
++    // mixer for a quad with one motor completely failed: thrust + roll + pitch on the remaining motors, yaw free
++    void                output_armed_stabilizing_single_motor_failure();
++    int8_t              _smf_index = -1;     // 0-based index of the failed motor, -1 = not requested
++    uint32_t            _smf_last_ms;        // last time the mode was requested
++    float               _smf_opposite_thrust = -1.0f;  // requested thrust of the opposite rotor, <= 0 = exact solution
++    float               _smf_realized_roll, _smf_realized_pitch;  // realised roll / pitch input after clipping
++    void                update_complete_loss_detector();
++    int8_t              _cl_candidate = -1;  // motor currently showing the complete-loss pattern
++    uint16_t            _cl_count;           // consecutive loops with that pattern
++    int8_t              _cl_motor = -1;      // detected lost motor, -1 = none
++
+     // add_motor using just position and yaw_factor (or prop direction)
+     void                add_motor(int8_t motor_num, float angle_degrees, float yaw_factor, uint8_t testing_order);
+ 
+diff --git a/libraries/AP_Motors/AP_MotorsMulticopter.h b/libraries/AP_Motors/AP_MotorsMulticopter.h
+index 6c983f18a9..2f7859b0e1 100644
+--- a/libraries/AP_Motors/AP_MotorsMulticopter.h
++++ b/libraries/AP_Motors/AP_MotorsMulticopter.h
+@@ -28,6 +28,19 @@
+ class AP_MotorsMulticopter : public AP_Motors {
+ public:
+ 
++    // single-motor-failure (SMF) allocation for fault-tolerant control: request that the mixer allocates thrust,
++    // roll and pitch to the remaining motors only, with motor_index (0-based) forced to zero and yaw uncontrolled.
++    // Must be called every loop while needed; the request expires after 200 ms. Only AP_MotorsMatrix implements it.
++    // opposite_thrust > 0: thrust (0..1) requested for the rotor opposite the failed one (yaw brake); the remaining
++    // pair is then allocated by weighted least squares (collective strongly weighted). <= 0: exact 3-rotor solution.
++    virtual void        request_single_motor_failure_mode(int8_t motor_index, float opposite_thrust = -1.0f) {}
++    virtual bool        single_motor_failure_mode_active() const { return false; }
++    // roll / pitch input actually realised by the single-motor-failure mixer after clipping (same units as set_roll)
++    virtual bool        get_single_motor_failure_realized(float &roll, float &pitch) const { return false; }
++    // index of a motor that has completely lost thrust (quad: pinned at full output while its diagonal partner is
++    // pinned at minimum), -1 if none
++    virtual int8_t      get_complete_loss_motor() const { return -1; }
++
+     // Constructor
+     AP_MotorsMulticopter(uint16_t speed_hz = AP_MOTORS_SPEED_DEFAULT);
+ 

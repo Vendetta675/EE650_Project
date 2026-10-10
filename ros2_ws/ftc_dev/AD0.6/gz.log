@@ -1,0 +1,43 @@
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="iris_with_standoffs"]/link[@name="imu_link"]/sensor[@name="imu_sensor"]/gz_frame_id:/root/ros2_ws/sim_models_ftc/iris_with_standoffs/model.sdf:L260]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="gimbal_small_3d"]/link[@name="pitch_link"]/sensor[@name="camera"]/gz_frame_id:/root/ardupilot_gazebo/models/gimbal_small_3d/model.sdf:L192]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[1;33m[GUI] [Wrn] [Application.cc:908] [0m[1;33m[QT] file::/WorldStats/WorldStats.qml:53:3: QML RowLayout: Binding loop detected for property "x"[0m[1;33m[0m
+libEGL warning: pci id for fd 57: 10de:25ec, driver (null)
+
+pci id for fd 58: 10de:25ec, driver (null)
+pci id for fd 59: 10de:25ec, driver (null)
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: pci id for fd 57: 10de:25ec, driver (null)
+
+pci id for fd 58: 10de:25ec, driver (null)
+pci id for fd 59: 10de:25ec, driver (null)
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: pci id for fd 57: 10de:25ec, driver (null)
+
+libEGL warning: pci id for fd 42: 10de:25ec, driver (null)
+
+pci id for fd 43: 10de:25ec, driver (null)
+pci id for fd 44: 10de:25ec, driver (null)
+libEGL warning: egl: failed to create dri2 screen
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="gimbal"]/link[@name="pitch_link"]/sensor[@name="camera"]/gz_frame_id:<data-string>:L231]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+libEGL warning: pci id for fd 42: 10de:25ec, driver (null)
+
+pci id for fd 43: 10de:25ec, driver (null)
+pci id for fd 44: 10de:25ec, driver (null)
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: pci id for fd 42: 10de:25ec, driver (null)
+
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="iris_with_standoffs"]/link[@name="imu_link"]/sensor[@name="imu_sensor"]/gz_frame_id:<data-string>:L276]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="iris_with_gimbal"]/model[@name="iris_with_standoffs"]/link[@name="imu_link"]/sensor[@name="imu_sensor"]/gz_frame_id:<data-string>:L277]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[1;33m[Wrn] [CameraZoomPlugin.cc:218] [0m[1;33mNo scene or camera sensors available.[0m
+[1;33m[Wrn] [Component.hh:144] [0m[1;33mTrying to serialize component with data type [[0m[1;33mSt6vectorIdSaIdEE[0m[1;33m], which doesn't have [0m[1;33m`operator<<`. Component will not be serialized.[0m[1;33m[0m
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="iris_with_gimbal"]/model[@name="gimbal"]/link[@name="pitch_link"]/sensor[@name="camera"]/gz_frame_id:<data-string>:L797]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[1;33m[Wrn] [CameraZoomPlugin.cc:218] [0m[1;33mNo scene or camera sensors available.[0m
+[1;33m[Wrn] [Ogre2Camera.cc:423] [0m[1;33mOgre2Camera::SetVisibilityMask: Mask bits [0m[1;33mc0000000[0m[1;33m are set but will be ignored as they conflict with the [0m[1;33mreserved bits used internally by the ogre2 backend.[0m[1;33m[0m
+[1;33m[Wrn] [ArduPilotPlugin.cc:1599] [0m[1;33mArduPilot controller has reset[0m
+[1;33m[GUI] [Wrn] [Component.hh:189] [0m[1;33mTrying to deserialize component with data type [[0m[1;33mSt6vectorIdSaIdEE[0m[1;33m], which doesn't have [0m[1;33m`operator>>`. Component will not be deserialized.[0m[1;33m[0m
+[1;33m[Wrn] [MotorFailureSystem.cpp:215] [0m[1;33mPROGRESSIVE FAILURE STARTED on [0m[1;33miris_with_standoffs::rotor_0_joint[0m[1;33m (motor index [0m[1;33m0[0m[1;33m)[0m
+[1;33m[Wrn] [MotorFailureSystem.cpp:234] [0m[1;33mMotor [0m[1;33m0[0m[1;33m CUT after progressive degradation.[0m
+[1;33m[Wrn] [ArduPilotPlugin.cc:1599] [0m[1;33mArduPilot controller has reset[0m
+[1;32mMsg[0m [NameManager::issueNewName] (Skeleton::BodyNode | iris_with_gimbal::iris_with_standoffs) The name [base_link] is a duplicate, so it has been renamed to [base_link(1)]
+[1;32mMsg[0m [NameManager::issueNewName] (Skeleton::BodyNode | iris_with_gimbal::iris_with_standoffs) The name [base_link] is a duplicate, so it has been renamed to [base_link(2)]

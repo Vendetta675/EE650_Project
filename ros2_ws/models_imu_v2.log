@@ -1,0 +1,17 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791414642.424313   35166 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791414642.424720   35166 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791414644.348603   35166 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791414644.349100   35166 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+E0000 00:00:1791414646.336255   35166 cuda_executor.cc:1737] INTERNAL: CUDA Runtime error: Failed call to cudaGetRuntimeVersion: Error loading CUDA libraries. GPU will not be used.: Error loading CUDA libraries. GPU will not be used.
+feature set v2; used: ['rel_m1', 'rel_m2', 'rel_m3', 'rel_m4', 'vib_x', 'vib_y', 'vib_z', 'pwm_spread', 'acc_sx', 'acc_sy', 'acc_sz', 'gyr_sx', 'gyr_sy', 'gyr_sz', 'gyr_x', 'gyr_y', 'gyr_z', 'rate_z', 'acc_z_dev'] | dropped (constant in training): ['current']
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+cls_lstm20 {"params": 7201, "seq_len": 20, "threshold": 0.9638822788723876, "test_roc_auc": 0.9427575921053829, "test_pr_auc": 0.9351083717700223, "episodes": 8, "detected": 8, "detected_in_precursor": 4, "latency_median_s": 4.5227367877960205, "latency_p90_s": 5.736418080329895, "false_alarms_per_min": 0.12463647694225176, "normal_minutes": 8.023333333333333}
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+cls_gru5 {"params": 5633, "seq_len": 5, "threshold": 0.9437422471162966, "test_roc_auc": 0.9415295320692185, "test_pr_auc": 0.930817706884875, "episodes": 8, "detected": 8, "detected_in_precursor": 6, "latency_median_s": 4.032512068748474, "latency_p90_s": 5.192117476463318, "false_alarms_per_min": 0.734094616639478, "normal_minutes": 8.173333333333334}
+            params  test_roc_auc  test_pr_auc  detected  episodes  detected_in_precursor  latency_median_s  false_alarms_per_min
+cls_lstm20  7201.0      0.942758     0.935108       8.0       8.0                    4.0          4.522737              0.124636
+cls_gru5    5633.0      0.941530     0.930818       8.0       8.0                    6.0          4.032512              0.734095

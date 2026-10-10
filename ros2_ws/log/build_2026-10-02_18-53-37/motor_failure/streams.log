@@ -1,0 +1,25 @@
+[0.020s] Invoking command in '/root/ros2_ws/build/motor_failure': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/mine_waypoint_pkg:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy /usr/bin/cmake --build /root/ros2_ws/build/motor_failure -- -j12 -l12
+[0.134s] [ 50%] [32mBuilding CXX object CMakeFiles/motor_failure_system.dir/src/MotorFailureSystem.cpp.o[0m
+[6.668s] [100%] [32m[1mLinking CXX shared library libmotor_failure_system.so[0m
+[7.006s] [100%] Built target motor_failure_system
+[7.023s] Invoked command in '/root/ros2_ws/build/motor_failure' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/mine_waypoint_pkg:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy /usr/bin/cmake --build /root/ros2_ws/build/motor_failure -- -j12 -l12
+[7.039s] Invoking command in '/root/ros2_ws/build/motor_failure': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/mine_waypoint_pkg:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy /usr/bin/cmake --install /root/ros2_ws/build/motor_failure
+[7.051s] -- Install configuration: ""
+[7.051s] -- Installing: /root/ros2_ws/install/motor_failure/lib/motor_failure/libmotor_failure_system.so
+[7.053s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/install/motor_failure/lib/motor_failure/libmotor_failure_system.so" to ""
+[7.053s] -- Installing: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/package_run_dependencies/motor_failure
+[7.054s] -- Installing: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/parent_prefix_path/motor_failure
+[7.054s] -- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/ament_prefix_path.sh
+[7.054s] -- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/ament_prefix_path.dsv
+[7.054s] -- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/path.sh
+[7.055s] -- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/path.dsv
+[7.055s] -- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.bash
+[7.055s] -- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.sh
+[7.055s] -- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.zsh
+[7.055s] -- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.dsv
+[7.055s] -- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/package.dsv
+[7.055s] -- Installing: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/packages/motor_failure
+[7.055s] -- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/cmake/motor_failureConfig.cmake
+[7.056s] -- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/cmake/motor_failureConfig-version.cmake
+[7.056s] -- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/package.xml
+[7.058s] Invoked command in '/root/ros2_ws/build/motor_failure' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/mine_waypoint_pkg:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy /usr/bin/cmake --install /root/ros2_ws/build/motor_failure

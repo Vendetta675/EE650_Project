@@ -1,0 +1,69 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791546801.649520    7193 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791546801.650911    7193 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791546805.896645    7193 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791546805.897820    7193 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+[INFO] [1791546810.752095058] [lstm_predictor_node]: Loaded /root/ros2_ws/models_imu_v2/cls_gru5_int8.tflite (v2 features, int8 input), threshold 0.453, persistence 8.
+[WARN] [1791546876.252265005] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546877.252384216] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546878.351700223] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546883.451117472] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 0.64
+[WARN] [1791546887.451311288] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 0.97
+[WARN] [1791546888.452115403] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546889.552371596] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 0.99
+[WARN] [1791546890.651456943] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546891.651799984] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546892.651852514] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546893.651952122] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546894.652010669] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546895.751712781] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546896.751886746] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546897.752005433] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 0.98
+[WARN] [1791546898.851172366] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546899.951468955] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546901.051742545] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546902.150988911] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546903.151597847] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546904.251038416] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546905.251210691] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 0.98
+[WARN] [1791546906.251932869] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546907.352000190] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546908.451670888] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 0.99
+[WARN] [1791546909.452024410] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546910.551051029] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546911.551622593] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546912.651229770] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546913.651394962] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546914.651687345] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546915.652073843] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 0.98
+[WARN] [1791546916.752158335] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546917.851789482] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 0.98
+[WARN] [1791546918.951538696] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546919.952050176] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546921.052442238] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546922.151961500] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546923.252321404] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 0.98
+[WARN] [1791546924.252276797] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 0.99
+[WARN] [1791546925.351129708] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546926.451095716] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546927.451102267] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546928.451196447] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546929.452083916] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546930.551332829] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546931.551913345] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546932.650974546] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546933.651163614] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546934.652334016] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 0.99
+[WARN] [1791546935.751038214] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546936.850863748] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00
+[WARN] [1791546937.852418543] [lstm_predictor_node]: MOTOR FAULT DEVELOPING! Probability: 1.00

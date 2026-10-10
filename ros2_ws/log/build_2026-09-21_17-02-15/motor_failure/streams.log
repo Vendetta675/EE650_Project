@@ -1,0 +1,25 @@
+[0.028s] Invoking command in '/root/ros2_ws/build/motor_failure': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=${debian_chroot:+($debian_chroot)}\u@\h:\w\$ /usr/bin/cmake --build /root/ros2_ws/build/motor_failure -- -j12 -l12
+[0.169s] [ 50%] [32mBuilding CXX object CMakeFiles/motor_failure.dir/src/MotorFailureSystem.cpp.o[0m
+[8.823s] [100%] [32m[1mLinking CXX shared library libmotor_failure.so[0m
+[9.295s] [100%] Built target motor_failure
+[9.318s] Invoked command in '/root/ros2_ws/build/motor_failure' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=${debian_chroot:+($debian_chroot)}\u@\h:\w\$ /usr/bin/cmake --build /root/ros2_ws/build/motor_failure -- -j12 -l12
+[9.336s] Invoking command in '/root/ros2_ws/build/motor_failure': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=${debian_chroot:+($debian_chroot)}\u@\h:\w\$ /usr/bin/cmake --install /root/ros2_ws/build/motor_failure
+[9.354s] -- Install configuration: ""
+[9.355s] -- Installing: /root/ros2_ws/install/motor_failure/lib/motor_failure/libmotor_failure.so
+[9.358s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/install/motor_failure/lib/motor_failure/libmotor_failure.so" to ""
+[9.359s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/package_run_dependencies/motor_failure
+[9.359s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/parent_prefix_path/motor_failure
+[9.360s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/ament_prefix_path.sh
+[9.360s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/ament_prefix_path.dsv
+[9.360s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/path.sh
+[9.360s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/path.dsv
+[9.361s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.bash
+[9.361s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.sh
+[9.361s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.zsh
+[9.361s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.dsv
+[9.362s] -- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/package.dsv
+[9.362s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/packages/motor_failure
+[9.362s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/cmake/motor_failureConfig.cmake
+[9.363s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/cmake/motor_failureConfig-version.cmake
+[9.364s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/package.xml
+[9.364s] Invoked command in '/root/ros2_ws/build/motor_failure' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=${debian_chroot:+($debian_chroot)}\u@\h:\w\$ /usr/bin/cmake --install /root/ros2_ws/build/motor_failure

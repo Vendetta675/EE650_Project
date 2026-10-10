@@ -1,0 +1,37 @@
+[1.179s] Invoking command in '/root/ros2_ws/src/motor_failure_predictor': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/root/ros2_ws/build/motor_failure_predictor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/motor_failure_predictor build --build-base /root/ros2_ws/build/motor_failure_predictor/build install --record /root/ros2_ws/build/motor_failure_predictor/install.log --install-scripts $base/lib/motor_failure_predictor --single-version-externally-managed install_data
+[1.630s] running egg_info
+[1.657s] creating ../../build/motor_failure_predictor/motor_failure_predictor.egg-info
+[1.658s] writing ../../build/motor_failure_predictor/motor_failure_predictor.egg-info/PKG-INFO
+[1.658s] writing dependency_links to ../../build/motor_failure_predictor/motor_failure_predictor.egg-info/dependency_links.txt
+[1.658s] writing entry points to ../../build/motor_failure_predictor/motor_failure_predictor.egg-info/entry_points.txt
+[1.659s] writing requirements to ../../build/motor_failure_predictor/motor_failure_predictor.egg-info/requires.txt
+[1.659s] writing top-level names to ../../build/motor_failure_predictor/motor_failure_predictor.egg-info/top_level.txt
+[1.659s] writing manifest file '../../build/motor_failure_predictor/motor_failure_predictor.egg-info/SOURCES.txt'
+[1.721s] reading manifest file '../../build/motor_failure_predictor/motor_failure_predictor.egg-info/SOURCES.txt'
+[1.723s] writing manifest file '../../build/motor_failure_predictor/motor_failure_predictor.egg-info/SOURCES.txt'
+[1.723s] running build
+[1.723s] running build_py
+[1.723s] creating /root/ros2_ws/build/motor_failure_predictor/build/lib/motor_failure_predictor
+[1.723s] copying motor_failure_predictor/random_flight_data_publisher.py -> /root/ros2_ws/build/motor_failure_predictor/build/lib/motor_failure_predictor
+[1.724s] copying motor_failure_predictor/lstm_node.py -> /root/ros2_ws/build/motor_failure_predictor/build/lib/motor_failure_predictor
+[1.724s] copying motor_failure_predictor/__init__.py -> /root/ros2_ws/build/motor_failure_predictor/build/lib/motor_failure_predictor
+[1.724s] running install
+[1.733s] running install_lib
+[1.761s] creating /root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor
+[1.761s] copying /root/ros2_ws/build/motor_failure_predictor/build/lib/motor_failure_predictor/random_flight_data_publisher.py -> /root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor
+[1.762s] copying /root/ros2_ws/build/motor_failure_predictor/build/lib/motor_failure_predictor/lstm_node.py -> /root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor
+[1.762s] copying /root/ros2_ws/build/motor_failure_predictor/build/lib/motor_failure_predictor/__init__.py -> /root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor
+[1.762s] byte-compiling /root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor/random_flight_data_publisher.py to random_flight_data_publisher.cpython-312.pyc
+[1.764s] byte-compiling /root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor/lstm_node.py to lstm_node.cpython-312.pyc
+[1.765s] byte-compiling /root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor/__init__.py to __init__.cpython-312.pyc
+[1.766s] running install_data
+[1.766s] creating /root/ros2_ws/install/motor_failure_predictor/share/ament_index/resource_index/packages
+[1.766s] copying resource/motor_failure_predictor -> /root/ros2_ws/install/motor_failure_predictor/share/ament_index/resource_index/packages
+[1.766s] copying package.xml -> /root/ros2_ws/install/motor_failure_predictor/share/motor_failure_predictor
+[1.766s] running install_egg_info
+[1.795s] Copying ../../build/motor_failure_predictor/motor_failure_predictor.egg-info to /root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor-0.0.0-py3.12.egg-info
+[1.797s] running install_scripts
+[1.867s] Installing lstm_predictor script to /root/ros2_ws/install/motor_failure_predictor/lib/motor_failure_predictor
+[1.868s] Installing random_publisher script to /root/ros2_ws/install/motor_failure_predictor/lib/motor_failure_predictor
+[1.868s] writing list of installed files to '/root/ros2_ws/build/motor_failure_predictor/install.log'
+[1.905s] Invoked command in '/root/ros2_ws/src/motor_failure_predictor' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/root/ros2_ws/build/motor_failure_predictor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/motor_failure_predictor build --build-base /root/ros2_ws/build/motor_failure_predictor/build install --record /root/ros2_ws/build/motor_failure_predictor/install.log --install-scripts $base/lib/motor_failure_predictor --single-version-externally-managed install_data

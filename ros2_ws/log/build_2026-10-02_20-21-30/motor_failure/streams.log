@@ -1,0 +1,22 @@
+[0.022s] Invoking command in '/root/ros2_ws/build/motor_failure': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/mine_waypoint_pkg:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy /usr/bin/cmake --build /root/ros2_ws/build/motor_failure -- -j12 -l12
+[0.141s] [100%] Built target motor_failure_system
+[0.160s] Invoked command in '/root/ros2_ws/build/motor_failure' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/mine_waypoint_pkg:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy /usr/bin/cmake --build /root/ros2_ws/build/motor_failure -- -j12 -l12
+[0.177s] Invoking command in '/root/ros2_ws/build/motor_failure': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/mine_waypoint_pkg:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy /usr/bin/cmake --install /root/ros2_ws/build/motor_failure
+[0.191s] -- Install configuration: ""
+[0.191s] -- Up-to-date: /root/ros2_ws/install/motor_failure/lib/motor_failure/libmotor_failure_system.so
+[0.191s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/package_run_dependencies/motor_failure
+[0.192s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/parent_prefix_path/motor_failure
+[0.192s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/ament_prefix_path.sh
+[0.192s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/ament_prefix_path.dsv
+[0.192s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/path.sh
+[0.192s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/path.dsv
+[0.192s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.bash
+[0.192s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.sh
+[0.192s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.zsh
+[0.192s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.dsv
+[0.192s] -- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/package.dsv
+[0.193s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/packages/motor_failure
+[0.193s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/cmake/motor_failureConfig.cmake
+[0.193s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/cmake/motor_failureConfig-version.cmake
+[0.193s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/package.xml
+[0.195s] Invoked command in '/root/ros2_ws/build/motor_failure' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/mine_waypoint_pkg:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy /usr/bin/cmake --install /root/ros2_ws/build/motor_failure

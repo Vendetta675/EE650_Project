@@ -1,0 +1,30 @@
+[INFO] [1791559895.486626200] [mavlink_bridge]: Connecting to udp:127.0.0.1:14551 ...
+[INFO] [1791559896.854063395] [mavlink_bridge]: Connected (system 1); publishing /flight_data (25 values, RAW_FIELDS_V3 order).
+Traceback (most recent call last):
+  File "/root/ros2_ws/install/motor_failure_predictor/lib/motor_failure_predictor/mavlink_bridge", line 33, in <module>
+    sys.exit(load_entry_point('motor_failure_predictor==0.0.0', 'console_scripts', 'mavlink_bridge')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor/mavlink_bridge.py", line 73, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 918, in _spin_once_impl
+    raise handler.exception()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/task.py", line 286, in _execute_coroutine_step
+    result = coro.send(None)
+             ^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 592, in handler
+    await call_coroutine()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 454, in _execute
+    await await_or_execute(tmr.callback)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 115, in await_or_execute
+    return callback(*args)
+           ^^^^^^^^^^^^^^^
+  File "/root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor/mavlink_bridge.py", line 63, in publish
+    self.pub.publish(msg)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/publisher.py", line 70, in publish
+    self.__publisher.publish(msg)
+rclpy._rclpy_pybind11.RCLError: Failed to publish: publisher's context is invalid, at ./src/rcl/publisher.c:423
+[ros2run]: Process exited with failure 1

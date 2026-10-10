@@ -1,0 +1,9 @@
+=== flight 90 loe_final=0.8 18:39:37
+connected; waiting for EKF
+airborne at 10.0 m
+episode 0: trigger at 1791398446.57
+episode 0: recovered, alt 9.8
+episode 1: trigger at 1791398502.16
+episode 1: recovered, alt 10.87
+flight done
+=== done 18:42:47

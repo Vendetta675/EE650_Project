@@ -1,0 +1,35 @@
+running egg_info
+creating ../build/failure_detection/failure_detection.egg-info
+writing ../build/failure_detection/failure_detection.egg-info/PKG-INFO
+writing dependency_links to ../build/failure_detection/failure_detection.egg-info/dependency_links.txt
+writing entry points to ../build/failure_detection/failure_detection.egg-info/entry_points.txt
+writing requirements to ../build/failure_detection/failure_detection.egg-info/requires.txt
+writing top-level names to ../build/failure_detection/failure_detection.egg-info/top_level.txt
+writing manifest file '../build/failure_detection/failure_detection.egg-info/SOURCES.txt'
+reading manifest file '../build/failure_detection/failure_detection.egg-info/SOURCES.txt'
+writing manifest file '../build/failure_detection/failure_detection.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /root/ros2_ws/build/failure_detection/build
+creating /root/ros2_ws/build/failure_detection/build/lib
+creating /root/ros2_ws/build/failure_detection/build/lib/failure_detection
+copying failure_detection/__init__.py -> /root/ros2_ws/build/failure_detection/build/lib/failure_detection
+copying failure_detection/motor_fault_detector.py -> /root/ros2_ws/build/failure_detection/build/lib/failure_detection
+running install
+running install_lib
+creating /root/ros2_ws/install/failure_detection/lib/python3.12/site-packages/failure_detection
+copying /root/ros2_ws/build/failure_detection/build/lib/failure_detection/__init__.py -> /root/ros2_ws/install/failure_detection/lib/python3.12/site-packages/failure_detection
+copying /root/ros2_ws/build/failure_detection/build/lib/failure_detection/motor_fault_detector.py -> /root/ros2_ws/install/failure_detection/lib/python3.12/site-packages/failure_detection
+byte-compiling /root/ros2_ws/install/failure_detection/lib/python3.12/site-packages/failure_detection/__init__.py to __init__.cpython-312.pyc
+byte-compiling /root/ros2_ws/install/failure_detection/lib/python3.12/site-packages/failure_detection/motor_fault_detector.py to motor_fault_detector.cpython-312.pyc
+running install_data
+creating /root/ros2_ws/install/failure_detection/share/ament_index
+creating /root/ros2_ws/install/failure_detection/share/ament_index/resource_index
+creating /root/ros2_ws/install/failure_detection/share/ament_index/resource_index/packages
+copying resource/failure_detection -> /root/ros2_ws/install/failure_detection/share/ament_index/resource_index/packages
+copying package.xml -> /root/ros2_ws/install/failure_detection/share/failure_detection
+running install_egg_info
+Copying ../build/failure_detection/failure_detection.egg-info to /root/ros2_ws/install/failure_detection/lib/python3.12/site-packages/failure_detection-0.0.0-py3.12.egg-info
+running install_scripts
+Installing motor_fault_detector script to /root/ros2_ws/install/failure_detection/lib/failure_detection
+writing list of installed files to '/root/ros2_ws/build/failure_detection/install.log'

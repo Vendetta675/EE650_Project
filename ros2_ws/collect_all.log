@@ -1,0 +1,141 @@
+=== flight 01 loe_final=0.8 18:43:16
+connected; waiting for EKF
+airborne at 10.0 m
+episode 0: trigger at 1791398664.36
+episode 0: recovered, alt 9.81
+episode 1: trigger at 1791398716.49
+episode 1: recovered, alt 10.38
+episode 2: trigger at 1791398772.42
+episode 2: recovered, alt 9.81
+episode 3: trigger at 1791398823.87
+episode 3: recovered, alt 9.82
+flight done
+=== flight 02 loe_final=0.8 18:48:08
+connected; waiting for EKF
+airborne at 10.0 m
+episode 0: trigger at 1791398968.19
+episode 0: recovered, alt 9.81
+episode 1: trigger at 1791399013.42
+episode 1: recovered, alt 10.5
+episode 2: trigger at 1791399068.11
+episode 2: recovered, alt 9.81
+episode 3: trigger at 1791399122.57
+episode 3: recovered, alt 10.41
+flight done
+=== flight 03 loe_final=0.8 18:53:06
+connected; waiting for EKF
+airborne at 10.0 m
+episode 0: trigger at 1791399255.87
+episode 0: recovered, alt 9.81
+episode 1: trigger at 1791399299.38
+episode 1: recovered, alt 11.27
+episode 2: trigger at 1791399351.51
+episode 2: recovered, alt 9.81
+episode 3: trigger at 1791399401.48
+episode 3: recovered, alt 11.14
+flight done
+=== flight 04 loe_final=0.8 18:57:46
+connected; waiting for EKF
+airborne at 10.0 m
+episode 0: trigger at 1791399537.48
+episode 0: recovered, alt 9.81
+episode 1: trigger at 1791399581.79
+episode 1: recovered, alt 9.7
+episode 2: trigger at 1791399637.07
+episode 2: recovered, alt 9.81
+episode 3: trigger at 1791399681.25
+episode 3: recovered, alt 8.76
+flight done
+=== flight 05 loe_final=0.8 19:02:25
+connected; waiting for EKF
+airborne at 10.0 m
+episode 0: trigger at 1791399820.68
+episode 0: recovered, alt 9.8
+episode 1: trigger at 1791399875.82
+episode 1: recovered, alt 9.96
+episode 2: trigger at 1791399920.20
+episode 2: recovered, alt 9.81
+episode 3: trigger at 1791399968.70
+episode 3: recovered, alt 8.59
+flight done
+=== done 19:07:13
+=== flight 06 loe_final=0.6 19:07:13
+connected; waiting for EKF
+airborne at 10.0 m
+episode 0: trigger at 1791400111.23
+episode 0: recovered, alt 0.03
+vehicle lost altitude, ending flight
+flight done
+=== flight 07 loe_final=0.6 19:10:22
+connected; waiting for EKF
+airborne at 10.0 m
+episode 0: trigger at 1791400292.64
+episode 0: recovered, alt 0.02
+vehicle lost altitude, ending flight
+flight done
+=== flight 08 loe_final=0.6 19:12:08
+connected; waiting for EKF
+airborne at 10.0 m
+episode 0: trigger at 1791400396.74
+episode 0: recovered, alt 0.0
+vehicle lost altitude, ending flight
+flight done
+=== flight 09 loe_final=0.6 19:13:38
+connected; waiting for EKF
+airborne at 10.0 m
+episode 0: trigger at 1791400489.92
+episode 0: recovered, alt 0.0
+vehicle lost altitude, ending flight
+flight done
+=== flight 10 loe_final=0.6 19:15:22
+connected; waiting for EKF
+airborne at 10.0 m
+episode 0: trigger at 1791400598.15
+episode 0: recovered, alt 0.02
+vehicle lost altitude, ending flight
+flight done
+=== flight 11 loe_final=0.6 19:17:07
+connected; waiting for EKF
+airborne at 10.0 m
+episode 0: trigger at 1791400702.19
+episode 0: recovered, alt 0.49
+vehicle lost altitude, ending flight
+flight done
+=== flight 12 loe_final=0.6 19:18:57
+connected; waiting for EKF
+airborne at 10.0 m
+episode 0: trigger at 1791400812.91
+episode 0: recovered, alt 0.02
+vehicle lost altitude, ending flight
+flight done
+=== flight 13 loe_final=0.6 19:20:49
+connected; waiting for EKF
+airborne at 10.0 m
+episode 0: trigger at 1791400919.86
+episode 0: recovered, alt 0.01
+vehicle lost altitude, ending flight
+flight done
+=== done 19:22:36
+=== flight 14 loe_final=0.7 19:22:37
+connected; waiting for EKF
+airborne at 10.0 m
+episode 0: trigger at 1791401026.55
+episode 0: recovered, alt 0.0
+vehicle lost altitude, ending flight
+flight done
+=== flight 15 loe_final=0.7 19:24:23
+connected; waiting for EKF
+airborne at 10.0 m
+episode 0: trigger at 1791401144.08
+episode 0: recovered, alt 1.01
+vehicle lost altitude, ending flight
+flight done
+=== flight 16 loe_final=0.7 19:26:21
+connected; waiting for EKF
+airborne at 10.0 m
+episode 0: trigger at 1791401253.20
+episode 0: recovered, alt 0.0
+vehicle lost altitude, ending flight
+flight done
+=== done 19:28:10
+ALL_DONE

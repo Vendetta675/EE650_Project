@@ -1,0 +1,25 @@
+[0.021s] Invoking command in '/root/ros2_ws/build/motor_failure': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(venv-ardupilot) VIRTUAL_ENV_PROMPT=(venv-ardupilot) /usr/bin/cmake --build /root/ros2_ws/build/motor_failure -- -j12 -l12
+[0.156s] [ 50%] Building CXX object CMakeFiles/motor_failure.dir/src/MotorFailureSystem.cpp.o
+[7.663s] [100%] Linking CXX shared library libmotor_failure.so
+[8.088s] [100%] Built target motor_failure
+[8.112s] Invoked command in '/root/ros2_ws/build/motor_failure' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(venv-ardupilot) VIRTUAL_ENV_PROMPT=(venv-ardupilot) /usr/bin/cmake --build /root/ros2_ws/build/motor_failure -- -j12 -l12
+[8.127s] Invoking command in '/root/ros2_ws/build/motor_failure': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(venv-ardupilot) VIRTUAL_ENV_PROMPT=(venv-ardupilot) /usr/bin/cmake --install /root/ros2_ws/build/motor_failure
+[8.141s] -- Install configuration: ""
+[8.141s] -- Installing: /root/ros2_ws/install/motor_failure/lib/libmotor_failure.so
+[8.143s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/install/motor_failure/lib/libmotor_failure.so" to ""
+[8.144s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/package_run_dependencies/motor_failure
+[8.144s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/parent_prefix_path/motor_failure
+[8.144s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/ament_prefix_path.sh
+[8.145s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/ament_prefix_path.dsv
+[8.145s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/path.sh
+[8.145s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/path.dsv
+[8.145s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.bash
+[8.145s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.sh
+[8.145s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.zsh
+[8.145s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.dsv
+[8.146s] -- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/package.dsv
+[8.146s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/packages/motor_failure
+[8.146s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/cmake/motor_failureConfig.cmake
+[8.146s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/cmake/motor_failureConfig-version.cmake
+[8.147s] -- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/package.xml
+[8.148s] Invoked command in '/root/ros2_ws/build/motor_failure' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(venv-ardupilot) VIRTUAL_ENV_PROMPT=(venv-ardupilot) /usr/bin/cmake --install /root/ros2_ws/build/motor_failure

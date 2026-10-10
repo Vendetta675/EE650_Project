@@ -1,0 +1,166 @@
+[0.172s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'motor_failure']
+[0.172s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=12, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['motor_failure'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7fef420ac410>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fef420ac1d0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fef420ac1d0>>, mixin_verb=('build',))
+[0.232s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.233s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/Gazebo.meta'
+[0.234s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastdds.meta'
+[0.234s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastrtps.meta'
+[0.234s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.235s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.235s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.235s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.235s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.235s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/root/ros2_ws'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(failure_detection) by extensions ['ignore', 'ignore_ament_install']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(failure_detection) by extension 'ignore'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(failure_detection) by extension 'ignore_ament_install'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(failure_detection) by extensions ['colcon_pkg']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(failure_detection) by extension 'colcon_pkg'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(failure_detection) by extensions ['colcon_meta']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(failure_detection) by extension 'colcon_meta'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(failure_detection) by extensions ['ros']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(failure_detection) by extension 'ros'
+[0.284s] DEBUG:colcon.colcon_core.package_identification:Package 'failure_detection' with type 'ros.ament_python' and name 'failure_detection'
+[0.284s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.284s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.284s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.284s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(logs) by extensions ['ignore', 'ignore_ament_install']
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(logs) by extension 'ignore'
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(logs) by extension 'ignore_ament_install'
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(logs) by extensions ['colcon_pkg']
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(logs) by extension 'colcon_pkg'
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(logs) by extensions ['colcon_meta']
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(logs) by extension 'colcon_meta'
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(logs) by extensions ['ros']
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(logs) by extension 'ros'
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(logs) by extensions ['cmake', 'python']
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(logs) by extension 'cmake'
+[0.285s] Level 1:colcon.colcon_core.package_identification:_identify(logs) by extension 'python'
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(logs) by extensions ['python_setup_py']
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(logs) by extension 'python_setup_py'
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(motor_failure) by extensions ['ignore', 'ignore_ament_install']
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(motor_failure) by extension 'ignore'
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(motor_failure) by extension 'ignore_ament_install'
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(motor_failure) by extensions ['colcon_pkg']
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(motor_failure) by extension 'colcon_pkg'
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(motor_failure) by extensions ['colcon_meta']
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(motor_failure) by extension 'colcon_meta'
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(motor_failure) by extensions ['ros']
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(motor_failure) by extension 'ros'
+[0.287s] DEBUG:colcon.colcon_core.package_identification:Package 'motor_failure' with type 'ros.ament_cmake' and name 'motor_failure'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(terrain) by extensions ['ignore', 'ignore_ament_install']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(terrain) by extension 'ignore'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(terrain) by extension 'ignore_ament_install'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(terrain) by extensions ['colcon_pkg']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(terrain) by extension 'colcon_pkg'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(terrain) by extensions ['colcon_meta']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(terrain) by extension 'colcon_meta'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(terrain) by extensions ['ros']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(terrain) by extension 'ros'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(terrain) by extensions ['cmake', 'python']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(terrain) by extension 'cmake'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(terrain) by extension 'python'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(terrain) by extensions ['python_setup_py']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(terrain) by extension 'python_setup_py'
+[0.288s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.288s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.288s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.288s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.288s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.317s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'failure_detection' in 'failure_detection'
+[0.318s] Level 5:colcon.colcon_core.verb:set package 'motor_failure' build argument 'cmake_args' from command line to 'None'
+[0.318s] Level 5:colcon.colcon_core.verb:set package 'motor_failure' build argument 'cmake_target' from command line to 'None'
+[0.318s] Level 5:colcon.colcon_core.verb:set package 'motor_failure' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.318s] Level 5:colcon.colcon_core.verb:set package 'motor_failure' build argument 'cmake_clean_cache' from command line to 'False'
+[0.318s] Level 5:colcon.colcon_core.verb:set package 'motor_failure' build argument 'cmake_clean_first' from command line to 'False'
+[0.318s] Level 5:colcon.colcon_core.verb:set package 'motor_failure' build argument 'cmake_force_configure' from command line to 'False'
+[0.318s] Level 5:colcon.colcon_core.verb:set package 'motor_failure' build argument 'ament_cmake_args' from command line to 'None'
+[0.318s] Level 5:colcon.colcon_core.verb:set package 'motor_failure' build argument 'catkin_cmake_args' from command line to 'None'
+[0.318s] Level 5:colcon.colcon_core.verb:set package 'motor_failure' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.318s] DEBUG:colcon.colcon_core.verb:Building package 'motor_failure' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ros2_ws/build/motor_failure', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ros2_ws/install/motor_failure', 'merge_install': False, 'path': '/root/ros2_ws/motor_failure', 'symlink_install': False, 'test_result_base': None}
+[0.318s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.320s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.320s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ros2_ws/motor_failure' with build type 'ament_cmake'
+[0.321s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ros2_ws/motor_failure'
+[0.324s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.324s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.324s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.342s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/build/motor_failure': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=${debian_chroot:+($debian_chroot)}\u@\h:\w\$ /usr/bin/cmake --build /root/ros2_ws/build/motor_failure -- -j12 -l12
+[8.563s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/build/motor_failure' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=${debian_chroot:+($debian_chroot)}\u@\h:\w\$ /usr/bin/cmake --build /root/ros2_ws/build/motor_failure -- -j12 -l12
+[8.579s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/build/motor_failure': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=${debian_chroot:+($debian_chroot)}\u@\h:\w\$ /usr/bin/cmake --install /root/ros2_ws/build/motor_failure
+[8.597s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(motor_failure)
+[8.598s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/build/motor_failure' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/failure_detection:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=${debian_chroot:+($debian_chroot)}\u@\h:\w\$ /usr/bin/cmake --install /root/ros2_ws/build/motor_failure
+[8.602s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/install/motor_failure' for CMake module files
+[8.603s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/install/motor_failure' for CMake config files
+[8.603s] Level 1:colcon.colcon_core.shell:create_environment_hook('motor_failure', 'cmake_prefix_path')
+[8.603s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/install/motor_failure/share/motor_failure/hook/cmake_prefix_path.ps1'
+[8.604s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/install/motor_failure/share/motor_failure/hook/cmake_prefix_path.dsv'
+[8.605s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/install/motor_failure/share/motor_failure/hook/cmake_prefix_path.sh'
+[8.606s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/install/motor_failure/lib'
+[8.606s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/install/motor_failure/bin'
+[8.606s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/install/motor_failure/lib/pkgconfig/motor_failure.pc'
+[8.609s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/install/motor_failure/lib/python3.12/site-packages'
+[8.610s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/install/motor_failure/bin'
+[8.610s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/install/motor_failure/share/motor_failure/package.ps1'
+[8.611s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/install/motor_failure/share/motor_failure/package.dsv'
+[8.612s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/install/motor_failure/share/motor_failure/package.sh'
+[8.613s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/install/motor_failure/share/motor_failure/package.bash'
+[8.613s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/install/motor_failure/share/motor_failure/package.zsh'
+[8.614s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/install/motor_failure/share/colcon-core/packages/motor_failure)
+[8.615s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(motor_failure)
+[8.615s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/install/motor_failure' for CMake module files
+[8.616s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/install/motor_failure' for CMake config files
+[8.616s] Level 1:colcon.colcon_core.shell:create_environment_hook('motor_failure', 'cmake_prefix_path')
+[8.616s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/install/motor_failure/share/motor_failure/hook/cmake_prefix_path.ps1'
+[8.617s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/install/motor_failure/share/motor_failure/hook/cmake_prefix_path.dsv'
+[8.617s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/install/motor_failure/share/motor_failure/hook/cmake_prefix_path.sh'
+[8.618s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/install/motor_failure/lib'
+[8.618s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/install/motor_failure/bin'
+[8.618s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/install/motor_failure/lib/pkgconfig/motor_failure.pc'
+[8.618s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/install/motor_failure/lib/python3.12/site-packages'
+[8.619s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/install/motor_failure/bin'
+[8.619s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/install/motor_failure/share/motor_failure/package.ps1'
+[8.620s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/install/motor_failure/share/motor_failure/package.dsv'
+[8.621s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/install/motor_failure/share/motor_failure/package.sh'
+[8.621s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/install/motor_failure/share/motor_failure/package.bash'
+[8.622s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/install/motor_failure/share/motor_failure/package.zsh'
+[8.622s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/install/motor_failure/share/colcon-core/packages/motor_failure)
+[8.622s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[8.623s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[8.623s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[8.623s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[8.632s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[8.633s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[8.633s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[8.633s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[8.636s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.Spawn.ExecFailed: /usr/bin/dbus-launch terminated abnormally without any error message
+[8.636s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[8.637s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ros2_ws/install/local_setup.ps1'
+[8.638s] INFO:colcon.colcon_core.shell:Creating prefix util module '/root/ros2_ws/install/_local_setup_util_ps1.py'
+[8.640s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ros2_ws/install/setup.ps1'
+[8.641s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ros2_ws/install/local_setup.sh'
+[8.642s] INFO:colcon.colcon_core.shell:Creating prefix util module '/root/ros2_ws/install/_local_setup_util_sh.py'
+[8.643s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ros2_ws/install/setup.sh'
+[8.644s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ros2_ws/install/local_setup.bash'
+[8.645s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ros2_ws/install/setup.bash'
+[8.646s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ros2_ws/install/local_setup.zsh'
+[8.647s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ros2_ws/install/setup.zsh'

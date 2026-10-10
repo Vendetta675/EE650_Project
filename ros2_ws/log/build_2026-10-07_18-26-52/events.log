@@ -1,0 +1,115 @@
+[0.000000] (-) TimerEvent: {}
+[0.000108] (-) JobUnselected: {'identifier': 'motor_failure_predictor'}
+[0.000156] (motor_failure) JobQueued: {'identifier': 'motor_failure', 'dependencies': OrderedDict()}
+[0.000657] (motor_failure) JobStarted: {'identifier': 'motor_failure'}
+[0.017692] (motor_failure) JobProgress: {'identifier': 'motor_failure', 'progress': 'cmake'}
+[0.019938] (motor_failure) JobProgress: {'identifier': 'motor_failure', 'progress': 'build'}
+[0.021216] (motor_failure) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/ros2_ws/build/motor_failure', '--', '-j12', '-l12'], 'cwd': '/root/ros2_ws/build/motor_failure', 'env': OrderedDict({'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'root', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': 'c7ab345f90ed', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root/gourav', 'ROS_PYTHON_VERSION': '3', 'PS1': '(venv-ardupilot)', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'PIP_BREAK_SYSTEM_PACKAGES': '1', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/root/.local/bin:/usr/lib/ccache:/root/ardupilot/Tools/autotest:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:/root/venv-ardupilot/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'VIRTUAL_ENV_PROMPT': '(venv-ardupilot)', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'VIRTUAL_ENV': '/root/venv-ardupilot', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ros2_ws/build/motor_failure', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'TZ': 'Etc/UTC', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099546] (-) TimerEvent: {}
+[0.156633] (motor_failure) StdoutLine: {'line': b'[ 50%] Building CXX object CMakeFiles/motor_failure.dir/src/MotorFailureSystem.cpp.o\n'}
+[0.199696] (-) TimerEvent: {}
+[0.299965] (-) TimerEvent: {}
+[0.400210] (-) TimerEvent: {}
+[0.500464] (-) TimerEvent: {}
+[0.600723] (-) TimerEvent: {}
+[0.700988] (-) TimerEvent: {}
+[0.801263] (-) TimerEvent: {}
+[0.901602] (-) TimerEvent: {}
+[1.001884] (-) TimerEvent: {}
+[1.102205] (-) TimerEvent: {}
+[1.202447] (-) TimerEvent: {}
+[1.302704] (-) TimerEvent: {}
+[1.402988] (-) TimerEvent: {}
+[1.503242] (-) TimerEvent: {}
+[1.603538] (-) TimerEvent: {}
+[1.703812] (-) TimerEvent: {}
+[1.804099] (-) TimerEvent: {}
+[1.904420] (-) TimerEvent: {}
+[2.004691] (-) TimerEvent: {}
+[2.104956] (-) TimerEvent: {}
+[2.205205] (-) TimerEvent: {}
+[2.305462] (-) TimerEvent: {}
+[2.405750] (-) TimerEvent: {}
+[2.506028] (-) TimerEvent: {}
+[2.606338] (-) TimerEvent: {}
+[2.706615] (-) TimerEvent: {}
+[2.806927] (-) TimerEvent: {}
+[2.907180] (-) TimerEvent: {}
+[3.007487] (-) TimerEvent: {}
+[3.107744] (-) TimerEvent: {}
+[3.208018] (-) TimerEvent: {}
+[3.308284] (-) TimerEvent: {}
+[3.408604] (-) TimerEvent: {}
+[3.508848] (-) TimerEvent: {}
+[3.609104] (-) TimerEvent: {}
+[3.709359] (-) TimerEvent: {}
+[3.809659] (-) TimerEvent: {}
+[3.909918] (-) TimerEvent: {}
+[4.010205] (-) TimerEvent: {}
+[4.110574] (-) TimerEvent: {}
+[4.210843] (-) TimerEvent: {}
+[4.311194] (-) TimerEvent: {}
+[4.411540] (-) TimerEvent: {}
+[4.511796] (-) TimerEvent: {}
+[4.612079] (-) TimerEvent: {}
+[4.712367] (-) TimerEvent: {}
+[4.812652] (-) TimerEvent: {}
+[4.912901] (-) TimerEvent: {}
+[5.013235] (-) TimerEvent: {}
+[5.113485] (-) TimerEvent: {}
+[5.213744] (-) TimerEvent: {}
+[5.314086] (-) TimerEvent: {}
+[5.414425] (-) TimerEvent: {}
+[5.514730] (-) TimerEvent: {}
+[5.615092] (-) TimerEvent: {}
+[5.715388] (-) TimerEvent: {}
+[5.815675] (-) TimerEvent: {}
+[5.916010] (-) TimerEvent: {}
+[6.016269] (-) TimerEvent: {}
+[6.116603] (-) TimerEvent: {}
+[6.216862] (-) TimerEvent: {}
+[6.317126] (-) TimerEvent: {}
+[6.417507] (-) TimerEvent: {}
+[6.517876] (-) TimerEvent: {}
+[6.618184] (-) TimerEvent: {}
+[6.718493] (-) TimerEvent: {}
+[6.818775] (-) TimerEvent: {}
+[6.919044] (-) TimerEvent: {}
+[7.019397] (-) TimerEvent: {}
+[7.119680] (-) TimerEvent: {}
+[7.219935] (-) TimerEvent: {}
+[7.320186] (-) TimerEvent: {}
+[7.420457] (-) TimerEvent: {}
+[7.520799] (-) TimerEvent: {}
+[7.621187] (-) TimerEvent: {}
+[7.663699] (motor_failure) StdoutLine: {'line': b'[100%] Linking CXX shared library libmotor_failure.so\n'}
+[7.721392] (-) TimerEvent: {}
+[7.821759] (-) TimerEvent: {}
+[7.922042] (-) TimerEvent: {}
+[8.022379] (-) TimerEvent: {}
+[8.088612] (motor_failure) StdoutLine: {'line': b'[100%] Built target motor_failure\n'}
+[8.112138] (motor_failure) CommandEnded: {'returncode': 0}
+[8.113860] (motor_failure) JobProgress: {'identifier': 'motor_failure', 'progress': 'install'}
+[8.122502] (-) TimerEvent: {}
+[8.127428] (motor_failure) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/ros2_ws/build/motor_failure'], 'cwd': '/root/ros2_ws/build/motor_failure', 'env': OrderedDict({'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'root', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': 'c7ab345f90ed', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root/gourav', 'ROS_PYTHON_VERSION': '3', 'PS1': '(venv-ardupilot)', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'PIP_BREAK_SYSTEM_PACKAGES': '1', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/root/.local/bin:/usr/lib/ccache:/root/ardupilot/Tools/autotest:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:/root/venv-ardupilot/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'VIRTUAL_ENV_PROMPT': '(venv-ardupilot)', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'VIRTUAL_ENV': '/root/venv-ardupilot', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ros2_ws/build/motor_failure', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'TZ': 'Etc/UTC', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[8.140934] (motor_failure) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[8.141714] (motor_failure) StdoutLine: {'line': b'-- Installing: /root/ros2_ws/install/motor_failure/lib/libmotor_failure.so\n'}
+[8.143784] (motor_failure) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/root/ros2_ws/install/motor_failure/lib/libmotor_failure.so" to ""\n'}
+[8.144105] (motor_failure) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/package_run_dependencies/motor_failure\n'}
+[8.144277] (motor_failure) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/parent_prefix_path/motor_failure\n'}
+[8.144595] (motor_failure) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/ament_prefix_path.sh\n'}
+[8.145049] (motor_failure) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/ament_prefix_path.dsv\n'}
+[8.145268] (motor_failure) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/path.sh\n'}
+[8.145430] (motor_failure) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/path.dsv\n'}
+[8.145583] (motor_failure) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.bash\n'}
+[8.145732] (motor_failure) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.sh\n'}
+[8.145886] (motor_failure) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.zsh\n'}
+[8.146032] (motor_failure) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.dsv\n'}
+[8.146177] (motor_failure) StdoutLine: {'line': b'-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/package.dsv\n'}
+[8.146320] (motor_failure) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/packages/motor_failure\n'}
+[8.146465] (motor_failure) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/cmake/motor_failureConfig.cmake\n'}
+[8.146783] (motor_failure) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/cmake/motor_failureConfig-version.cmake\n'}
+[8.147008] (motor_failure) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_ws/install/motor_failure/share/motor_failure/package.xml\n'}
+[8.147913] (motor_failure) CommandEnded: {'returncode': 0}
+[8.180463] (motor_failure) JobEnded: {'identifier': 'motor_failure', 'rc': 0}
+[8.181617] (-) EventReactorShutdown: {}

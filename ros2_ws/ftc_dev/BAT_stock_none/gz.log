@@ -1,0 +1,71 @@
+[1;32m[Msg] [0m[1;32mGazebo Sim Server v[0m[1;32m8.11.0[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mLoading SDF world file[[0m[1;32m/root/ros2_ws/worlds/iris_runway_headless.sdf[0m[1;32m].[0m
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="iris_with_standoffs"]/link[@name="imu_link"]/sensor[@name="imu_sensor"]/gz_frame_id:/root/ardupilot_gazebo/models/iris_with_standoffs/model.sdf:L260]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="gimbal_small_3d"]/link[@name="pitch_link"]/sensor[@name="camera"]/gz_frame_id:/root/ardupilot_gazebo/models/gimbal_small_3d/model.sdf:L192]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[1;32m[Msg] [0m[1;32mServing entity system service on [[0m[1;32m/[0m[1;32mentity/system/add[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mCreate[0m[1;32m service on [[0m[1;32m/world/iris_runway/create_multiple[0m[1;32m] (async)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mCreate[0m[1;32m service on [[0m[1;32m/world/iris_runway/create_multiple/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mRemove[0m[1;32m service on [[0m[1;32m/world/iris_runway/remove[0m[1;32m] (async)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mRemove[0m[1;32m service on [[0m[1;32m/world/iris_runway/remove/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/iris_runway/set_pose[0m[1;32m] (async)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/iris_runway/set_pose/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/iris_runway/set_pose_vector[0m[1;32m] (async)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/iris_runway/set_pose_vector/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mLight configuration[0m[1;32m service on [[0m[1;32m/world/iris_runway/light_config[0m[1;32m] (async)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mLight configuration[0m[1;32m service on [[0m[1;32m/world/iris_runway/light_config/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mPhysics[0m[1;32m service on [[0m[1;32m/world/iris_runway/set_physics[0m[1;32m] (async)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mPhysics[0m[1;32m service on [[0m[1;32m/world/iris_runway/set_physics/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mSphericalCoordinates[0m[1;32m service on [[0m[1;32m/world/iris_runway/set_spherical_coordinates[0m[1;32m] (async)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mSphericalCoordinates[0m[1;32m service on [[0m[1;32m/world/iris_runway/set_spherical_coordinates/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mEnable collision[0m[1;32m service on [[0m[1;32m/world/iris_runway/enable_collision[0m[1;32m] (async)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mEnable collision[0m[1;32m service on [[0m[1;32m/world/iris_runway/enable_collision/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mDisable collision[0m[1;32m service on [[0m[1;32m/world/iris_runway/disable_collision[0m[1;32m] (async)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mDisable collision[0m[1;32m service on [[0m[1;32m/world/iris_runway/disable_collision/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/iris_runway/visual_config[0m[1;32m] (async)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/iris_runway/visual_config/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/iris_runway/wheel_slip[0m[1;32m] (async)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/iris_runway/wheel_slip/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mApplyJointForce subscribing to Double messages on [[0m[1;32m/model/iris_with_gimbal/joint/iris_with_standoffs::rotor_0_joint/cmd_force[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mApplyJointForce subscribing to Double messages on [[0m[1;32m/model/iris_with_gimbal/joint/iris_with_standoffs::rotor_1_joint/cmd_force[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mApplyJointForce subscribing to Double messages on [[0m[1;32m/model/iris_with_gimbal/joint/iris_with_standoffs::rotor_2_joint/cmd_force[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mApplyJointForce subscribing to Double messages on [[0m[1;32m/model/iris_with_gimbal/joint/iris_with_standoffs::rotor_3_joint/cmd_force[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32m[[0m[1;32miris_with_gimbal[0m[1;32m] [0m[1;32mAdvertising on [0m[1;32m/gimbal/cmd_roll[0m[1;32m.[0m
+[1;32m[Msg] [0m[1;32m[[0m[1;32miris_with_gimbal[0m[1;32m] [0m[1;32mAdvertising on [0m[1;32m/gimbal/cmd_pitch[0m[1;32m.[0m
+[1;32m[Msg] [0m[1;32m[[0m[1;32miris_with_gimbal[0m[1;32m] [0m[1;32mAdvertising on [0m[1;32m/gimbal/cmd_yaw[0m[1;32m.[0m
+[1;32m[Msg] [0m[1;32mJointPositionController subscribing to Double messages on [[0m[1;32m/gimbal/cmd_roll[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mJointPositionController subscribing to Double messages on [[0m[1;32m/gimbal/cmd_pitch[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mJointPositionController subscribing to Double messages on [[0m[1;32m/gimbal/cmd_yaw[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mRegistered joint for potential failure: [0m[1;32miris_with_standoffs::rotor_0_joint[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mRegistered joint for potential failure: [0m[1;32miris_with_standoffs::rotor_1_joint[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mRegistered joint for potential failure: [0m[1;32miris_with_standoffs::rotor_2_joint[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mRegistered joint for potential failure: [0m[1;32miris_with_standoffs::rotor_3_joint[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mProgressive MotorFailureSystem loaded. Trigger: [0m[1;32m/model/iris_with_gimbal[0m[1;32m/trigger_random_failure[0m[1;32m | LOE 1.0 -> [0m[1;32m0.8[0m[1;32m over [0m[1;32m5[0m[1;32m s[0m[1;32m | stutter [0m[1;32m0.15[0m[1;32m @ [0m[1;32m35[0m[1;32m Hz[0m[1;32m | cut_after [0m[1;32m-1[0m[1;32m | event log [0m[1;32m/root/ros2_ws/fault_events.csv[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mGstCameraPlugin: attached to sensor [[0m[1;32mcamera[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mGstCameraPlugin: streaming video to [0m[1;32m127.0.0.1[0m[1;32m:[0m[1;32m5600[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mLoaded level [[0m[1;32mdefault[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mServing world controls on [[0m[1;32m/world/iris_runway[0m[1;32m/control], [[0m[1;32m/world/iris_runway[0m[1;32m/control/state] and [[0m[1;32m/world/iris_runway[0m[1;32m/playback/control][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mServing GUI information on [[0m[1;32m/world/iris_runway[0m[1;32m/[0m[1;32mgui/info[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mWorld [[0m[1;32miris_runway[0m[1;32m] initialized with [[0m[1;32m1ms[0m[1;32m] physics profile.[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mServing world SDF generation service on [[0m[1;32m/world/iris_runway[0m[1;32m/[0m[1;32mgenerate_world_sdf[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mServing world names on [[0m[1;32m/gazebo/worlds[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mResource path add service on [[0m[1;32m/gazebo/resource_paths/add[0m[1;32m].[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mResource path get service on [[0m[1;32m/gazebo/resource_paths/get[0m[1;32m].[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mResource path resolve service on [[0m[1;32m/gazebo/resource_paths/resolve[0m[1;32m].[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mResource paths published on [[0m[1;32m/gazebo/resource_paths[0m[1;32m].[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mServer control service on [[0m[1;32m/server_control[0m[1;32m].[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mFound no publishers on /stats, adding root stats topic[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mFound no publishers on /clock, adding root clock topic[0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mFound IMU sensor with name [[0m[1;32miris_with_standoffs::imu_link::imu_sensor[0m[1;32m][0m
+[1;32m[Msg] [0m[1;32mGstCameraPlugin: camera name [[0m[1;32miris_with_gimbal::gimbal::pitch_link::camera[0m[1;32m][0m[1;32m[0m
+[1;32mMsg[0m [NameManager::issueNewName] (Skeleton::BodyNode | iris_with_gimbal::iris_with_standoffs) The name [base_link] is a duplicate, so it has been renamed to [base_link(1)]
+[1;32mMsg[0m [NameManager::issueNewName] (Skeleton::BodyNode | iris_with_gimbal::iris_with_stan[1;33m[Wrn] [ArduPilotPlugin.cc:1672] [0m[1;33mArduPilot controller has reset[0m
+doffs) The name [base_link] is a duplicate, so it has been renamed to [base_link(2)]
+[1;32m[Msg] [0m[1;32mServing scene information on [[0m[1;32m/world/iris_runway[0m[1;32m/[0m[1;32mscene/info[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mServing graph information on [[0m[1;32m/world/iris_runway[0m[1;32m/[0m[1;32mscene/graph[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mServing full state on [[0m[1;32m/world/iris_runway[0m[1;32m/[0m[1;32mstate[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mServing full state (async) on [[0m[1;32m/world/iris_runway[0m[1;32m/[0m[1;32mstate_async[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mPublishing scene information on [[0m[1;32m/world/iris_runway/scene/info[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mPublishing entity deletions on [[0m[1;32m/world/iris_runway/scene/deletion[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mPublishing state changes on [[0m[1;32m/world/iris_runway/state[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mPublishing pose messages on [[0m[1;32m/world/iris_runway[0m[1;32m/[0m[1;32mpose/info[0m[1;32m][0m[1;32m[0m
+[1;32m[Msg] [0m[1;32mPublishing dynamic pose messages on [[0m[1;32m/world/iris_runway[0m[1;32m/[0m[1;32mdynamic_pose/info[0m[1;32m][0m[1;32m[0m

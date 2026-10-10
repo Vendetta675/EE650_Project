@@ -1,0 +1,4 @@
+[INFO] [1791533599.781280944] [fault_supervisor]: Supervisor armed on udp:127.0.0.1:14552 (threshold 0.453).
+[WARN] [1791533650.851015993] [fault_supervisor]: supervisor: NORMAL -> HOLD (alarm p=1.00)
+[WARN] [1791533651.850709484] [fault_supervisor]: supervisor: HOLD -> DESCEND (confirmed: 10 hot windows)
+[WARN] [1791533654.750962607] [fault_supervisor]: supervisor: DESCEND -> LAND (rel_alt 1.4 m)

@@ -1,0 +1,21 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/motor_failure_system.dir/src/MotorFailureSystem.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library libmotor_failure_system.so[0m
+[100%] Built target motor_failure_system
+-- Install configuration: ""
+-- Installing: /root/ros2_ws/install/motor_failure/lib/motor_failure/libmotor_failure_system.so
+-- Set non-toolchain portion of runtime path of "/root/ros2_ws/install/motor_failure/lib/motor_failure/libmotor_failure_system.so" to ""
+-- Installing: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/package_run_dependencies/motor_failure
+-- Installing: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/parent_prefix_path/motor_failure
+-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/ament_prefix_path.sh
+-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/ament_prefix_path.dsv
+-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/path.sh
+-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/environment/path.dsv
+-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.bash
+-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.sh
+-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.zsh
+-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.dsv
+-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/package.dsv
+-- Installing: /root/ros2_ws/install/motor_failure/share/ament_index/resource_index/packages/motor_failure
+-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/cmake/motor_failureConfig.cmake
+-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/cmake/motor_failureConfig-version.cmake
+-- Installing: /root/ros2_ws/install/motor_failure/share/motor_failure/package.xml

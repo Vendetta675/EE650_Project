@@ -1,0 +1,38 @@
+Setting SIM_SPEEDUP=1.000000
+Starting SITL: JSON
+Home: -35.363261 149.165230 alt=584.000000m hdg=353.000000
+JSON control interface set to 127.0.0.1:9002
+Starting sketch 'ArduCopter'
+Starting SITL input
+Using Irlock at port : 9005
+Using \clock topic for DDS timing: disabled
+bind port 5760 for SERIAL0
+SERIAL0 on TCP port 5760
+Waiting for connection ....
+Connection on serial port 5760
+Loaded defaults from /root/ardupilot/Tools/autotest/default_params/copter.parm,/root/ardupilot/Tools/autotest/default_params/gazebo-iris.parm
+bind port 5762 for SERIAL1
+SERIAL1 on TCP port 5762
+bind port 5763 for SERIAL2
+SERIAL2 on TCP port 5763
+
+JSON received:
+	timestamp
+	imu: gyro
+	imu: accel_body
+	position
+	quaternion
+	velocity
+	no_time_sync
+	no_lockstep
+
+Forcing use_time_sync=0
+validate_structures:539: Validating structures
+Loaded defaults from /root/ardupilot/Tools/autotest/default_params/copter.parm,/root/ardupilot/Tools/autotest/default_params/gazebo-iris.parm
+New connection on SERIAL2
+New connection on SERIAL1
+No JSON sensor message received, resending servos
+Closed connection on SERIAL0
+Closed connection on SERIAL2
+No JSON sensor message received, resending servos
+No JSON sensor message received, resending servos

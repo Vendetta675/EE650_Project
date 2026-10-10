@@ -1,0 +1,121 @@
+{
+ "split": {
+  "val": [
+   "flight_04",
+   "flight_10",
+   "flight_11",
+   "flight_15",
+   "flight_18",
+   "flight_20"
+  ],
+  "test": [
+   "flight_05",
+   "flight_12",
+   "flight_13",
+   "flight_16",
+   "flight_19",
+   "flight_21"
+  ]
+ },
+ "features": [
+  "rel_m1",
+  "rel_m2",
+  "rel_m3",
+  "rel_m4",
+  "vib_x",
+  "vib_y",
+  "vib_z",
+  "pwm_spread"
+ ],
+ "dropped": [
+  "current"
+ ],
+ "units": 32,
+ "persistence": 2,
+ "results": {
+  "cls_lstm20": {
+   "params": 5793,
+   "seq_len": 20,
+   "threshold": 0.9399494876180386,
+   "test_roc_auc": 0.8624437495707112,
+   "test_pr_auc": 0.7490149349191526,
+   "episodes": 11,
+   "detected": 7,
+   "detected_in_precursor": 4,
+   "latency_median_s": 3.83219838142395,
+   "latency_p90_s": 5.852818822860717,
+   "false_alarms_per_min": 0.2413030363965413,
+   "normal_minutes": 8.288333333333334
+  },
+  "cls_gru20": {
+   "params": 4577,
+   "seq_len": 20,
+   "threshold": 0.905424495288543,
+   "test_roc_auc": 0.8342341534549317,
+   "test_pr_auc": 0.7068979534295844,
+   "episodes": 11,
+   "detected": 7,
+   "detected_in_precursor": 2,
+   "latency_median_s": 5.20626163482666,
+   "latency_p90_s": 6.211413860321045,
+   "false_alarms_per_min": 0.12065151819827065,
+   "normal_minutes": 8.288333333333334
+  },
+  "ae_lstm20": {
+   "params": 13832,
+   "seq_len": 20,
+   "threshold": 0.7400307655334473,
+   "test_roc_auc": 0.4609048055791848,
+   "test_pr_auc": 0.3668499499763937,
+   "episodes": 11,
+   "detected": 4,
+   "detected_in_precursor": 4,
+   "latency_median_s": 3.199610948562622,
+   "latency_p90_s": 3.323564314842224,
+   "false_alarms_per_min": 1.2065151819827065,
+   "normal_minutes": 8.288333333333334
+  },
+  "cls_lstm5": {
+   "params": 5793,
+   "seq_len": 5,
+   "threshold": 0.9850969654306732,
+   "test_roc_auc": 0.8601995078395523,
+   "test_pr_auc": 0.7274213168985975,
+   "episodes": 11,
+   "detected": 8,
+   "detected_in_precursor": 5,
+   "latency_median_s": 4.124313831329346,
+   "latency_p90_s": 6.732287740707397,
+   "false_alarms_per_min": 1.0665613272763184,
+   "normal_minutes": 8.438333333333334
+  },
+  "cls_gru5": {
+   "params": 4577,
+   "seq_len": 5,
+   "threshold": 0.9700742399292184,
+   "test_roc_auc": 0.8782406591933904,
+   "test_pr_auc": 0.7617125244934915,
+   "episodes": 11,
+   "detected": 11,
+   "detected_in_precursor": 6,
+   "latency_median_s": 4.346044063568115,
+   "latency_p90_s": 8.765396118164062,
+   "false_alarms_per_min": 1.1850681414181314,
+   "normal_minutes": 8.438333333333334
+  },
+  "ae_gru5": {
+   "params": 10632,
+   "seq_len": 5,
+   "threshold": 0.08162789046764374,
+   "test_roc_auc": 0.494082901652471,
+   "test_pr_auc": 0.36781268112687304,
+   "episodes": 11,
+   "detected": 5,
+   "detected_in_precursor": 5,
+   "latency_median_s": 3.098483085632324,
+   "latency_p90_s": 3.4089869976043703,
+   "false_alarms_per_min": 1.659095397985384,
+   "normal_minutes": 8.438333333333334
+  }
+ }
+}

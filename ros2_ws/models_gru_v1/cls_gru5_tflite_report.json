@@ -1,0 +1,53 @@
+{
+ "model": "models_gru/cls_gru5.h5",
+ "kind": "classifier",
+ "params": 4577,
+ "size_bytes": {
+  "h5": 89280,
+  "fp32": 35364,
+  "int8": 42288
+ },
+ "test_roc_auc": {
+  "keras": 0.8843518019899645,
+  "fp32": 0.8843518019899645,
+  "int8": 0.8753441169217453
+ },
+ "latency_us_1thread": {
+  "keras_call": 31891.804002952995,
+  "tflite_fp32": 17.98650191631168,
+  "tflite_int8": 25.022498448379338
+ },
+ "abs_diff_vs_keras": {
+  "fp32": {
+   "max": 5.066394805908203e-07,
+   "mean": 3.0006656714931523e-08
+  },
+  "int8": {
+   "max": 0.4807913899421692,
+   "mean": 0.019396131858229637
+  }
+ },
+ "int8_io_quantization": {
+  "input": [
+   0.03306106477975845,
+   -21.0
+  ],
+  "output": [
+   0.00390625,
+   -128.0
+  ]
+ },
+ "int8_op_types": [
+  "ADD",
+  "DELEGATE",
+  "FULLY_CONNECTED",
+  "LOGISTIC",
+  "MUL",
+  "RESHAPE",
+  "SPLIT",
+  "STRIDED_SLICE",
+  "SUB",
+  "TANH",
+  "UNPACK"
+ ]
+}

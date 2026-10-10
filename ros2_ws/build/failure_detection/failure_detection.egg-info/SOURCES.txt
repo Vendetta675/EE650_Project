@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+../build/failure_detection/failure_detection.egg-info/PKG-INFO
+../build/failure_detection/failure_detection.egg-info/SOURCES.txt
+../build/failure_detection/failure_detection.egg-info/dependency_links.txt
+../build/failure_detection/failure_detection.egg-info/entry_points.txt
+../build/failure_detection/failure_detection.egg-info/requires.txt
+../build/failure_detection/failure_detection.egg-info/top_level.txt
+../build/failure_detection/failure_detection.egg-info/zip-safe
+failure_detection/__init__.py
+failure_detection/motor_fault_detector.py
+resource/failure_detection
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

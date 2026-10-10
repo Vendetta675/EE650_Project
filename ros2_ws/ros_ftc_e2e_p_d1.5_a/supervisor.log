@@ -1,0 +1,25 @@
+[INFO] [1791560319.871511977] [fault_supervisor]: Supervisor armed on udp:127.0.0.1:14552 (threshold 0.926, FTC hand-off on).
+[WARN] [1791560369.343293029] [fault_supervisor]: supervisor: NORMAL -> DESCEND (alarm p=0.98, low battery (SoC ~0.24 < 0.7): fault-tolerant controller armed, landing now)
+[WARN] [1791560373.142021463] [fault_supervisor]: supervisor: DESCEND -> FTC (onboard FTC took over motor 1)
+[WARN] [1791560376.244014552] [fault_supervisor]: supervisor: low-battery landing, LAND at rel_alt 0.8 m
+Traceback (most recent call last):
+  File "/root/ros2_ws/install/motor_failure_predictor/lib/motor_failure_predictor/fault_supervisor", line 33, in <module>
+    sys.exit(load_entry_point('motor_failure_predictor==0.0.0', 'console_scripts', 'fault_supervisor')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor/fault_supervisor_node.py", line 74, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 757, in _wait_for_ready_callbacks
+    wait_set = _rclpy.WaitSet(
+               ^^^^^^^^^^^^^^^
+rclpy._rclpy_pybind11.RCLError: failed to initialize wait set: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/wait.c:130
+[ros2run]: Process exited with failure 1

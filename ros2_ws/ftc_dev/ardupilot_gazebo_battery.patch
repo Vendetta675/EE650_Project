@@ -1,0 +1,293 @@
+diff --git a/include/BatteryModel.hh b/include/BatteryModel.hh
+new file mode 100644
+index 0000000..8a70509
+--- /dev/null
++++ b/include/BatteryModel.hh
+@@ -0,0 +1,137 @@
++/*
++ * LiPo battery + propulsion power model for the ArduPilot Gazebo plugin.
++ *
++ * Pack: open-circuit voltage OCV(SoC) per cell (LiPo discharge curve), series resistance R0 and one RC polarisation
++ * branch (R1, tau1) - the standard first-order Thevenin equivalent circuit. SoC is coulomb counted.
++ * Load: each rotor's electrical power from momentum theory, thrust T = kT * omega^2,
++ *   P_elec = T^1.5 / sqrt(2 rho A) / (figure_of_merit * drive_efficiency), plus a constant avionics current.
++ * The terminal voltage solves V = E - R0 * (P / V + I_avionics) for the constant-power load (E = OCV - V_rc).
++ * Above the pack's maximum power (discriminant < 0) the voltage collapses to E'/2 (brown-out).
++ * Effect on the vehicle: ESC output is a duty cycle of the battery voltage, so the rotor speed reached for a given PWM
++ * scales with V / V_ref, and the motor
++ * torque available at speed omega follows the DC motor line tau_max = tau_stall * (V / V_ref - omega / omega0)
++ * (back-EMF), which sets the maximum thrust. Calibrated so that at V_ref the Gazebo Iris rotor still reaches its
++ * measured top speed (620 rad/s without the limit, thrust-to-weight 1.57 for the 1.98 kg Iris), where the plugin's
++ * cmd_max (2.5) binds. (A first calibration from an estimated 603 rad/s removed ~3 % of top speed even on a full
++ * battery, and that alone made the three-rotor FTC fail: its margin is that thin.)
++ * V_ref = 4.0 V/cell, a fresh pack under hover load: with a full battery the vehicle flies as the plugin did before
++ * the battery model (the validated baseline), and the model adds the loss as the pack drains or sags.
++ */
++#ifndef BATTERYMODEL_HH_
++#define BATTERYMODEL_HH_
++
++#include <algorithm>
++#include <array>
++#include <cmath>
++#include <vector>
++
++namespace gz {
++namespace sim {
++namespace systems {
++
++struct BatteryParams
++{
++  int cells = 3;
++  double capacityAh = 5.1;
++  double socInit = 1.0;
++  double r0Cell = 0.006;        // ohm per cell (series resistance of a healthy 5 Ah pack; aged packs: 2-3x)
++  double r1Cell = 0.004;        // ohm per cell (polarisation)
++  double tau1 = 30.0;           // s
++  double vRefCell = 4.0;        // V per cell at which the rotor speed multiplier is calibrated (fresh pack, loaded)
++  double thrustCoeff = 2.0e-5;  // N / (rad/s)^2, measured on the Gazebo Iris rotors
++  double propDiameter = 0.254;  // m (10 in)
++  double airDensity = 1.225;    // kg/m^3
++  double figureOfMerit = 0.6;
++  double driveEfficiency = 0.75;  // motor * ESC
++  double noLoadSpeed = 775.0;     // rad/s at V_ref (top loaded speed 620 rad/s = 80 % of no-load)
++  double stallTorque = 12.5;      // joint torque at V_ref, omega = 0: 12.5 * (1 - 620/775) = 2.5 = cmd_max
++  double avionicsCurrent = 0.5;   // A
++};
++
++class BatteryModel
++{
++  public: void Configure(const BatteryParams &_p)
++  {
++    this->p = _p;
++    this->soc = std::clamp(_p.socInit, 0.0, 1.0);
++    this->vRc = 0.0;
++    this->voltage = this->Ocv() * _p.cells;
++    this->current = 0.0;
++  }
++
++  /// Open-circuit voltage per cell, linear interpolation of a typical LiPo curve (0 % ... 100 % in 10 % steps)
++  public: double Ocv() const
++  {
++    static const std::array<double, 11> v{3.27, 3.69, 3.73, 3.77, 3.79, 3.82, 3.87, 3.92, 3.97, 4.08, 4.20};
++    const double x = std::clamp(this->soc, 0.0, 1.0) * 10.0;
++    const int i = std::min(9, static_cast<int>(x));
++    return v[i] + (v[i + 1] - v[i]) * (x - i);
++  }
++
++  /// Electrical power (W) of one rotor at angular speed _omega (rad/s)
++  public: double RotorPower(double _omega) const
++  {
++    const double area = M_PI * 0.25 * this->p.propDiameter * this->p.propDiameter;
++    const double thrust = this->p.thrustCoeff * _omega * _omega;
++    return std::pow(thrust, 1.5) / std::sqrt(2.0 * this->p.airDensity * area) /
++           (this->p.figureOfMerit * this->p.driveEfficiency);
++  }
++
++  /// Advance by _dt seconds with the given rotor speeds (rad/s); updates voltage, current and SoC.
++  public: void Step(double _dt, const std::vector<double> &_omegas)
++  {
++    double power = 0.0;
++    this->motorCurrent.resize(_omegas.size());
++    this->omegas = _omegas;
++    for (size_t i = 0; i < _omegas.size(); ++i)
++    {
++      this->motorPower[i % 8] = this->RotorPower(std::fabs(_omegas[i]));
++      power += this->motorPower[i % 8];
++    }
++    const double n = this->p.cells;
++    const double r0 = this->p.r0Cell * n;
++    const double e = this->Ocv() * n - this->vRc - r0 * this->p.avionicsCurrent;
++    const double disc = e * e - 4.0 * r0 * power;
++    this->brownout = disc < 0.0;
++    this->voltage = this->brownout ? 0.5 * e : 0.5 * (e + std::sqrt(disc));
++    this->current = power / std::max(this->voltage, 0.1) + this->p.avionicsCurrent;
++    for (size_t i = 0; i < _omegas.size(); ++i)
++      this->motorCurrent[i] = this->motorPower[i % 8] / std::max(this->voltage, 0.1);
++    if (_dt > 0.0)
++    {
++      const double r1 = this->p.r1Cell * n;
++      this->vRc += (this->current * r1 - this->vRc) * std::min(1.0, _dt / this->p.tau1);
++      this->soc = std::max(0.0, this->soc - this->current * _dt / (3600.0 * this->p.capacityAh));
++      this->consumedMah += this->current * _dt / 3.6;
++    }
++  }
++
++  /// Rotor speed scale: ESC output relative to the calibration voltage
++  public: double SpeedScale() const
++  {
++    return std::clamp(this->voltage / (this->p.vRefCell * this->p.cells), 0.0, 1.2);
++  }
++
++  /// Torque magnitude the motor can produce at speed _omega with the present voltage (back-EMF limit)
++  public: double TorqueLimit(double _omega) const
++  {
++    return std::max(0.0, this->p.stallTorque * (this->SpeedScale() - std::fabs(_omega) / this->p.noLoadSpeed));
++  }
++
++  public: BatteryParams p;
++  public: double soc = 1.0;
++  public: double vRc = 0.0;
++  public: double voltage = 12.6;
++  public: double current = 0.0;
++  public: double consumedMah = 0.0;
++  public: bool brownout = false;
++  public: std::array<double, 8> motorPower{};
++  public: std::vector<double> motorCurrent;
++  public: std::vector<double> omegas;
++};
++
++}  // namespace systems
++}  // namespace sim
++}  // namespace gz
++
++#endif  // BATTERYMODEL_HH_
+diff --git a/src/ArduPilotPlugin.cc b/src/ArduPilotPlugin.cc
+index 8309c37..fdc76ae 100755
+--- a/src/ArduPilotPlugin.cc
++++ b/src/ArduPilotPlugin.cc
+@@ -56,6 +56,9 @@
+ #include <gz/math/Vector3.hh>
+ #include <gz/plugin/Register.hh>
+ #include <gz/transport/Node.hh>
++#include <gz/msgs/float_v.pb.h>
++
++#include "BatteryModel.hh"
+ 
+ #include <sdf/sdf.hh>
+ 
+@@ -256,6 +259,18 @@ class gz::sim::systems::ArduPilotPluginPrivate
+   /// \brief We need an gz-transport Node to subscribe to IMU data
+   public: gz::transport::Node node;
+ 
++  /// \brief Battery / propulsion power model [optional, <battery> element]
++  public: BatteryModel battery;
++
++  /// \brief True when the model has a <battery> element
++  public: bool batteryEnabled{false};
++
++  /// \brief Publisher of the battery state [voltage, current, soc, consumed mAh, I_motor0..n-1, omega0..n-1]
++  public: gz::transport::Node::Publisher batteryPub;
++
++  /// \brief Time since the last battery state message
++  public: double batteryPubElapsed{0.0};
++
+   /// \brief A copy of the most recently received IMU data message
+   public: gz::msgs::IMU imuMsg;
+ 
+@@ -499,6 +514,34 @@ void gz::sim::systems::ArduPilotPlugin::Configure(
+   this->LoadRangeSensors(sdfClone, _ecm);
+   this->LoadWindSensors(sdfClone, _ecm);
+ 
++  // Battery / propulsion power model (optional): voltage, current and SoC go to ArduPilot in the JSON packet, and the
++  // voltage limits the rotor speed and torque. Without <battery> the plugin behaves as before.
++  if (sdfClone->HasElement("battery"))
++  {
++    auto b = sdfClone->GetElement("battery");
++    BatteryParams bp;
++    bp.cells = b->Get<int>("cells", bp.cells).first;
++    bp.capacityAh = b->Get<double>("capacity_ah", bp.capacityAh).first;
++    bp.socInit = b->Get<double>("soc_init", bp.socInit).first;
++    bp.r0Cell = b->Get<double>("r0_cell", bp.r0Cell).first;
++    bp.r1Cell = b->Get<double>("r1_cell", bp.r1Cell).first;
++    bp.tau1 = b->Get<double>("tau1", bp.tau1).first;
++    bp.vRefCell = b->Get<double>("v_ref_cell", bp.vRefCell).first;
++    bp.thrustCoeff = b->Get<double>("thrust_coeff", bp.thrustCoeff).first;
++    bp.propDiameter = b->Get<double>("prop_diameter", bp.propDiameter).first;
++    bp.figureOfMerit = b->Get<double>("figure_of_merit", bp.figureOfMerit).first;
++    bp.driveEfficiency = b->Get<double>("drive_efficiency", bp.driveEfficiency).first;
++    bp.avionicsCurrent = b->Get<double>("avionics_current", bp.avionicsCurrent).first;
++    bp.noLoadSpeed = b->Get<double>("no_load_speed", bp.noLoadSpeed).first;
++    bp.stallTorque = b->Get<double>("stall_torque", bp.stallTorque).first;
++    this->dataPtr->battery.Configure(bp);
++    this->dataPtr->batteryEnabled = true;
++    const std::string topic = b->Get<std::string>("topic", "/model/" + this->dataPtr->modelName + "/battery_state").first;
++    this->dataPtr->batteryPub = this->dataPtr->node.Advertise<gz::msgs::Float_V>(topic);
++    gzmsg << "[" << this->dataPtr->modelName << "] battery model: " << bp.cells << "S " << bp.capacityAh
++          << " Ah, SoC " << bp.socInit << ", R0 " << bp.r0Cell * bp.cells << " ohm; state on " << topic << "\n";
++  }
++
+   // Initialise sockets
+   if (!InitSockets(sdfClone))
+   {
+@@ -1304,6 +1347,7 @@ void gz::sim::systems::ArduPilotPlugin::ApplyMotorForces(
+     const double _dt,
+     gz::sim::EntityComponentManager &_ecm)
+ {
++  std::vector<double> rotorSpeeds;  // rad/s of the speed-controlled rotors, for the battery model
+   // update velocity PID for controls and apply force to joint
+   for (size_t i = 0; i < this->dataPtr->controls.size(); ++i)
+   {
+@@ -1350,7 +1394,10 @@ void gz::sim::systems::ArduPilotPlugin::ApplyMotorForces(
+     {
+       if (this->dataPtr->controls[i].type == "VELOCITY")
+       {
+-        const double velTarget = this->dataPtr->controls[i].cmd /
++        // ESC output is a duty cycle of the battery voltage: the speed reached for a given PWM scales with it
++        const double vScale = this->dataPtr->batteryEnabled ?
++          this->dataPtr->battery.SpeedScale() : 1.0;
++        const double velTarget = vScale * this->dataPtr->controls[i].cmd /
+           this->dataPtr->controls[i].rotorVelocitySlowdownSim;
+         gz::sim::components::JointVelocity* vComp =
+           _ecm.Component<gz::sim::components::JointVelocity>(
+@@ -1359,8 +1406,15 @@ void gz::sim::systems::ArduPilotPlugin::ApplyMotorForces(
+         {
+             const double vel = vComp->Data()[0];
+             const double error = vel - velTarget;
+-            const double force = this->dataPtr->controls[i].pid.Update(
++            double force = this->dataPtr->controls[i].pid.Update(
+                 error, std::chrono::duration<double>(_dt));
++            if (this->dataPtr->batteryEnabled)
++            {
++              // back-EMF: the torque available falls with speed and rises with voltage
++              const double lim = this->dataPtr->battery.TorqueLimit(vel);
++              force = gz::math::clamp(force, -lim, lim);
++              rotorSpeeds.push_back(vel);
++            }
+             jfcComp->Data()[0] = force;
+         }
+       }
+@@ -1413,6 +1467,25 @@ void gz::sim::systems::ArduPilotPlugin::ApplyMotorForces(
+       }
+     }
+   }
++
++  if (this->dataPtr->batteryEnabled)
++  {
++    auto &bat = this->dataPtr->battery;
++    bat.Step(_dt, rotorSpeeds);
++    this->dataPtr->batteryPubElapsed += _dt;
++    if (this->dataPtr->batteryPubElapsed >= 0.1)
++    {
++      this->dataPtr->batteryPubElapsed = 0.0;
++      gz::msgs::Float_V msg;
++      for (double v : {bat.voltage, bat.current, bat.soc, bat.consumedMah})
++        msg.add_data(static_cast<float>(v));
++      for (double v : bat.motorCurrent)
++        msg.add_data(static_cast<float>(v));
++      for (double v : bat.omegas)
++        msg.add_data(static_cast<float>(v));
++      this->dataPtr->batteryPub.Publish(msg);
++    }
++  }
+ }
+ 
+ /////////////////////////////////////////////////
+@@ -2007,6 +2080,18 @@ void gz::sim::systems::ArduPilotPlugin::CreateStateJSON(
+       writer.EndObject();
+     }
+ 
++    // Battery (optional JSON fields; without them SITL uses SIM_BATT_VOLTAGE and 0 A)
++    if (this->dataPtr->batteryEnabled)
++    {
++      writer.Key("battery");
++      writer.StartObject();
++      writer.Key("voltage");
++      writer.Double(this->dataPtr->battery.voltage);
++      writer.Key("current");
++      writer.Double(this->dataPtr->battery.current);
++      writer.EndObject();
++    }
++
+     // Set no time sync
+     writer.Key("no_time_sync");
+     writer.Bool(this->dataPtr->isNoTimeSync);

@@ -1,0 +1,23 @@
+[1.290s] Invoking command in '/root/ros2_ws/Robofest_6.0_CV-landmine_detection/vidhaan-rosPackage/mine_waypoint_pkg': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=${debian_chroot:+($debian_chroot)}\u@\h:\w\$ PYTHONPATH=/root/ros2_ws/build/mine_waypoint_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/install/mine_waypoint_pkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/mine_waypoint_pkg build --build-base /root/ros2_ws/build/mine_waypoint_pkg/build install --record /root/ros2_ws/build/mine_waypoint_pkg/install.log --install-scripts $base/lib/mine_waypoint_pkg --single-version-externally-managed install_data
+[1.597s] /usr/local/lib/python3.12/dist-packages/setuptools/_distutils/dist.py:318: UserWarning: Unknown distribution option: 'tests_require'
+[1.597s]   warnings.warn(msg)
+[1.818s] running egg_info
+[1.850s] writing ../../../build/mine_waypoint_pkg/mine_waypoint_pkg.egg-info/PKG-INFO
+[1.851s] writing dependency_links to ../../../build/mine_waypoint_pkg/mine_waypoint_pkg.egg-info/dependency_links.txt
+[1.851s] writing entry points to ../../../build/mine_waypoint_pkg/mine_waypoint_pkg.egg-info/entry_points.txt
+[1.851s] writing requirements to ../../../build/mine_waypoint_pkg/mine_waypoint_pkg.egg-info/requires.txt
+[1.852s] writing top-level names to ../../../build/mine_waypoint_pkg/mine_waypoint_pkg.egg-info/top_level.txt
+[1.933s] reading manifest file '../../../build/mine_waypoint_pkg/mine_waypoint_pkg.egg-info/SOURCES.txt'
+[1.935s] writing manifest file '../../../build/mine_waypoint_pkg/mine_waypoint_pkg.egg-info/SOURCES.txt'
+[1.935s] running build
+[1.936s] running build_py
+[1.936s] running install
+[1.944s] running install_lib
+[1.977s] running install_data
+[1.977s] running install_egg_info
+[2.007s] removing '/root/ros2_ws/install/mine_waypoint_pkg/lib/python3.12/site-packages/mine_waypoint_pkg-0.0.1-py3.12.egg-info' (and everything under it)
+[2.007s] Copying ../../../build/mine_waypoint_pkg/mine_waypoint_pkg.egg-info to /root/ros2_ws/install/mine_waypoint_pkg/lib/python3.12/site-packages/mine_waypoint_pkg-0.0.1-py3.12.egg-info
+[2.009s] running install_scripts
+[2.078s] Installing mine_waypoint_node script to /root/ros2_ws/install/mine_waypoint_pkg/lib/mine_waypoint_pkg
+[2.079s] writing list of installed files to '/root/ros2_ws/build/mine_waypoint_pkg/install.log'
+[2.135s] Invoked command in '/root/ros2_ws/Robofest_6.0_CV-landmine_detection/vidhaan-rosPackage/mine_waypoint_pkg' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=${debian_chroot:+($debian_chroot)}\u@\h:\w\$ PYTHONPATH=/root/ros2_ws/build/mine_waypoint_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/install/mine_waypoint_pkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/mine_waypoint_pkg build --build-base /root/ros2_ws/build/mine_waypoint_pkg/build install --record /root/ros2_ws/build/mine_waypoint_pkg/install.log --install-scripts $base/lib/mine_waypoint_pkg --single-version-externally-managed install_data

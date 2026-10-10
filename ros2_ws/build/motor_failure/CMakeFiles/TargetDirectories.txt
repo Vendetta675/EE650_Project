@@ -1,0 +1,10 @@
+/root/ros2_ws/build/motor_failure/CMakeFiles/uninstall.dir
+/root/ros2_ws/build/motor_failure/CMakeFiles/motor_failure_uninstall.dir
+/root/ros2_ws/build/motor_failure/CMakeFiles/motor_failure.dir
+/root/ros2_ws/build/motor_failure/CMakeFiles/test.dir
+/root/ros2_ws/build/motor_failure/CMakeFiles/edit_cache.dir
+/root/ros2_ws/build/motor_failure/CMakeFiles/rebuild_cache.dir
+/root/ros2_ws/build/motor_failure/CMakeFiles/list_install_components.dir
+/root/ros2_ws/build/motor_failure/CMakeFiles/install.dir
+/root/ros2_ws/build/motor_failure/CMakeFiles/install/local.dir
+/root/ros2_ws/build/motor_failure/CMakeFiles/install/strip.dir

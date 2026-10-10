@@ -1,0 +1,74 @@
+{
+ "split": {
+  "val": [
+   "flight_03",
+   "flight_06",
+   "flight_10",
+   "flight_17",
+   "flight_19",
+   "flight_24",
+   "flight_30",
+   "flight_33"
+  ],
+  "test": [
+   "flight_05",
+   "flight_08",
+   "flight_12",
+   "flight_13",
+   "flight_21",
+   "flight_22",
+   "flight_31",
+   "flight_34"
+  ]
+ },
+ "feature_set": "v3",
+ "features": [
+  "rel_m1",
+  "rel_m2",
+  "rel_m3",
+  "rel_m4",
+  "vib_x",
+  "vib_y",
+  "vib_z",
+  "current",
+  "pwm_spread",
+  "acc_sx",
+  "acc_sy",
+  "acc_sz",
+  "gyr_sx",
+  "gyr_sy",
+  "gyr_sz",
+  "gyr_x",
+  "gyr_y",
+  "gyr_z",
+  "rate_z",
+  "acc_z_dev",
+  "relf_m1",
+  "relf_m2",
+  "relf_m3",
+  "relf_m4",
+  "spread_f",
+  "pwm_mean",
+  "v_cell",
+  "power_per_thr"
+ ],
+ "dropped": [],
+ "units": 32,
+ "persistence": 2,
+ "results": {
+  "cls_gru5": {
+   "params": 6497,
+   "seq_len": 5,
+   "threshold": 0.9266737401861891,
+   "test_roc_auc": 0.9057172658112278,
+   "test_pr_auc": 0.8400802906635135,
+   "episodes": 16,
+   "detected": 16,
+   "detected_in_precursor": 14,
+   "latency_median_s": 3.8545979261398315,
+   "latency_p90_s": 5.01247239112854,
+   "false_alarms_per_min": 0.6755995946402432,
+   "normal_minutes": 14.801666666666668
+  }
+ }
+}

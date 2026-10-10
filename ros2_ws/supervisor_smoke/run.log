@@ -1,0 +1,25 @@
+=== flight 01 loe_final=0.6 23:14:26
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791414880.653672   37396 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791414880.654226   37396 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791414882.729344   37396 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791414882.729906   37396 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/usr/local/lib/python3.12/dist-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/usr/local/lib/python3.12/dist-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+airborne; supervisor on
+trigger at 1791414941.29
+1791414945.03 supervisor: NORMAL -> HOLD (alarm p=1.00)
+1791414946.03 supervisor: HOLD -> DESCEND (confirmed: 10 hot windows)
+1791414950.52 supervisor: DESCEND -> LAND (rel_alt 1.9 m)
+disarmed (landed or crashed)
+recovered, alt 0.0
+supervisor events: [(1791414945.03, 'NORMAL', 'HOLD', 'alarm p=1.00'), (1791414946.03, 'HOLD', 'DESCEND', 'confirmed: 10 hot windows'), (1791414950.52, 'DESCEND', 'LAND', 'rel_alt 1.9 m')]
+=== done 23:16:09

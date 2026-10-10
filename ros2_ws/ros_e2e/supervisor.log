@@ -1,0 +1,4 @@
+[INFO] [1791437093.280493064] [fault_supervisor]: Supervisor armed on tcp:127.0.0.1:5763 (threshold 0.453).
+[WARN] [1791437164.714355779] [fault_supervisor]: supervisor: NORMAL -> HOLD (alarm p=1.00)
+[WARN] [1791437165.713930647] [fault_supervisor]: supervisor: HOLD -> DESCEND (confirmed: 10 hot windows)
+[WARN] [1791437174.515220193] [fault_supervisor]: supervisor: DESCEND -> LAND (rel_alt 2.0 m)

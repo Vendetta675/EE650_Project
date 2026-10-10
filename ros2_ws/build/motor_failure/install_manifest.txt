@@ -1,0 +1,16 @@
+/root/ros2_ws/install/motor_failure/lib/libmotor_failure.so
+/root/ros2_ws/install/motor_failure/share/ament_index/resource_index/package_run_dependencies/motor_failure
+/root/ros2_ws/install/motor_failure/share/ament_index/resource_index/parent_prefix_path/motor_failure
+/root/ros2_ws/install/motor_failure/share/motor_failure/environment/ament_prefix_path.sh
+/root/ros2_ws/install/motor_failure/share/motor_failure/environment/ament_prefix_path.dsv
+/root/ros2_ws/install/motor_failure/share/motor_failure/environment/path.sh
+/root/ros2_ws/install/motor_failure/share/motor_failure/environment/path.dsv
+/root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.bash
+/root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.sh
+/root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.zsh
+/root/ros2_ws/install/motor_failure/share/motor_failure/local_setup.dsv
+/root/ros2_ws/install/motor_failure/share/motor_failure/package.dsv
+/root/ros2_ws/install/motor_failure/share/ament_index/resource_index/packages/motor_failure
+/root/ros2_ws/install/motor_failure/share/motor_failure/cmake/motor_failureConfig.cmake
+/root/ros2_ws/install/motor_failure/share/motor_failure/cmake/motor_failureConfig-version.cmake
+/root/ros2_ws/install/motor_failure/share/motor_failure/package.xml

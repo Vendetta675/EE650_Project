@@ -1,0 +1,61 @@
+[0.000000] (-) TimerEvent: {}
+[0.000715] (-) JobUnselected: {'identifier': 'ardupilot_gazebo'}
+[0.000815] (-) JobUnselected: {'identifier': 'motor_failure'}
+[0.000901] (motor_failure_predictor) JobQueued: {'identifier': 'motor_failure_predictor', 'dependencies': OrderedDict()}
+[0.000939] (motor_failure_predictor) JobStarted: {'identifier': 'motor_failure_predictor'}
+[0.099691] (-) TimerEvent: {}
+[0.200034] (-) TimerEvent: {}
+[0.300276] (-) TimerEvent: {}
+[0.400524] (-) TimerEvent: {}
+[0.500765] (-) TimerEvent: {}
+[0.601081] (-) TimerEvent: {}
+[0.701395] (-) TimerEvent: {}
+[0.801703] (-) TimerEvent: {}
+[0.902011] (-) TimerEvent: {}
+[1.002323] (-) TimerEvent: {}
+[1.081850] (motor_failure_predictor) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/motor_failure_predictor', 'build', '--build-base', '/root/ros2_ws/build/motor_failure_predictor/build', 'install', '--record', '/root/ros2_ws/build/motor_failure_predictor/install.log', '--install-scripts', '$base/lib/motor_failure_predictor', '--single-version-externally-managed', 'install_data'], 'cwd': '/root/ros2_ws/src/motor_failure_predictor', 'env': {'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'root', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': 'c7ab345f90ed', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root/gourav', 'ROS_PYTHON_VERSION': '3', 'PS1': '(venv-ardupilot)', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'PIP_BREAK_SYSTEM_PACKAGES': '1', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/root/.local/bin:/usr/lib/ccache:/root/ardupilot/Tools/autotest:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:/root/venv-ardupilot/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'VIRTUAL_ENV_PROMPT': '(venv-ardupilot)', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'VIRTUAL_ENV': '/root/venv-ardupilot', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ros2_ws/build/motor_failure_predictor', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/root/ros2_ws/build/motor_failure_predictor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'TZ': 'Etc/UTC', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[1.102493] (-) TimerEvent: {}
+[1.202755] (-) TimerEvent: {}
+[1.303178] (-) TimerEvent: {}
+[1.403455] (-) TimerEvent: {}
+[1.503771] (-) TimerEvent: {}
+[1.513829] (motor_failure_predictor) StdoutLine: {'line': b'running egg_info\n'}
+[1.541597] (motor_failure_predictor) StdoutLine: {'line': b'writing ../../build/motor_failure_predictor/motor_failure_predictor.egg-info/PKG-INFO\n'}
+[1.544299] (motor_failure_predictor) StdoutLine: {'line': b'writing dependency_links to ../../build/motor_failure_predictor/motor_failure_predictor.egg-info/dependency_links.txt\n'}
+[1.544911] (motor_failure_predictor) StdoutLine: {'line': b'writing entry points to ../../build/motor_failure_predictor/motor_failure_predictor.egg-info/entry_points.txt\n'}
+[1.545164] (motor_failure_predictor) StdoutLine: {'line': b'writing requirements to ../../build/motor_failure_predictor/motor_failure_predictor.egg-info/requires.txt\n'}
+[1.545620] (motor_failure_predictor) StdoutLine: {'line': b'writing top-level names to ../../build/motor_failure_predictor/motor_failure_predictor.egg-info/top_level.txt\n'}
+[1.604006] (-) TimerEvent: {}
+[1.604507] (motor_failure_predictor) StdoutLine: {'line': b"reading manifest file '../../build/motor_failure_predictor/motor_failure_predictor.egg-info/SOURCES.txt'\n"}
+[1.607465] (motor_failure_predictor) StdoutLine: {'line': b"writing manifest file '../../build/motor_failure_predictor/motor_failure_predictor.egg-info/SOURCES.txt'\n"}
+[1.607785] (motor_failure_predictor) StdoutLine: {'line': b'running build\n'}
+[1.608205] (motor_failure_predictor) StdoutLine: {'line': b'running build_py\n'}
+[1.608338] (motor_failure_predictor) StdoutLine: {'line': b'copying motor_failure_predictor/mavlink_bridge.py -> /root/ros2_ws/build/motor_failure_predictor/build/lib/motor_failure_predictor\n'}
+[1.608640] (motor_failure_predictor) StdoutLine: {'line': b'copying motor_failure_predictor/lstm_node.py -> /root/ros2_ws/build/motor_failure_predictor/build/lib/motor_failure_predictor\n'}
+[1.608853] (motor_failure_predictor) StdoutLine: {'line': b'copying motor_failure_predictor/detector.py -> /root/ros2_ws/build/motor_failure_predictor/build/lib/motor_failure_predictor\n'}
+[1.609063] (motor_failure_predictor) StdoutLine: {'line': b'copying motor_failure_predictor/fault_features.py -> /root/ros2_ws/build/motor_failure_predictor/build/lib/motor_failure_predictor\n'}
+[1.609733] (motor_failure_predictor) StdoutLine: {'line': b'running install\n'}
+[1.617358] (motor_failure_predictor) StdoutLine: {'line': b'running install_lib\n'}
+[1.646857] (motor_failure_predictor) StdoutLine: {'line': b'copying /root/ros2_ws/build/motor_failure_predictor/build/lib/motor_failure_predictor/mavlink_bridge.py -> /root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor\n'}
+[1.647429] (motor_failure_predictor) StdoutLine: {'line': b'copying /root/ros2_ws/build/motor_failure_predictor/build/lib/motor_failure_predictor/lstm_node.py -> /root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor\n'}
+[1.647721] (motor_failure_predictor) StdoutLine: {'line': b'copying /root/ros2_ws/build/motor_failure_predictor/build/lib/motor_failure_predictor/detector.py -> /root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor\n'}
+[1.647938] (motor_failure_predictor) StdoutLine: {'line': b'copying /root/ros2_ws/build/motor_failure_predictor/build/lib/motor_failure_predictor/fault_features.py -> /root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor\n'}
+[1.648847] (motor_failure_predictor) StdoutLine: {'line': b'byte-compiling /root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor/mavlink_bridge.py to mavlink_bridge.cpython-312.pyc\n'}
+[1.651019] (motor_failure_predictor) StdoutLine: {'line': b'byte-compiling /root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor/lstm_node.py to lstm_node.cpython-312.pyc\n'}
+[1.652871] (motor_failure_predictor) StdoutLine: {'line': b'byte-compiling /root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor/detector.py to detector.cpython-312.pyc\n'}
+[1.657487] (motor_failure_predictor) StdoutLine: {'line': b'byte-compiling /root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor/fault_features.py to fault_features.cpython-312.pyc\n'}
+[1.661089] (motor_failure_predictor) StdoutLine: {'line': b'running install_data\n'}
+[1.661668] (motor_failure_predictor) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.692395] (motor_failure_predictor) StdoutLine: {'line': b"removing '/root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor-0.0.0-py3.12.egg-info' (and everything under it)\n"}
+[1.694275] (motor_failure_predictor) StdoutLine: {'line': b'Copying ../../build/motor_failure_predictor/motor_failure_predictor.egg-info to /root/ros2_ws/install/motor_failure_predictor/lib/python3.12/site-packages/motor_failure_predictor-0.0.0-py3.12.egg-info\n'}
+[1.695530] (motor_failure_predictor) StdoutLine: {'line': b'running install_scripts\n'}
+[1.704121] (-) TimerEvent: {}
+[1.758581] (motor_failure_predictor) StdoutLine: {'line': b'Installing fault_supervisor script to /root/ros2_ws/install/motor_failure_predictor/lib/motor_failure_predictor\n'}
+[1.759020] (motor_failure_predictor) StdoutLine: {'line': b'Installing lstm_predictor script to /root/ros2_ws/install/motor_failure_predictor/lib/motor_failure_predictor\n'}
+[1.759187] (motor_failure_predictor) StdoutLine: {'line': b'Installing mavlink_bridge script to /root/ros2_ws/install/motor_failure_predictor/lib/motor_failure_predictor\n'}
+[1.759340] (motor_failure_predictor) StdoutLine: {'line': b'Installing random_publisher script to /root/ros2_ws/install/motor_failure_predictor/lib/motor_failure_predictor\n'}
+[1.759715] (motor_failure_predictor) StdoutLine: {'line': b"writing list of installed files to '/root/ros2_ws/build/motor_failure_predictor/install.log'\n"}
+[1.796868] (motor_failure_predictor) CommandEnded: {'returncode': 0}
+[1.804226] (-) TimerEvent: {}
+[1.815464] (motor_failure_predictor) JobEnded: {'identifier': 'motor_failure_predictor', 'rc': 0}
+[1.816235] (-) EventReactorShutdown: {}

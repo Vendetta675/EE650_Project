@@ -1,0 +1,15 @@
+# Fault-tolerant control (single rotor failure) custom controller, loaded as an extra SITL defaults file
+CC_TYPE        3
+CC_AXIS_MASK   7
+CC3_FAIL_MOT   0
+# test airframe sim_models_ftc (1.2 kg): the stock 2 kg Iris cannot hover on two diagonal rotors
+CC3_MASS       1.2
+# softer position loop and slow, low-lean navigation: a fast position loop excites the coning motion of the
+# spinning 3-rotor vehicle (0.5 Hz divergence), and large leans exceed the little thrust margin left
+PSC_NE_POS_P   0.5
+PSC_NE_VEL_P   0.8
+PSC_NE_VEL_I   0.2
+PSC_NE_VEL_D   0
+PSC_ANGLE_MAX  8
+WP_SPD         1.0
+WP_ACC         0.5

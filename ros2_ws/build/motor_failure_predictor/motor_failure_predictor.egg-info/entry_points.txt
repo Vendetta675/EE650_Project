@@ -1,0 +1,5 @@
+[console_scripts]
+fault_supervisor = motor_failure_predictor.fault_supervisor_node:main
+lstm_predictor = motor_failure_predictor.lstm_node:main
+mavlink_bridge = motor_failure_predictor.mavlink_bridge:main
+random_publisher = motor_failure_predictor.random_flight_data_publisher:main

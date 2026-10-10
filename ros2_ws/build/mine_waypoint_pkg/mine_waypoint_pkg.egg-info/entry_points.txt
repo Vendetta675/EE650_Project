@@ -1,0 +1,2 @@
+[console_scripts]
+mine_waypoint_node = mine_waypoint_pkg.mine_waypoint_node:main

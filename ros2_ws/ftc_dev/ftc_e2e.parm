@@ -1,0 +1,7 @@
+# Extra SITL defaults for ros_ftc_e2e_test.sh (loaded after ftc.parm)
+# two more MAVLink links over UDP (SITL --serial5/--serial6): mavlink_bridge on 14551, fault_supervisor on 14552
+SERIAL5_PROTOCOL 2
+SERIAL6_PROTOCOL 2
+# test airframe sim_models_ftc10 (1.0 kg): enough thrust margin to survive the ~0.3 s hand-off of the onboard detection
+CC3_MASS       1.0
+BATT_CAPACITY  2200

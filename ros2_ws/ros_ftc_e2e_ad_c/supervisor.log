@@ -1,0 +1,4 @@
+[INFO] [1791577771.651165879] [fault_supervisor]: Supervisor armed on udp:127.0.0.1:14552 (threshold 0.926, FTC hand-off on).
+[WARN] [1791577820.228573252] [fault_supervisor]: supervisor: NORMAL -> DESCEND (alarm p=0.99, low battery (SoC ~0.24 < 0.7): fault-tolerant controller armed, landing now)
+[WARN] [1791577823.927721661] [fault_supervisor]: supervisor: DESCEND -> FTC (onboard FTC took over motor 1)
+[WARN] [1791577828.027495968] [fault_supervisor]: supervisor: low-battery landing, LAND at rel_alt 0.9 m

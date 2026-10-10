@@ -1,0 +1,1 @@
+# mine_waypoint_pkg

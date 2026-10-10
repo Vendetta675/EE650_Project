@@ -1,0 +1,11 @@
+{
+ "model": "cls_gru5_int8.tflite",
+ "source_h5": "cls_gru5.h5",
+ "threshold": 0.733,
+ "persistence": 5,
+ "vote": [
+  5,
+  5
+ ],
+ "selection": "alarm rule (k-of-n votes) and threshold chosen on VALIDATION flights only: threshold per rule for <= 0.5 false alarms / min, then most detections within the precursor, most detections, lowest median latency"
+}

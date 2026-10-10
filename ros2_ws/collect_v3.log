@@ -1,0 +1,89 @@
+=== flight 03 stock soc=0.46 r0x1.33 loe=0.7 episodes=2 12:25:55
+episode 0: trigger at 1791548882.55;vehicle lost altitude, ending flight;flight done;
+./collect_v3.sh: line 42:  8351 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 04 light soc=0.76 r0x1.83 loe=0.7 episodes=3 12:28:30
+episode 0: trigger at 1791548997.02;episode 1: trigger at 1791549047.16;episode 2: trigger at 1791549091.01;flight done;
+./collect_v3.sh: line 42:  8650 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 05 stock soc=0.87 r0x1.82 loe=0.8 episodes=3 12:32:34
+episode 0: trigger at 1791549241.16;episode 1: trigger at 1791549294.61;episode 2: trigger at 1791549345.16;flight done;
+./collect_v3.sh: line 42:  8767 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 06 light soc=0.84 r0x2.15 loe=0.8 episodes=2 12:36:47
+episode 0: trigger at 1791549526.29;episode 1: trigger at 1791549600.49;flight done;
+./collect_v3.sh: line 42:  8884 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 07 stock soc=0.85 r0x1.88 loe=0.6 episodes=3 12:41:02
+episode 0: trigger at 1791549738.66;vehicle lost altitude, ending flight;flight done;
+./collect_v3.sh: line 42:  8985 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 08 light soc=0.54 r0x1.92 loe=0.6 episodes=3 12:42:48
+episode 0: trigger at 1791549842.94;episode 1: trigger at 1791549889.02;episode 2: trigger at 1791549944.51;flight done;
+./collect_v3.sh: line 42:  9070 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 09 stock soc=0.47 r0x2.23 loe=0.7 episodes=2 12:46:47
+episode 0: trigger at 1791550114.89;vehicle lost altitude, ending flight;flight done;
+./collect_v3.sh: line 42:  9187 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 10 light soc=0.67 r0x2.22 loe=0.7 episodes=3 12:49:03
+episode 0: trigger at 1791550231.63;episode 1: trigger at 1791550286.91;episode 2: trigger at 1791550335.29;flight done;
+=== flight 11 stock soc=0.81 r0x2.02 loe=0.8 episodes=3 12:53:17
+episode 0: trigger at 1791550482.80;episode 1: trigger at 1791550530.25;episode 2: trigger at 1791550578.68;flight done;
+./collect_v3.sh: line 42:  9389 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 12 light soc=0.53 r0x1.38 loe=0.8 episodes=2 12:57:21
+episode 0: trigger at 1791550755.13;episode 1: trigger at 1791550846.02;flight done;
+=== flight 13 stock soc=0.99 r0x2.39 loe=0.6 episodes=3 13:01:48
+episode 0: trigger at 1791550982.78;vehicle lost altitude, ending flight;flight done;
+./collect_v3.sh: line 42:  9613 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 14 light soc=0.88 r0x2.50 loe=0.6 episodes=3 13:04:53
+episode 0: trigger at 1791551170.05;episode 1: trigger at 1791551225.83;episode 2: trigger at 1791551274.81;flight done;
+=== flight 15 stock soc=0.71 r0x1.11 loe=0.7 episodes=2 13:08:57
+episode 0: trigger at 1791551463.16;vehicle lost altitude, ending flight;flight done;
+./collect_v3.sh: line 42:  9815 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 16 light soc=0.60 r0x1.84 loe=0.7 episodes=3 13:11:38
+episode 0: trigger at 1791551584.45;episode 1: trigger at 1791551631.27;episode 2: trigger at 1791551682.05;flight done;
+./collect_v3.sh: line 42:  9900 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 17 stock soc=0.58 r0x1.69 loe=0.8 episodes=3 13:15:46
+episode 0: trigger at 1791551823.23;episode 1: trigger at 1791551873.37;episode 2: trigger at 1791551914.83;flight done;
+./collect_v3.sh: line 42: 10031 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 18 light soc=0.93 r0x2.06 loe=0.8 episodes=2 13:19:39
+episode 0: trigger at 1791552098.69;episode 1: trigger at 1791552170.46;flight done;
+./collect_v3.sh: line 42: 10148 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 19 stock soc=0.75 r0x1.04 loe=0.6 episodes=3 13:23:52
+episode 0: trigger at 1791552319.41;vehicle lost altitude, ending flight;flight done;
+=== flight 20 light soc=0.83 r0x1.55 loe=0.6 episodes=3 13:25:54
+episode 0: trigger at 1791552434.21;episode 1: trigger at 1791552483.04;episode 2: trigger at 1791552524.65;flight done;
+./collect_v3.sh: line 42: 10372 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 21 stock soc=0.65 r0x1.60 loe=0.7 episodes=2 13:29:47
+episode 0: trigger at 1791552687.82;vehicle lost altitude, ending flight;flight done;
+./collect_v3.sh: line 42: 10542 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 22 light soc=0.75 r0x1.75 loe=0.7 episodes=3 13:32:02
+episode 0: trigger at 1791552802.20;episode 1: trigger at 1791552852.80;episode 2: trigger at 1791552899.82;flight done;
+=== flight 23 stock soc=0.47 r0x1.76 loe=0.8 episodes=3 13:36:02
+episode 0: trigger at 1791553035.83;episode 1: trigger at 1791553081.94;episode 2: trigger at 1791553135.76;flight done;
+./collect_v3.sh: line 42: 10782 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 24 light soc=0.85 r0x1.90 loe=0.8 episodes=2 13:39:54
+episode 0: trigger at 1791553320.87;episode 1: trigger at 1791553402.83;flight done;
+./collect_v3.sh: line 42: 10921 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 25 stock soc=0.69 r0x2.38 loe=0.6 episodes=3 13:44:24
+episode 0: trigger at 1791553550.92;vehicle lost altitude, ending flight;flight done;
+./collect_v3.sh: line 42: 11050 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 26 light soc=0.56 r0x1.63 loe=0.6 episodes=3 13:46:20
+episode 0: trigger at 1791553660.91;episode 1: trigger at 1791553702.12;episode 2: trigger at 1791553753.07;flight done;
+./collect_v3.sh: line 42: 11147 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 27 stock soc=0.96 r0x1.72 loe=0.7 episodes=2 13:50:15
+episode 0: trigger at 1791553914.12;vehicle lost altitude, ending flight;flight done;
+./collect_v3.sh: line 42: 11286 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 28 light soc=0.71 r0x1.04 loe=0.7 episodes=3 13:52:29
+episode 0: trigger at 1791554035.79;episode 1: trigger at 1791554081.80;episode 2: trigger at 1791554129.00;flight done;
+./collect_v3.sh: line 42: 11385 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== done 13:56:31
+=== flight 29 stock soc=0.46 r0x1.70 loe=0.8 episodes=2 13:56:36
+episode 0: trigger at 1791554331.36;episode 1: trigger at 1791554428.59;flight done;
+./collect_v3.sh: line 42: 11569 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== flight 30 stock soc=0.41 r0x1.48 loe=0.8 episodes=2 14:01:30
+episode 0: trigger at 1791554624.20;episode 1: trigger at 1791554727.27;flight done;
+=== flight 31 stock soc=0.64 r0x2.36 loe=0.8 episodes=2 14:06:30
+episode 0: trigger at 1791554917.98;vehicle lost altitude, ending flight;flight done;
+=== flight 32 stock soc=0.51 r0x1.27 loe=0.8 episodes=2 14:10:28
+episode 0: trigger at 1791555158.30;episode 1: trigger at 1791555255.92;flight done;
+=== flight 33 stock soc=0.76 r0x1.42 loe=0.8 episodes=2 14:15:19
+episode 0: trigger at 1791555461.56;episode 1: trigger at 1791555565.56;flight done;
+=== flight 34 stock soc=0.81 r0x1.11 loe=0.8 episodes=2 14:20:28
+episode 0: trigger at 1791555760.41;episode 1: trigger at 1791555870.60;flight done;
+./collect_v3.sh: line 42: 12062 Killed                  /root/ardupilot/build/sitl/bin/arducopter --model JSON --speedup 1 --slave 0 -I0 -w --sim-address=127.0.0.1 --home -35.363261,149.165230,584,353 --defaults $PARM > sitl_$i.log 2>&1
+=== done 14:25:37

@@ -1,0 +1,3 @@
+[INFO] [1791557730.835892526] [fault_supervisor]: Supervisor armed on udp:127.0.0.1:14552 (threshold 0.926, FTC hand-off on).
+[WARN] [1791557780.601181570] [fault_supervisor]: supervisor: NORMAL -> ARMED (alarm p=0.97: fault-tolerant controller armed, mission continues)
+[WARN] [1791557784.100705644] [fault_supervisor]: supervisor: ARMED -> FTC (onboard FTC took over motor 1)

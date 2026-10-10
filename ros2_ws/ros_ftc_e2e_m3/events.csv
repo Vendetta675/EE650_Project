@@ -1,0 +1,4 @@
+wall_time,sim_time,event,motor_index,joint_name,effectiveness,loe_final,ramp_duration,stutter_amplitude,stutter_frequency,cut_after
+1791533746.721387,40.275000,start,2,iris_with_standoffs::rotor_2_joint,1.000000,0.600000,5.000000,0.150000,35.000000,2.000000
+1791533753.725744,47.275000,cut,2,iris_with_standoffs::rotor_2_joint,0.000000,0.600000,5.000000,0.150000,35.000000,2.000000
+1791533804.687039,95.861000,recover,2,iris_with_standoffs::rotor_2_joint,1.000000,0.600000,5.000000,0.150000,35.000000,2.000000

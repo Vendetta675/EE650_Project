@@ -1,0 +1,53 @@
+{
+ "model": "models_v3feat_v3data/cls_gru5.h5",
+ "kind": "classifier",
+ "params": 6497,
+ "size_bytes": {
+  "h5": 113600,
+  "fp32": 43044,
+  "int8": 43424
+ },
+ "test_roc_auc": {
+  "keras": 0.9064882162276128,
+  "fp32": 0.9064882445048434,
+  "int8": 0.9049467112760716
+ },
+ "latency_us_1thread": {
+  "keras_call": 38370.64300205384,
+  "tflite_fp32": 12.878999768872745,
+  "tflite_int8": 29.30249866039958
+ },
+ "abs_diff_vs_keras": {
+  "fp32": {
+   "max": 4.172325134277344e-07,
+   "mean": 1.831303286792263e-08
+  },
+  "int8": {
+   "max": 0.4568172097206116,
+   "mean": 0.015194199979305267
+  }
+ },
+ "int8_io_quantization": {
+  "input": [
+   0.0784313753247261,
+   -1.0
+  ],
+  "output": [
+   0.00390625,
+   -128.0
+  ]
+ },
+ "int8_op_types": [
+  "ADD",
+  "DELEGATE",
+  "FULLY_CONNECTED",
+  "LOGISTIC",
+  "MUL",
+  "RESHAPE",
+  "SPLIT",
+  "STRIDED_SLICE",
+  "SUB",
+  "TANH",
+  "UNPACK"
+ ]
+}
